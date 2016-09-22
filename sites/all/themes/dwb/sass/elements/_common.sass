@@ -1,0 +1,111 @@
+// MASONRY BREAKPOINTS
+@include breakpoint($m)
+  body:before
+    content: "smartphone"
+    display: none
+@include breakpoint($t)
+  body:before
+    content: "tablet"
+    display: none
+@include breakpoint($d)
+  body:before
+    content: "desktop"
+    display: none
+@include breakpoint($b)
+  body:before
+    content: "bigscreen"
+    display: none
+    
+// COMMON STYLES
+body
+  font-family: $font-stack
+  font-size: $font-size-paragraph
+.front
+  #header
+    height: 530px
+    @include breakpoint($t)
+      height: 630px
+    @include breakpoint($i)
+      height: 600px
+      background-color: transparent !important
+      background-position: center 120px !important
+      background-size: cover !important
+    @include breakpoint($sm)
+      height: 500px
+      background-color: transparent !important
+      background-position: center 75px !important
+      background-size: cover !important
+  .container
+    margin-left: auto
+    margin-right: auto
+    max-width: 1920px
+    padding: 0 2%
+    @include breakpoint($b)
+      padding: 0
+    @include breakpoint($t)
+      padding: 0
+    @include breakpoint($m)
+      padding: 0
+
+.not-front
+  .container
+    margin-left: auto
+    margin-right: auto
+    max-width: 1920px
+    padding: 0
+
+.container-narrow
+  margin-left: auto
+  margin-right: auto
+  max-width: 810px
+  position: relative
+  padding-top: 50px
+
+.header-outer
+  background: white
+  @include breakpoint($t)
+    background: none
+  @include breakpoint($m)
+    background: none
+
+.not-front
+  .header-outer
+    background: none
+
+.outer-container
+  width: 100%
+  margin: 0
+  padding: 0
+  background: white
+
+.desktop
+  display: inline-block
+  @include breakpoint($m)
+    display: none
+
+.desktop-menu
+  display: inline-block
+  @include breakpoint($m)
+    display: none
+
+.mobile
+  display: none
+  @include breakpoint($m)
+    display: block
+
+ul.pager.pager-load-more
+  li
+    background: white
+    text-align: center
+    padding: 15px 10px
+    text-transform: uppercase
+    max-width: 200px
+    margin: 60px auto 100px auto
+    display: block
+    +shadow
+  a
+    color: $font-dark-red
+    text-decoration: none
+    font-weight: bold
+    border-bottom: 2px solid $font-dark-red
+    padding-bottom: $btn-padding-height

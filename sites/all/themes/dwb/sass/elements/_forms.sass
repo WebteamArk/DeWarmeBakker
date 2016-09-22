@@ -1,0 +1,48 @@
+// Footer newsletter
+#block-webform-client-block-1
+  .webform-submit
+    padding: 12px 20px
+    text-align: center
+    font-weight: bold
+    background: $btn-light-grey
+    border: none
+    color: #fff
+    text-transform: uppercase
+    span
+      border-bottom: 2px solid white
+      padding-bottom: $btn-padding-height
+
+  .form-actions
+    display: inline-block
+    @include breakpoint($t)
+      display: block
+      text-align: center
+    @include breakpoint($m)
+      display: block
+      text-align: center
+  .webform-component--e-mail
+    display: inline-block
+    @include breakpoint($t)
+      display: block
+      text-align: center
+    @include breakpoint($m)
+      display: block
+      text-align: center
+
+input#edit-submitted-e-mail
+  height: 40px
+  width: 480px
+  +shadow
+  margin-right: 20px
+  @include breakpoint($t)
+    width: 70%
+    margin: 0
+  @include breakpoint($m)
+    width: 80%
+    margin: 0
+
+
+input[placeholder]
+  &#edit-submitted-e-mail
+    font-style: italic
+    text-align: center

@@ -1,0 +1,291 @@
+.masonry-item,
+.masonry-grid-sizer
+  width: 25%
+  margin: 0
+  padding: 0
+  border: 0
+  overflow: hidden
+  position: relative
+  @include breakpoint($m)
+    width: 100%
+  @include breakpoint($t)
+    width: 50%
+  @include breakpoint($d)
+    width: 33%
+  @include breakpoint($b)
+    width: 25%
+
+.masonry-item .node
+  position: absolute
+
+.field-name-ds-link-to-node
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  display: block
+  a
+    width: 100%
+    height: 100%
+    display: block
+    line-height: 0
+    font-size: 0
+    color: transparent
+// -----------------------------------------------  TILE 1 x 1
+
+.tile-shape-1
+  //background: red
+  padding-bottom: 25%
+  @include breakpoint($m)
+    padding-bottom: 100%
+  @include breakpoint($t)
+    padding-bottom: 50%
+  @include breakpoint($d)
+    padding-bottom: 33%
+  @include breakpoint($b)
+    padding-bottom: 25%
+  .tile-text
+    display: none
+  .tile-more-link
+    display: none
+  .field-name-node-link
+    display: none
+  .tile-title-outer
+    padding: 15px 10px
+    background: white
+    text-align: center
+    max-width: 200px
+    margin: 0 auto
+    +shadow
+    position: relative
+    top: 43%
+    //-ms-transform: translateY(-25%)
+    //-webkit-transform: translateY(-25%)
+    //transform: translateY(-25%)
+    .tile-title
+      border-bottom: 2px solid $font-dark-red
+      padding-bottom: $btn-padding-height
+      text-decoration: none
+      font-weight: bold
+      color: $font-dark-red
+      font-size: $font-size-paragraph
+      text-transform: uppercase
+      display: inline-block
+      margin: 0
+      line-height: normal
+      -webkit-margin-before: 0
+      -webkit-margin-after: 0
+      -webkit-margin-start: 0
+      -webkit-margin-end: 0
+  .node
+    padding: 50px
+    @include breakpoint($m)
+      padding: 30px
+    @include breakpoint($t)
+      padding: 40px
+    .ds-2col
+      & > .group-left
+        width: 100%
+        position: relative
+      & > .group-right
+        width: 100%
+        position: absolute
+        height: 100%
+        top: 0
+        left: 0
+        .field-item
+          border-bottom: 2px solid $font-dark-red
+          padding-bottom: $btn-padding-height
+          display: inline-block
+
+// -----------------------------------------------  TILE 1 x 2
+
+.tile-shape-2
+  //background: yellow
+  padding-bottom: 50%
+  background: $transparent-white
+  .field-name-node-link
+    display: none
+  @include breakpoint($m)
+    padding-bottom: 100%
+  @include breakpoint($t)
+    padding-bottom: 100%
+  @include breakpoint($d)
+    padding-bottom: 66%
+  @include breakpoint($b)
+    padding-bottom: 50%
+  .tile-title
+    font-family: $font-tile-title
+    font-size: $font-size-tile-title
+    margin: 0
+    line-height: normal
+    padding-top: 20px
+    -webkit-margin-before: 0
+    -webkit-margin-after: 0
+    -webkit-margin-start: 0
+    -webkit-margin-end: 0
+  .tile-text
+    margin: 10px 0
+  .tile-more-link
+    text-transform: uppercase
+    span
+      color: $font-dark-red
+      text-decoration: none
+      font-weight: bold
+      border-bottom: 2px solid $font-dark-red
+      padding-bottom: $btn-padding-height
+  .node
+    padding: 50px
+    @include breakpoint($m)
+      padding: 30px
+    @include breakpoint($t)
+      padding: 40px
+    .ds-2col
+      & > .group-left
+        width: 100%
+        position: relative
+      & > .group-right
+        width: 100%
+        position: relative
+
+
+// -----------------------------------------------  TILE 2 x 1
+
+.tile-shape-3
+  //background: blue
+  width: 50%
+  padding-bottom: 25%
+  background: $transparent-white
+  .field-name-node-link
+    display: none
+  @include breakpoint($m)
+    width: 100%
+    padding-bottom: 100%
+  @include breakpoint($t)
+    width: 100%
+    padding-bottom: 50%
+  @include breakpoint($d)
+    width: 66%
+    padding-bottom: 33%
+  @include breakpoint($b)
+    width: 50%
+    padding-bottom: 25%
+  .tile-title
+    font-family: $font-tile-title
+    font-size: $font-size-tile-title
+    margin: 0
+    line-height: normal
+    -webkit-margin-before: 0
+    -webkit-margin-after: 0
+    -webkit-margin-start: 0
+    -webkit-margin-end: 0
+  .tile-text
+    margin: 10px 0
+  .tile-more-link
+    text-transform: uppercase
+    span
+      color: $font-dark-red
+      text-decoration: none
+      font-weight: bold
+      border-bottom: 2px solid $font-dark-red
+      padding-bottom: $btn-padding-height
+  .node
+    padding: 50px
+    @include breakpoint($m)
+      padding: 30px
+    @include breakpoint($t)
+      padding: 40px
+    .ds-2col
+      & > .group-left
+        width: 43%
+        position: relative
+      & > .group-right
+        width: 50%
+        position: relative
+        margin-left: 7%
+        .field-item
+          border-bottom: 2px solid $font-dark-red
+          padding-bottom: $btn-padding-height
+          display: inline-block
+
+// -----------------------------------------------  TILE 2 x 2
+
+.tile-shape-4
+  //background: green
+  width: 50%
+  padding-bottom: 50%
+  .field-name-node-link
+    display: none
+  @include breakpoint($m)
+    width: 100%
+    padding-bottom: 100%
+  @include breakpoint($t)
+    width: 100%
+    padding-bottom: 100%
+  @include breakpoint($d)
+    width: 66%
+    padding-bottom: 66%
+  @include breakpoint($b)
+    width: 50%
+    padding-bottom: 50%
+  .tile-title
+    text-align: center
+    text-transform: uppercase
+    font-size: $font-size-tile-action
+    color: white
+    margin: 0
+    padding-top: 40px
+    line-height: normal
+    -webkit-margin-before: 0
+    -webkit-margin-after: 0
+    -webkit-margin-start: 0
+    -webkit-margin-end: 0
+  .tile-text
+    text-align: center
+    margin: 20px 50px
+    color: white
+  .tile-more-link
+    background: white
+    text-align: center
+    padding: 15px 10px
+    text-transform: uppercase
+    max-width: 200px
+    text-align: center
+    display: block
+    margin: 0 auto 40px auto
+    +shadow
+    span
+      color: $font-dark-red
+      text-decoration: none
+      font-weight: bold
+      border-bottom: 2px solid $font-dark-red
+      padding-bottom: $btn-padding-height
+  .node
+    padding: 50px
+    width: 100%
+    height: 100%
+    box-sizing:  border-box
+    @include breakpoint($m)
+      padding: 30px
+    @include breakpoint($t)
+      padding: 40px
+    .ds-2col
+      width: 100%
+      height: 100%
+      position: relative
+      & > .group-left
+        width: 100%
+        position: relative
+      & > .group-right
+        width: 100%
+        background: $transparent-red
+        position: absolute
+        top: 25%
+        left: 0
+        .field-item
+          border-bottom: 2px solid $font-dark-red
+          padding-bottom: $btn-padding-height
+          display: inline-block
+.pager-load-more-empty
+  display: none
