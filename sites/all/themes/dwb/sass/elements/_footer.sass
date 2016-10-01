@@ -4,6 +4,10 @@
 	margin-right: 0
 	background: #fff
 	padding-bottom: 100px
+	@include breakpoint($t)
+		padding-bottom: 40px
+	@include breakpoint($m)
+		padding-bottom: 30px
 
 // Scroll to top
 
@@ -12,8 +16,11 @@
 	position: absolute
 	top: -35px
 	left: 50%
-	margin-left: -80px
-	width: 160px
+	margin-left: -60px
+	width: 120px
+	.animate-anchor
+		text-decoration: none
+		color: black
 	.arrow-top-outer
 		width: 0
 		height: 0
@@ -26,8 +33,12 @@
 		font-size: $font-size-footer
 		text-align: center
 		font-weight: bold
-		margin-top: -20px
+		margin-top: -24px
 		z-index: 1
+		@include breakpoint($t)
+			margin-top: -4px
+		@include breakpoint($m)
+			margin-top: -9px
 		a
 			text-decoration: none
 			color: black
@@ -36,16 +47,19 @@
 		height: 16px
 		position: absolute
 		top: 16px
-		right: 71px
+		right: 51px
 		border-top: 2px solid #000
 		border-right: 2px solid #000
 		transform: rotate(-45deg)
 		z-index: 2
 
-//       Footer site menu
+// ------------------------------- Footer site menu
 
 #block-menu-block-1
 	text-align: center
+	margin-bottom: 30px
+	.block
+		margin-bottom: 0
 	ul.menu
 		list-style-type: none
 		margin: 0
@@ -54,19 +68,25 @@
 			list-style-type: none
 			list-style-image: none
 			display: inline-block
+			line-height: 24px
 			margin: 10px 10px
 			@include breakpoint($t)
+				margin: 5px 5px
 				display: list-item
+				&.first
+					margin-left: 5px !important
+				a
+					display: inline-block
 			@include breakpoint($m)
+				margin: 5px 5px
 				display: list-item
+				&.first
+					margin-left: 10px !important
+				a
+					display: inline-block
 			&.first
 				margin-left: 0
-			a
-				text-transform: uppercase
-				text-decoration: none
-			a.active
-				border-bottom: 2px solid $btn-active-color
-				padding-bottom: $btn-padding-height
+			+menu-style
 
 //       Footer terms menu
 
@@ -94,14 +114,14 @@
 // ZIG ZAG
 
 .zigzag
-	margin-bottom: 20px
+	margin-bottom: 15px
 	position: relative
 	height: $zz-height
 	z-index: 1
 	@include breakpoint($t)
-		margin: 0 33% 20px 33%
+		margin: 0 33% 30px 33%
 	@include breakpoint($m)
-		margin: 0 33% 20px 33%
+		margin: 0 33% 25px 33%
 	&:before,
 	&:after
 		content: ""

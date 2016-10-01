@@ -1,16 +1,24 @@
 // Footer newsletter
 #block-webform-client-block-1
   .webform-submit
-    padding: 12px 20px
+    padding: 11px 20px
     text-align: center
     font-weight: bold
     background: $btn-light-grey
     border: none
     color: #fff
     text-transform: uppercase
+    transition: all 1s ease
+    @include breakpoint($t)
+      margin-top: 20px
+    @include breakpoint($m)
+      margin-top: 15px
+    &:hover
+      transition: all 0.5s ease
+      background: $btn-light-grey-hover
     span
       border-bottom: 2px solid white
-      padding-bottom: $btn-padding-height
+      padding-bottom: 1px
 
   .form-actions
     display: inline-block
@@ -33,6 +41,7 @@ input#edit-submitted-e-mail
   height: 40px
   width: 480px
   +shadow
+  border: 1px solid $input-footer-form
   margin-right: 20px
   @include breakpoint($t)
     width: 70%
@@ -43,6 +52,41 @@ input#edit-submitted-e-mail
 
 
 input[placeholder]
-  &#edit-submitted-e-mail
+  // &#edit-submitted-e-mail
+  font-style: italic
+  text-align: center
+
+
+#block-webform-client-block-1
+  margin-bottom: 40px
+  @include breakpoint($m)
+    margin-bottom: 30px
+  .block
+    margin-bottom: 0
+  .form-item
+    margin: 0
+  label
+    display: none
+    span
+      display: none
+    @include breakpoint($t)
+      display: block
+      font-style: italic
+      font-weight: normal
+      margin-bottom: 20px
+      color: $input-footer-form
+    @include breakpoint($m)
+      display: block
+      font-style: italic
+      font-weight: normal
+      margin-bottom: 20px
+      color: $input-footer-form
+  [placeholder]::-webkit-input-placeholder
     font-style: italic
     text-align: center
+    &#edit-submitted-e-mail
+      text-align: center
+    @include breakpoint($t)
+      opacity: 0
+    @include breakpoint($m)
+      opacity: 0

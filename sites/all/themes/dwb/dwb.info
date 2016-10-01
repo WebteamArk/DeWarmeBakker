@@ -51,7 +51,10 @@ stylesheets[all][] = system.theme.css
 
 ; Then we add our own stylesheet.
 stylesheets[all][] = css/styles.css
+stylesheets[all][] = js/multiselect/jquery.multiselect.css
+stylesheets[all][] = js/ellipsis/ellipsis.css
 stylesheets[all][] = css/dwb.css
+stylesheets[all][] = wojtek/css/wojtek.css
 
 ; Built-in conditional stylesheet support has been removed from Zen 7.x-5.x.
 ; Instead, Zen now adds conditional-comment-included classes to the html
@@ -67,6 +70,8 @@ stylesheets[all][] = css/dwb.css
 
 ; Optionally add some JavaScripts to your theme.
 
+scripts[] = js/multiselect/jquery.multiselect.js
+scripts[] = js/ellipsis/jquery.ellipsis.min.js
 scripts[] = js/npxGrid.js
 scripts[] = js/script.js
 

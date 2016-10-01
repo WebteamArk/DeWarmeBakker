@@ -130,3 +130,81 @@ function dwb_preprocess_block(&$variables, $hook) {
   //}
 }
 // */
+
+/**
+ * Implementation of hook_form_alter().
+ */
+function dwb_form_alter(&$form, &$form_state, $form_id) {
+  $node = menu_get_object();
+  if(isset($node->nid) && $node->type == 'action') {
+    if (preg_match("/webform_client_form_/i", $form_id) && $form_id != 'webform_client_form_1') {
+      $form['#submit'][] = '_dwb_check_win_loose_callback';
+    }
+  }
+}
+
+/**
+ * Webform submit callback
+ */
+function _dwb_check_win_loose_callback(&$form, &$form_state) {
+  module_load_include('inc', 'webform', 'includes/webform.submissions');
+  $count = webform_get_submission_count($form['#node']->nid);
+  $node = menu_get_object();
+  if($count <= 1000) {
+    $form_state['redirect'] = array('node/' . $node->nid, array('query' => array('v' => 'win')));
+  } else {
+    $form_state['redirect'] = array('node/' . $node->nid, array('query' => array('v' => 'nowin')));
+  }
+}
+
+/**
+ * Theme Load more button
+ */
+function dwb_pager_link($variables) {
+  $text = $variables['text'];
+  $page_new = $variables['page_new'];
+  $element = $variables['element'];
+  $parameters = $variables['parameters'];
+  $attributes = $variables['attributes'];
+
+  $page = isset($_GET['page']) ? $_GET['page'] : '';
+  if ($new_page = implode(',', pager_load_array($page_new[$element], $element, explode(',', $page)))) {
+    $parameters['page'] = $new_page;
+  }
+
+  $query = array();
+  if (count($parameters)) {
+    $query = drupal_get_query_parameters($parameters, array());
+  }
+  if ($query_pager = pager_get_query_parameters()) {
+    $query = array_merge($query, $query_pager);
+  }
+
+  // Set each pager link title
+  if (!isset($attributes['title'])) {
+    static $titles = NULL;
+    if (!isset($titles)) {
+      $titles = array(
+        t('« first') => t('Go to first page'),
+        t('‹ previous') => t('Go to previous page'),
+        t('next ›') => t('Go to next page'),
+        t('last »') => t('Go to last page'),
+      );
+    }
+    if (isset($titles[$text])) {
+      $attributes['title'] = $titles[$text];
+    }
+    elseif (is_numeric($text)) {
+      $attributes['title'] = t('Go to page @number', array('@number' => $text));
+    }
+  }
+
+  // @todo l() cannot be used here, since it adds an 'active' class based on the
+  //   path only (which is always the current path for pager links). Apparently,
+  //   none of the pager links is active at any time - but it should still be
+  //   possible to use l() here.
+  // @see http://drupal.org/node/1410574
+  $attributes['href'] = url($_GET['q'], array('query' => $query));
+  $attributes['class'] = array('squaretoRoundLink');
+  return '<a' . drupal_attributes($attributes) . '><div class="squareToRound"><p>' . check_plain($text) . '</p></div></a>';
+}

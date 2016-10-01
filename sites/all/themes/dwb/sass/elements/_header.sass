@@ -84,7 +84,7 @@
 .region
   &.region-navigation
     text-align: center
-    margin: 30px 0 100px 0
+    margin: 20px 0 90px 0
     @include breakpoint($m)
       margin: 0
 
@@ -92,7 +92,7 @@
   .region
     &.region-navigation
       text-align: center
-      margin: 60px 0 60px 0
+      margin: 60px 0 100px 0
       @include breakpoint($m)
         margin: 0
 
@@ -107,23 +107,15 @@ ul.language-switcher-locale-url
     list-style-image: none
     display: inline-block
     margin: 10px
+    line-height: 24px
     float: none
   &.first
     margin-left: 0
+  +menu-style
+ul#superfish-1
   a
-    text-transform: uppercase
-    text-decoration: none
-    &:after
-      content: ''
-      display: block
-      border-bottom: solid 2px $btn-active-color
-      transform: scaleX(0)
-      transition: transform 450ms ease-in
-    &:hover:after
-      transform: scaleX(1)
-  a.active
-    border-bottom: 2px solid $btn-active-color
-    padding-bottom: $btn-padding-height
+    display: inline
+
 
 //MOBILE NAVIGATION
 
@@ -144,7 +136,6 @@ ul.language-switcher-locale-url
   width: 44px
   height: 44px
   cursor: pointer
-  transition: all .3s
   span
     line-height: 0
     font-size: 0
@@ -157,9 +148,9 @@ ul.language-switcher-locale-url
   height: 30px
   border-bottom: 4px solid $font-dark-red
   &:hover
-    border-bottom-color: grey
+    border-bottom-color: $font-dark-red
   &:hover:before, &:hover:after
-    background-color: grey
+    background-color: $font-dark-red
   &:before, &:after
     background-color: $font-dark-red
     height: 4px
@@ -172,35 +163,120 @@ ul.language-switcher-locale-url
   &:after
     margin-top: 3px
 
+ul#superfish-2-accordion
+  &.sf-expanded
+    position: absolute !important
+    top: 0px !important
+    right: 0px !important
+    width: 200px
+    padding: 120px 0 50px 0
+    z-index: 100
+    background: $font-dark-red
+  li
+    padding: 15px
+    box-sizing: border-box
+    &.fr
+      display: inline-block
+      width: 10%
+    &.nl
+      display: inline-block
+      width: 10%
+      float: left
+  a
+    color: white
+    text-decoration: none
+    text-transform: uppercase
+    font-size: $font-size-paragraph
+    text-align: left
+    display: inline
+    float: left
+    line-height: normal
+    &.active
+      border-bottom: 2px solid white
+
+a#superfish-2-toggle
+  &.sf-expanded
+    z-index: 101
+    border: 0
+    position: absolute
+    top: 50px
+    right: 225px
+    &:before,
+    &:after
+      position: absolute
+      content: ' '
+      height: 33px
+      width: 4px
+      background-color: $font-dark-red
+      margin: 0
+      top: 0
+    &:before
+      transform: rotate(45deg)
+    &:after
+      transform: rotate(-45deg)
+
 //LINK BUTTON
 
 .views-field-field-link-button
   text-decoration: none
   display: block
   margin: 30px auto 0 auto
-  .field-content
+  width: 200px
+  // .field-content
+  //   transition: border-radius 1s ease,background-color 1s ease
+  //   width: 200px
+  //   height: 40px
+  //   text-align: center
+  //   margin: 0 auto
+  //   background-color: white
+  //   +shadow
+  // a
+  //   transition: color 0.5s ease,border-color 0.5s ease
+  //   text-transform: uppercase
+  //   font-weight: bold
+  //   text-decoration: none
+  //   display: inline
+  //   border-bottom: 3px $font-dark-red solid
+  //   color: $font-dark-red
+  //   padding-bottom: $btn-padding-height
+  // &:hover
+  //   .field-content
+  //     transition: border-radius 0.5s ease,background-color 0.5s ease
+  //     background-color: $font-dark-red
+  //     border-radius: 20px
+  //     a
+  //       transition: color 0.5s ease,border-color 0.5s ease
+  //       color: white
+  //       border-color: white
+
+
+
+.squaretoRoundLink
+  text-decoration: none
+  .squareToRound
     transition: border-radius 1s ease,background-color 1s ease
     width: 200px
     height: 40px
     text-align: center
     margin: 0 auto
+    margin-bottom: 50px
     background-color: white
-    +shadow
-  a
-    transition: color 0.5s ease,border-color 0.5s ease
-    text-transform: uppercase
-    font-weight: bold
-    text-decoration: none
-    display: inline
-    border-bottom: 3px $font-dark-red solid
-    color: $font-dark-red
-    padding-bottom: $btn-padding-height
+    +darkshadow
+    p
+      transition: color 0.5s ease,border-color 0.5s ease
+      font-size: 14px
+      text-transform: uppercase
+      font-weight: bold
+      line-height: 35px
+      display: inline
+      color: $font-dark-red
+      border-bottom: 3px $font-dark-red solid
   &:hover
-    .field-content
+    .squareToRound
       transition: border-radius 0.5s ease,background-color 0.5s ease
       background-color: $font-dark-red
       border-radius: 20px
-      a
+      p
         transition: color 0.5s ease,border-color 0.5s ease
         color: white
         border-color: white

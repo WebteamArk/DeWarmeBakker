@@ -1,0 +1,291 @@
+// --------------- WHO IS
+
+.styles-who-is
+  .paragraphs-item-par-image
+    &.styles-image-with-link
+      .content
+        display: inline-block
+        position: relative
+    text-align: center
+    // .content
+    //   display: inline-block
+    //   position: relative
+  .field-name-field-link
+    // display: inline-block
+    // position: relative
+    a
+      display: block
+      height: 100%
+      position: absolute
+      top: 0
+      width: 100%
+      line-height: 0
+      font-size: 0
+      color: transparent
+  #content
+    margin-bottom: -7px
+  #page-title
+    font-family: $font-tile-title
+    font-size: $font-size-whois-title
+    color: white
+    text-transform: capitalize
+    font-weight: bold
+  .field-name-field-image
+    text-align: center
+  .field-name-field-image-1
+    position: relative
+    z-index: 80
+    text-align: center
+  .field-name-field-text-1,
+  .field-name-field-text-2,
+  .field-name-field-text-3
+    width: 33%
+    float: left
+    @include breakpoint($m)
+      width: 100%
+  p
+    color: white
+    font-size: $font-size-whois-p
+  .paragraphs-item-par-long-text
+    padding: 0 10%
+  h2
+    &.field-name-field-subtitle
+      text-align: center
+      // max-width: 800px
+      margin: 50px auto 30px auto
+      color: white
+      font-weight: normal
+      font-size: $font-size-whois-subtitle
+  .group-grupa
+    background: #e9e9e9
+    margin-top: -100px
+    clear: both
+    padding-top: 100px
+    position: relative
+    &:before
+      +outer-border-top-grey
+    &:after
+      +outer-border-bottom-grey
+      content: ''
+      clear: both
+      display: block
+    .field-name-field-subtitle
+      font-size: $font-size-whois-subtitle
+      text-align: center
+    p
+      color: black
+      padding: 0 30px
+  ul#superfish-1,
+  ul.language-switcher-locale-url
+    +menu-style-whois
+    .language-link
+      color: white
+  ul#superfish-1
+    a
+      display: inline
+  .ds-2col-fluid
+    .group-left
+      width: 47%
+      padding-right: 3%
+      @include breakpoint($m)
+        width: 100%
+        padding-right: 0
+        .field-name-field-text-1
+          text-align: center
+        img
+          float: none !important
+          max-width: 80%
+          @include breakpoint($sm)
+            max-width: 200px
+      p
+        padding: 0
+      .field-name-field-text-1
+        float: right
+        width: 100%
+        img
+          float: right
+    .group-right
+      @include breakpoint($m)
+        width: 100%
+        text-align: center
+        ul
+          text-align: left
+          padding: 0 5% !important
+      .squareToRound
+        display: inline-block
+        width: initial
+        padding: 0 10px
+      .field-name-field-text-3
+        width: 100%
+        p
+          padding: 0
+        ul
+          padding: 0
+          // padding-left: 5px
+          li
+            list-style: none
+            margin: 0
+            // text-indent: -9px
+            color: white
+            &:before
+              content: "\b7\a0"
+            p
+              margin: 0
+              padding: 0
+              display: inline
+
+//---------------------------------------TABLES
+
+.not-front
+  table
+    width: 24%
+    float: left
+    border: 1px solid $font-dark-red
+    margin: 0 5px 75px 0
+    text-align: center
+    @include breakpoint($t)
+      width: 48%
+      margin: 0 0 30px 0
+      &.table2,
+      &.table4
+        margin: 0 0 30px 20px
+    @include breakpoint($m)
+      width: 100%
+      margin: 0 0 20px 0
+    .firstrow
+      background: $font-dark-red
+      height: 50px
+      .firstcol
+        font-family: $font-tile-title
+        color: white
+        font-size: $font-size-title-tablet
+        padding: 10px
+    .evenrow
+      .firstcol
+        color: $font-dark-red
+        font-weight: bold
+        padding: 0 20px
+      &:nth-child(2)
+        .firstcol
+          padding-top: 20px
+    .oddrow
+      .firstcol
+        padding: 0 20px 20px 20px
+
+
+//---------------------- NEWS
+.styles-news-overview-page
+  .ms-options
+    min-height: initial !important
+  #edit-sort-by
+    display: none
+  .view-filters
+    max-width: 300px
+
+// ----------------------------- ZOEK
+
+.styles-search-on-map
+  #page-title
+    padding-bottom: 30px
+  #content
+    margin-bottom: 100px
+  .marker-cluster-small
+    background-color: white
+    div
+      background-color: #333
+      color: white
+      font-weight: bold !important
+  .form-item-distance-country
+    display: none
+  .form-item-distance-search-distance
+    display: none
+  .form-item-distance-search-units
+    display: none
+  #views-exposed-form-find-dwb-block-1
+    display: none
+  .view-filters
+    background: $transparent-white-node
+    max-width: none
+  .views-row
+    display: block
+    float: left
+    width: 46%
+    background: $transparent-white-node
+    margin: 6% 2% 0 2%
+    padding: 3%
+    box-sizing: border-box
+    position: relative
+    &:before
+      +outer-border-top-white
+    &:after
+      +outer-border-bottom-white
+    @include breakpoint($sm)
+      width: 100%
+    h2
+      margin: 0 0 3% 0
+      text-transform: uppercase
+    a
+      color: $font-dark-red
+      text-decoration: none
+      font-weight: bold
+  #views-exposed-form-find-dwb-block
+    width: 700px
+    margin: 0 auto
+    margin-bottom: 100px
+    padding: 1%
+    @include breakpoint($t)
+      width: 400px
+    @include breakpoint($m)
+      max-width: 300px
+    @include breakpoint($sm)
+      max-width: 300px
+      margin-bottom: 0
+
+    #edit-distance-postal-code
+      height: 40px
+      max-width: 300px
+      @include breakpoint($t)
+        max-width: 400px
+      @include breakpoint($m)
+        max-width: 300px
+      +darkshadow
+      border: 1px solid $input-footer-form
+    button
+      padding: 5px 0 !important
+      height: 40px
+    .views-submit-button
+      height: 40px
+      background: $font-dark-red
+      padding: 0
+      margin-top: 8px
+      @include breakpoint($m)
+        margin: 30px auto 20px auto
+        text-align: center
+        max-width: 60px
+      +darkshadow
+      #edit-submit-find-dwb
+        display: none
+      .npxSearchMap
+        background: transparent
+        border: none
+        padding: 10px
+        span
+          margin-top: 0
+          border: none
+          border-bottom: 2px solid white
+          padding-bottom: 1px
+          display: inline
+          background: none
+          color: white
+          font-weight: bold
+          text-transform: uppercase
+          margin: 0 10px
+
+// ------------------- DISCLAIMER
+.styles-disclaimer
+  h1
+    text-align: center
+  .view-mode-disclaimer
+    padding: 5%
+  #main
+    padding-top: 70px

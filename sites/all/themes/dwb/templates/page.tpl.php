@@ -3,7 +3,7 @@
 </div>
 <div class="header-outer">
 
-<div class="container">
+<!-- <div class="container"> -->
 <header class="header" id="header" role="banner">
 
   <div class="logo-search">
@@ -26,7 +26,7 @@
       <?php print render($page['header']); ?>
 
     </header>
-    </div>
+    <!-- </div> -->
   </div>
 <div id="page" class="container">
 
@@ -35,7 +35,9 @@
     <?php print render($page['navigation']); ?>
   </div>
 
+<figure>
 <?php print render($page['headerbottom']); ?>
+</figure>
 
   <div id="main">
 
@@ -64,6 +66,7 @@
 <div class="outer-container">
   <div class="container-narrow">
     <div class="scroll-to-top">
+      <a class="top animate-anchor" href="#header">
       <div class="arrow-top-outer">
         <div class="arrow-top">
 
@@ -71,8 +74,9 @@
       </div>
 
       <div class="top-button">
-        <a class="top animate-anchor" href="#header"><?php print t('top'); ?></a>
+        <?php print t('top'); ?>
       </div>
+      </a>
     </div>
     <div class="zigzag"></div>
       <?php print render($page['footer']); ?>

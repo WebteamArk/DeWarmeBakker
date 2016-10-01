@@ -28,8 +28,7 @@ if(typeof(CKEDITOR) !== 'undefined') {
             */
 
             { name : 'Color H3'		, element : 'h3', styles : { 'color' : '#A30000' } },
-
-
+            { name : 'button link'	, element : 'a', attributes: { 'class': 'change-to-button' } },
 
 
     ]);

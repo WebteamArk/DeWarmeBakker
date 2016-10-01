@@ -14,6 +14,7 @@
       gridSizer: ".masonry-grid-sizer",
       gridItem: ".views-row",
       fixedItem: ".node-action",
+      forceSmall: false,
     };
 
   function Plugin ( container, options ) {
@@ -35,7 +36,7 @@
     this._commands = {
       processNewTiles: this._processNewTiles,
     };
-    
+    console.debug(this.settings.fixedItem);
     this.init();
   }
 
@@ -83,7 +84,7 @@
       var ok = false;
       var $tilesBeforeLoad = $(this.container).find(this.settings.gridItem + '.masonry-item');
       var offset = $tilesBeforeLoad.length;
-      var $tiles = $(this.container).find(this.settings.gridItem+ ':not(.masonry-item)');
+      var $tiles = $(this.container).find(this.settings.gridItem + ':not(.masonry-item)');
       
       var iteration = 0;
       
@@ -249,6 +250,25 @@
           if($.inArray(index, usedBricks) === -1 && index !== -1 && index !== 'G') {
             var elem = $tiles.get(index);
             $(elem).css('position', 'absolute');
+            switch(this._tilesInfo[index]) {
+              case 1:
+                $(elem).css('width', pixelWidth);
+                $(elem).css('height', pixelWidth);
+                break;
+              case 2:
+                $(elem).css('width', pixelWidth);
+                $(elem).css('height', pixelWidth * 2);
+                break;
+              case 3:
+                $(elem).css('width', pixelWidth * 2);
+                $(elem).css('height', pixelWidth);
+                break;
+              case 4:
+                $(elem).css('width', pixelWidth * 2);
+                $(elem).css('height', pixelWidth * 2);
+                break;
+            }
+            //$(elem).css('padding', '25px');
             $(elem).css('left', j * percentageWidth + '%');
             $(elem).css('top', i * pixelWidth + 1);
             $(elem).addClass('masonry-item');
@@ -257,7 +277,8 @@
           }
         }
       }
-      $tiles.closest('.view-content').height((this._lastRow + 1) * pixelWidth);
+//      $tiles.closest('.view-content').height((this._lastRow + 1) * pixelWidth);
+      $(this.container).find('> .view-content').height((this._lastRow + 1) * pixelWidth);
     },
     cleanup: function () {
       var $tiles = $(this.container).find(this.settings.gridItem);
@@ -285,18 +306,22 @@
       }, 250);
     },
     getPercentageWidth: function () {
-      $(this.container).find('.view-content').append('<div id="npxGridMeasurement" style="display: none;"><div class="masonry-grid-sizer">&nbsp;</div></div>');
+      $(this.container).find('.view-content').first().append('<div id="npxGridMeasurement" style="display: none;"><div class="masonry-grid-sizer">&nbsp;</div></div>');
       var width = $(this.container).find('.masonry-grid-sizer').width();
-      $(this.container).find('#npxGridMeasurement').remove();
+//      $(this.container).find('#npxGridMeasurement').remove();
+      $('#npxGridMeasurement').remove();
       return width;
     },
     getPixelWidth: function () {
-      $(this.container).find('.view-content').append('<div id="npxGridMeasurement" class="masonry-grid-sizer" style="opacity: 0;">&nbsp;</div>');
+      $(this.container).find('.view-content').first().append('<div id="npxGridMeasurement" class="masonry-grid-sizer" style="opacity: 0;">&nbsp;</div>');
       var width = $(this.container).find('.masonry-grid-sizer').width();
-      $(this.container).find('#npxGridMeasurement').remove();
+      $('#npxGridMeasurement').remove();
       return width;
     },
     getRandomInt: function(min, max) {
+      if (this.settings.forceSmall) {
+        return 1;
+      }
       return Math.floor(Math.random() * (max - min + 1)) + min;
     },
     createMatrix: function ( rows, cols, defaultValue){

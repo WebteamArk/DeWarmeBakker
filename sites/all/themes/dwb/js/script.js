@@ -28,9 +28,17 @@ Drupal.behaviors.dwbWebformSubmit = {
 
       $(this).replaceWith('<button type="submit" name="' + name + '" class="' + classes + '"><span>' + value + '</span></button>');
     });
-  },
-  linkIsExternal: function(link_element) {
-    return (link_element.host !== window.location.host);
+//    $('#views-exposed-form-find-dwb-block #edit-submit-find-dwb', context).once('dwb-webform-submit').each(function () {
+    $('#views-exposed-form-find-dwb-block #edit-submit-find-dwb', context).once('dwb-webform-submit').each(function () {
+      var value = $(this).attr('value');
+      
+      $(this).closest('.views-submit-button').append('<button class="npxSearchMap"><span>' + value + '</span></button>');
+      var that = this;
+      $('button.npxSearchMap', context).click( function (e) {
+        e.preventDefault();
+        $(that).click();
+      });
+    });
   },
 };
 
@@ -38,10 +46,61 @@ Drupal.behaviors.dwbTiles = {
     attach: function(context, settings) {
       $('div.view-front-page', context).once('dwb-tiles').each(function () {
         var that = this;
-        $(this).npxGrid(this);
+        $(this).npxGrid();
         $(this).on('views_load_more.new_content', function(event, content) {
           $(that).data('plugin_npxGrid').processNewTiles();
         });
+      });
+      $('div.view-products-overview', context).once('dwb-tiles').each(function () {
+        var that = this;
+        $(this).npxGrid({fixedItem: '.seasonal-product'});
+        $(this).on('views_load_more.new_content', function(event, content) {
+          $(that).data('plugin_npxGrid').processNewTiles();
+        });
+      });
+      $('div.view-recipes-overview', context).once('dwb-tiles').each(function () {
+        var that = this;
+        $(this).npxGrid();
+        $(this).on('views_load_more.new_content', function(event, content) {
+          $(that).data('plugin_npxGrid').processNewTiles();
+        });
+      });
+      $('div.view-related-recipes', context).once('dwb-tiles').each(function () {
+        var that = this;
+        $(this).npxGrid({forceSmall: true});
+      });
+      $('div.view-news-overview', context).once('dwb-tiles').each(function () {
+        var that = this;
+        $(this).npxGrid();
+        $(this).on('views_load_more.new_content', function(event, content) {
+          $(that).data('plugin_npxGrid').processNewTiles();
+        });
+      });
+      $('div.view-related-news', context).once('dwb-tiles').each(function () {
+        var that = this;
+        $(this).npxGrid({forceSmall: true});
+      });
+      $('div.view-about-bread-overview', context).once('dwb-tiles').each(function () {
+        var that = this;
+        $(this).npxGrid();
+        $(this).on('views_load_more.new_content', function(event, content) {
+          $(that).data('plugin_npxGrid').processNewTiles();
+        });
+      });
+      $('div.view-taxonomy-term', context).once('dwb-tiles').each(function () {
+        var that = this;
+        $(this).npxGrid({fixedItem: '.seasonal-product'});
+        $(this).on('views_load_more.new_content', function(event, content) {
+          $(that).data('plugin_npxGrid').processNewTiles();
+        });
+      });
+      $('div.view-y-random-6-recipes', context).once('dwb-tiles').each(function () {
+        var that = this;
+        $(this).npxGrid({forceSmall: true});
+      });
+      $('div.view-y-overview-to-recipes', context).once('dwb-tiles').each(function () {
+        var that = this;
+        $(this).npxGrid({forceSmall: true});
       });
     },
 };
@@ -49,6 +108,7 @@ Drupal.behaviors.dwbTiles = {
 Drupal.behaviors.dwbAnimateTiles = {
   attach: function(context, settings) {
     $('div.view-front-page .views-row', context).once('dwb-animate-tiles').each(function () {
+      Drupal.behaviors.dwbAnimateTiles.trimTexts(this);
       $(this).fadeTo(0, 0);
       $(this).waypoint(function(event, direction) {
         Drupal.behaviors.dwbAnimateTiles.animateObject(this, (Math.random() * 1000) + 300);
@@ -57,6 +117,77 @@ Drupal.behaviors.dwbAnimateTiles = {
     });
     $('div.view-front-page', context).on('views_load_more.new_content', function(event, content) {
       Drupal.attachBehaviors(document, settings);
+    });
+    $('div.view-products-overview .views-row', context).once('dwb-animate-tiles').each(function () {
+      Drupal.behaviors.dwbAnimateTiles.trimTexts(this);
+      $(this).fadeTo(0, 0);
+      $(this).waypoint(function(event, direction) {
+        Drupal.behaviors.dwbAnimateTiles.animateObject(this, (Math.random() * 1000) + 300);
+      },
+      { offset: '100%', triggerOnce: false});
+    });
+    $('div.view-products-overview', context).on('views_load_more.new_content', function(event, content) {
+      Drupal.attachBehaviors(document, settings);
+    });
+    $('div.view-recipes-overview .views-row', context).once('dwb-animate-tiles').each(function () {
+      Drupal.behaviors.dwbAnimateTiles.trimTexts(this);
+      $(this).fadeTo(0, 0);
+      $(this).waypoint(function(event, direction) {
+        Drupal.behaviors.dwbAnimateTiles.animateObject(this, (Math.random() * 1000) + 300);
+      },
+      { offset: '100%', triggerOnce: false});
+    });
+    $('div.view-recipes-overview', context).on('views_load_more.new_content', function(event, content) {
+      Drupal.attachBehaviors(document, settings);
+    });
+    $('div.view-news-overview .views-row', context).once('dwb-animate-tiles').each(function () {
+      Drupal.behaviors.dwbAnimateTiles.trimTexts(this);
+      $(this).fadeTo(0, 0);
+      $(this).waypoint(function(event, direction) {
+        Drupal.behaviors.dwbAnimateTiles.animateObject(this, (Math.random() * 1000) + 300);
+      },
+      { offset: '100%', triggerOnce: false});
+    });
+    $('div.view-news-overview', context).on('views_load_more.new_content', function(event, content) {
+      Drupal.attachBehaviors(document, settings);
+    });
+    $('div.view-about-bread-overview .views-row', context).once('dwb-animate-tiles').each(function () {
+      Drupal.behaviors.dwbAnimateTiles.trimTexts(this);
+      $(this).fadeTo(0, 0);
+      $(this).waypoint(function(event, direction) {
+        Drupal.behaviors.dwbAnimateTiles.animateObject(this, (Math.random() * 1000) + 300);
+      },
+      { offset: '100%', triggerOnce: false});
+    });
+    $('div.view-about-bread-overview', context).on('views_load_more.new_content', function(event, content) {
+      Drupal.attachBehaviors(document, settings);
+    });
+    $('div.view-taxonomy-term .views-row', context).once('dwb-animate-tiles').each(function () {
+      Drupal.behaviors.dwbAnimateTiles.trimTexts(this);
+      $(this).fadeTo(0, 0);
+      $(this).waypoint(function(event, direction) {
+        Drupal.behaviors.dwbAnimateTiles.animateObject(this, (Math.random() * 1000) + 300);
+      },
+      { offset: '100%', triggerOnce: false});
+    });
+    $('div.view-taxonomy-term', context).on('views_load_more.new_content', function(event, content) {
+      Drupal.attachBehaviors(document, settings);
+    });
+    $('div.view-y-random-6-recipes .views-row', context).once('dwb-animate-tiles').each(function () {
+      Drupal.behaviors.dwbAnimateTiles.trimTexts(this);
+      $(this).fadeTo(0, 0);
+      $(this).waypoint(function(event, direction) {
+        Drupal.behaviors.dwbAnimateTiles.animateObject(this, (Math.random() * 1000) + 300);
+      },
+      { offset: '100%', triggerOnce: false});
+    });
+    $('div.view-y-overview-to-recipes .views-row', context).once('dwb-animate-tiles').each(function () {
+      Drupal.behaviors.dwbAnimateTiles.trimTexts(this);
+      $(this).fadeTo(0, 0);
+      $(this).waypoint(function(event, direction) {
+        Drupal.behaviors.dwbAnimateTiles.animateObject(this, (Math.random() * 1000) + 300);
+      },
+      { offset: '100%', triggerOnce: false});
     });
   },
   animateObject: function(object, delay) {
@@ -68,20 +199,81 @@ Drupal.behaviors.dwbAnimateTiles = {
       $(object).addClass('come-in');
     }, delay);
   },
+  trimTexts: function(object) {
+    return;
+    if($(object).hasClass('tile-shape-4')) {
+      $(object).find('.tile-title').ellipsis({ lines: 2+1, responsive: true });
+      $(object).find('.tile-text').ellipsis({ lines: 3+1, responsive: true });
+    }
+    else if($(object).hasClass('tile-shape-3')) {
+      $(object).find('.tile-title').ellipsis({ lines: 2+1, responsive: true });
+      $(object).find('.tile-text').ellipsis({ lines: 3+1, responsive: true });
+    }
+    else {
+      $(object).find('.tile-title').ellipsis({ lines: 3+1, responsive: true });
+      $(object).find('.tile-text').ellipsis({ lines: 3+1, responsive: true });
+    }
+  },
 };
 
-
-Drupal.behaviors.dwbTileLink = {
+Drupal.behaviors.dwbMultiselect = {
   attach: function(context, settings) {
-    $('.tile-shape-2 .field-name-ds-link-to-node a', context).once('dwb-tile-link').each(function () {
-      Drupal.behaviors.dwbTileLink.setLinkSize(this);
+    $('#edit-field-course-of-the-meal-tid', context).once('dwb-multiselect').each(function() {
+      $(this).multiselect({
+        columns: 1,
+        placeholder: Drupal.t('Gang'),
+        onLoad: function (element) {
+          $(element).hide();
+          var $optionsWrapper = $(element).next('.ms-options-wrap').find('.ms-options');
+          $optionsWrapper.append('<div class="dwb-submit"><button type="submit"><span>' + Drupal.t('bevestigen') + '</span></button></div>');
+          $optionsWrapper.append('<button class="reset"><span>' + Drupal.t('reset') + '</span></button></div>');
+          $optionsWrapper.find('.reset').click(function(e){
+            e.preventDefault();
+            $optionsWrapper.find('input[type="checkbox"]:checked').click();
+          });
+          $optionsWrapper.find('button[type="submit"]').click(function(e){
+            e.preventDefault();
+            $('#edit-submit-recipes-overview').click();
+          });
+        },
+      });
+    });
+    $('#edit-field-bread-type-tid', context).once('dwb-multiselect').each(function() {
+      $(this).multiselect({
+        columns: 1,
+        placeholder: Drupal.t('Broodsoort'),
+        onLoad: function (element) {
+          $(element).hide();
+          var $optionsWrapper = $(element).next('.ms-options-wrap').find('.ms-options');
+          $optionsWrapper.append('<div class="dwb-submit"><button type="submit"><span>' + Drupal.t('bevestigen') + '</span></button></div>');
+          $optionsWrapper.append('<button class="reset"><span>' + Drupal.t('reset') + '</span></button></div>');
+          $optionsWrapper.find('.reset').click(function(e){
+            e.preventDefault();
+            $optionsWrapper.find('input[type="checkbox"]:checked').click();
+          });
+          $optionsWrapper.find('button[type="submit"]').click(function(e){
+            e.preventDefault();
+            $('#edit-submit-recipes-overview').click();
+          });
+        },
+      });
+    });
+    $('#views-exposed-form-find-dwb-block #edit-field-bakery-products-tid', context).first().once('dwb-multiselect').each(function() {
+      $(this).multiselect({
+        columns: 1,
+        placeholder: Drupal.t('filter op'),
+        onLoad: function (element) {
+          $(element).hide();
+        },
+      });
+    });
+    $('#views-exposed-form-news-overview-block #edit-sort-order', context).first().once('dwb-multiselect').each(function() {
+      $(this).multiselect({
+        columns: 1,
+        placeholder: Drupal.t('sort'),
+      });
     });
   },
-  setLinkSize: function (elem) {
-    var $container = $(this).closest('.tile-shape-2');
-    var height = $container.height();
-    $(elem).height(height);
-  }
 };
 
 Drupal.behaviors.dwbAnimateAnchor = {
@@ -97,10 +289,35 @@ Drupal.behaviors.dwbAnimateAnchor = {
   },
 };
 
+Drupal.behaviors.dwbMobileMenu = {
+  attach: function(context, settings) {
+//    console.debug('dwbMobileMenu');
+    $('#superfish-2 #superfish-2-accordion', context).once('dwb-mobile-menu', function () {
+      var $that = $(this);
+      $('#block-locale-language .language-switcher-locale-url li', context).each(function () {
+        $that.append($(this));
+      });
+    });
+  },
+};
+
+Drupal.behaviors.dwbLinkToButton = {
+  attach: function(context, settings) {
+    $('a.change-to-button', context).once('dwb-link-to-button', function () {
+      var text = $(this).text();
+      var html = '<div class="squareToRound"><p>' + text + '</p></div>';
+      $(this).addClass('squaretoRoundLink');
+      $(this).html(html);
+    });
+  },
+};
+
+$(document).ajaxComplete(function(){
+  Drupal.attachBehaviors();
+});
+
 $(window).resize( function () {
-  $('.tile-shape-2 .field-name-ds-link-to-node a').once('dwb-tile-link').each(function () {
-    Drupal.behaviors.dwbTileLink.setLinkSize(this);
-  });
+  Drupal.attachBehaviors('#superfish-2');
 });
 
 })(jQuery, Drupal, this, this.document);
