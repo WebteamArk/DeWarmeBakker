@@ -7,9 +7,11 @@
   overflow: hidden
   position: relative
   @include breakpoint($m)
+    width: 50%
+  @include breakpoint($sp)
     width: 100%
   @include breakpoint($t)
-    width: 50%
+    width: 33%
   @include breakpoint($d)
     width: 33%
   @include breakpoint($b)
@@ -79,10 +81,13 @@
   &.contextual-links-region
     position: static
 
-.view-id-y_term_tid_from_reference.contextual-links-region
-  .view-content
-    position: static
+.node.node-node-term.node-teaser.view-mode-teaser
+  position: static
 
+.node.node-node-term.node-teaser.view-mode-teaser
+  .view-y-term-tid-from-reference
+    .view-content
+      position: static
 
 // -----------------------------------------------  TILE 1 x 1
 
@@ -90,8 +95,10 @@
   //background: red
   padding-bottom: 25%
   +tile1hover
-  @include breakpoint($m)
+  @include breakpoint($sp)
     padding-bottom: 100%
+  @include breakpoint($m)
+    padding-bottom: 50%
   @include breakpoint($t)
     padding-bottom: 50%
   @include breakpoint($d)
@@ -121,6 +128,8 @@
     top: 40%
     @include breakpoint($b)
       max-width: 160px
+    @include breakpoint($t)
+      max-width: 60%
     @include breakpoint($m)
       max-width: 60%
     //-ms-transform: translateY(-25%)
@@ -255,9 +264,12 @@
     height: calc(100% - 50px)
   .field-name-node-link
     display: none
-  @include breakpoint($m)
+  @include breakpoint($sp)
     width: 100%
     padding-bottom: 100%
+  @include breakpoint($m)
+    width: 100%
+    padding-bottom: 50%
   @include breakpoint($t)
     width: 100%
     padding-bottom: 50%

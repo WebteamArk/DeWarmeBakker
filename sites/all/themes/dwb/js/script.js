@@ -102,6 +102,10 @@ Drupal.behaviors.dwbTiles = {
         var that = this;
         $(this).npxGrid({forceSmall: true});
       });
+      $('div.view-about-bread-related-6-random', context).once('dwb-tiles').each(function () {
+        var that = this;
+        $(this).npxGrid({forceSmall: true});
+      });
     },
 };
 
@@ -189,6 +193,14 @@ Drupal.behaviors.dwbAnimateTiles = {
       },
       { offset: '100%', triggerOnce: false});
     });
+    $('div.view-about-bread-related-6-random .views-row', context).once('dwb-animate-tiles').each(function () {
+      Drupal.behaviors.dwbAnimateTiles.trimTexts(this);
+      $(this).fadeTo(0, 0);
+      $(this).waypoint(function(event, direction) {
+        Drupal.behaviors.dwbAnimateTiles.animateObject(this, (Math.random() * 1000) + 300);
+      },
+      { offset: '100%', triggerOnce: false});
+    });
   },
   animateObject: function(object, delay) {
     if($(window).width() < 768) {
@@ -267,10 +279,24 @@ Drupal.behaviors.dwbMultiselect = {
         },
       });
     });
+    $('.webform-client-form #edit-submitted-kies-jouw-warme-bakker', context).first().once('dwb-multiselect').each(function() {
+      var wrapper = this;
+      $(this).multiselect({
+        columns: 1,
+        placeholder: Drupal.t('Mijn warme bakker'),
+        onOptionClick : function () {
+          console.debug(JSON.stringify(wrapper));
+          var $optionsWrapper = $(wrapper).next('.ms-options-wrap').find('.ms-options');
+          $optionsWrapper.find('input[type="checkbox"]:checked').click();
+          
+        },
+      });
+//      $(this).wrap('<div class="inner"></div>');
+    });
     $('#views-exposed-form-news-overview-block #edit-sort-order', context).first().once('dwb-multiselect').each(function() {
       $(this).multiselect({
         columns: 1,
-        placeholder: Drupal.t('sort'),
+        placeholder: Drupal.t('Sorteer'),
       });
     });
   },
@@ -308,6 +334,27 @@ Drupal.behaviors.dwbLinkToButton = {
       var html = '<div class="squareToRound"><p>' + text + '</p></div>';
       $(this).addClass('squaretoRoundLink');
       $(this).html(html);
+    });
+  },
+};
+
+Drupal.behaviors.dwbLinkFix = {
+    attach: function(context, settings) {
+      $('.field-name-field-p-basic .field-name-field-link a', context).once('dwb-link-fix', function () {
+        var text = $(this).text();
+        var html = '<span>' + text + '</span>';
+        $(this).html(html);
+      });
+    },
+};
+
+Drupal.behaviors.dwbPlaceholder = {
+  attach: function(context, settings) {
+    $('#views-exposed-form-find-dwb-block #edit-city', context).once('dwb-placeholder', function () {
+      $(this).attr('placeholder', Drupal.t('Stad'));
+    });
+    $('#views-exposed-form-find-dwb-block #edit-distance-postal-code', context).once('dwb-placeholder', function () {
+      $(this).attr('placeholder', Drupal.t('Postcode'));
     });
   },
 };

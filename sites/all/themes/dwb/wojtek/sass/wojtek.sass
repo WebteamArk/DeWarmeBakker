@@ -1,3 +1,8 @@
+@import compass/css3
+@import "breakpoint"
+@import "mixins"
+@import "variables"
+
 .addtoany_list
   display: block
   float: none
@@ -9,66 +14,297 @@
     display: block
     height: 0
     visibility: hidden
-  > a
-    width: 40px
-    height: 40px
-    overflow: hidden
-    padding: 0
-    margin: 0 0 0 10px
-    background: transparent url('../i/social.png') no-repeat 0 0
-    display: block
-    float: right
-    > span
-      text-indent: -9990px
-    > span.a2a_svg
-      display: none
-    &.a2a_button_facebook
-      background-position: 0 0
-    &.a2a_button_pinterest
-      background-position: -40px 0
-    &.a2a_button_email
-      background-position: -80px 0
-    &.a2a_button_print
-      background-position: -120px 0
-    &.a2a_button_printfriendly
-      background-position: -120px 0
-      display: none
-    &.a2a_button_facebook:hover
-      background-position: 0 -40px
-    &.a2a_button_pinterest:hover
-      background-position: -40px -40px
-    &.a2a_button_email:hover
-      background-position: -80px -40px
-    &.a2a_button_print:hover
-      background-position: -120px -40px
-    &.a2a_button_printfriendly:hover
-      background-position: -120px -40px
+  #social-icons
+    > a
+      width: 40px
+      height: 40px
+      overflow: hidden
+      padding: 0
+      margin: 0 0 0 10px
+      background: transparent url('../i/social.png') no-repeat 0 0
+      display: block
+      float: right
+      > span
+        text-indent: -9990px
+      > span.a2a_svg
+        display: none
+      &.a2a_button_facebook
+        background-position: 0 0
+      &.a2a_button_pinterest
+        background-position: -40px 0
+      &.a2a_button_email
+        background-position: -80px 0
+      &.a2a_button_print
+        background-position: -120px 0
+      &.a2a_button_printfriendly
+        background-position: -120px 0
+        display: none
+      &.a2a_button_facebook:hover
+        background-position: 0 -40px
+      &.a2a_button_pinterest:hover
+        background-position: -40px -40px
+      &.a2a_button_email:hover
+        background-position: -80px -40px
+      &.a2a_button_print:hover
+        background-position: -120px -40px
+      &.a2a_button_printfriendly:hover
+        background-position: -120px -40px
 @media (max-width: 320px)
   .addtoany_list
     display: block
     width: 180px
-    > a
-      width: 30px
-      height: 30px
-      margin: 0 0 0 20px
-      &.a2a_button_facebook
-        background-position: 0 -80px
-        margin: 0 0 0 0px
-      &.a2a_button_pinterest
-        background-position: -30px -80px
-      &.a2a_button_email
-        background-position: -60px -80px
-      &.a2a_button_print
-        background-position: -90px -80px
-      &.a2a_button_printfriendly
-        background-position: -90px -80px
-      &.a2a_button_facebook:hover
-        background-position: 0 -110px
-      &.a2a_button_pinterest:hover
-        background-position: -30px -110px
-      &.a2a_button_email:hover
-        background-position: -60px -110px
-      &.a2a_button_print:hover
-        background-position: -90px -110px
-      &.a2a_button_printfriendly:hover
-        background-position: -90px -110px
+    #social-icons
+      > a
+        width: 30px
+        height: 30px
+        margin: 0 0 0 20px
+        &.a2a_button_facebook
+          background-position: 0 -80px
+          margin: 0 0 0 0px
+        &.a2a_button_pinterest
+          background-position: -30px -80px
+        &.a2a_button_email
+          background-position: -60px -80px
+        &.a2a_button_print
+          background-position: -90px -80px
+        &.a2a_button_printfriendly
+          background-position: -90px -80px
+        &.a2a_button_facebook:hover
+          background-position: 0 -110px
+        &.a2a_button_pinterest:hover
+          background-position: -30px -110px
+        &.a2a_button_email:hover
+          background-position: -60px -110px
+        &.a2a_button_print:hover
+          background-position: -90px -110px
+        &.a2a_button_printfriendly:hover
+          background-position: -90px -110px
+
+
+.node-type-action
+  #content
+    margin-top: -75px
+    line-height: normal
+    margin-bottom: 100px
+  .group-bg
+    padding: 75px 100px
+    @include breakpoint($t)
+      padding: 50px 10%
+    @include breakpoint($m)
+      padding: 50px 10%
+    @include breakpoint($sm)
+      padding: 30px 10%
+  .group-bg
+    width: 90%
+    margin: 0 auto
+    background: $transparent-white-node
+    box-sizing: border-box
+    position: relative
+    &:before
+      +outer-border-top-white
+      background: rgba(0, 0, 0, 0) url("../../images/zigzagb.png") repeat-x scroll 0 0
+    &:after
+      +outer-border-bottom-white
+      background: rgba(0, 0, 0, 0) url("../../images/zigzagdb.png") repeat-x scroll 0 0
+  .region-headerbottom
+    height: 560px
+  @include breakpoint($t)
+    #content
+      margin-top: -50px
+    .region-headerbottom
+      height: 462px
+  @include breakpoint($m)
+    #content
+      margin-top: -50px
+    .region-headerbottom
+      height: 462px
+  @include breakpoint($sm)
+    #content
+      margin-top: -30px
+    .region-headerbottom
+      height: 210px
+  h1
+    font-family: "Dancing Script",cursive
+    font-size: 50px
+    line-height: normal
+    margin: 0
+  .field-name-field-p-basic form.webform-client-form
+    max-width: 500px
+    padding: 0
+    margin: 0 auto
+    .form-item
+      margin: 0 0
+    input, select
+      height: 40px
+      background: #fff
+      border: none
+      padding: 0
+      margin: 0
+      width: 100%
+    input
+      +box-shadow(0px 2px 10px 0 #999)
+      +box-sizing(border-box)
+      padding-left: 10px
+    .ms-options-wrap
+      +box-shadow(0px 2px 10px 0 #999)
+      > button
+        background-color: #fff
+        border: none
+        color: #822a3a
+        font-size: 14px
+        margin-top: 1px
+        outline: medium none
+        padding: 5px 20px 5px 5px
+        position: relative
+        text-align: center
+        white-space: nowrap
+        width: 100%
+        font-weight: bold
+        text-transform: uppercase
+      > .ms-options
+        +box-shadow(0px 2px 10px 0 #999)
+        border: none
+        ul
+          > li:nth-child(1)
+            display: none
+    label
+      line-height: 30px
+      font-weight: 500
+      color: #888
+      margin: 15px 0 0 0
+    .form-required
+      color: #888
+    .webform-layout-box.horiz > *,
+    .webform-layout-box.equal > *
+      display: inline-block
+      vertical-align: top
+      word-spacing: normal
+      // @include breakpoint($t)
+      //   display: block
+      @include breakpoint($m)
+        display: block
+      @include breakpoint($sm)
+        display: block
+    .webform-component--street-group
+      .webform-component--street-group--straat
+        width: 66%
+        margin-right: 2%
+      .webform-component--street-group--nr
+        width: 15%
+        margin-right: 2%
+      .webform-component--street-group--bus
+        width: 15%
+        margin-right: 0%
+      @include breakpoint($m)
+        .webform-component--street-group--straat,
+        .webform-component--street-group--nr,
+        .webform-component--street-group--bus
+          width: 100%
+          margin-right: 0%
+      @include breakpoint($sm)
+        .webform-component--street-group--straat,
+        .webform-component--street-group--nr,
+        .webform-component--street-group--bus
+          width: 100%
+          margin-right: 0%
+    .webform-component--city-group
+      .webform-component--city-group--postcode
+        width: 32%
+        margin-right: 2%
+      .webform-component--city-group--gemeente
+        width: 66%
+        margin-right: 0%
+      @include breakpoint($m)
+        .webform-component--city-group--postcode,
+        .webform-component--city-group--gemeente
+          width: 100%
+          margin-right: 0%
+      @include breakpoint($sm)
+        .webform-component--city-group--postcode,
+        .webform-component--city-group--gemeente
+          width: 100%
+          margin-right: 0%
+    .webform-component-markup
+      margin: 40px auto
+      text-align: center
+      color: #888
+    .form-actions
+      text-align: center
+      button
+        display: inline-block
+        background-color: #822a3a
+        box-shadow: 0 3px 10px black
+        height: 40px
+        margin: 0 auto 50px
+        text-align: center
+        transition: border-radius 1s ease 0s, background-color 1s ease 0s
+        border: none
+        padding: 0 20px
+        span
+          border-bottom: 3px solid #fff
+          color: #fff
+          display: inline
+          font-size: 14px
+          font-weight: bold
+          line-height: 35px
+          text-transform: uppercase
+          transition: color 0.5s ease 0s, border-color 0.5s ease 0s
+        &:hover
+          +border-radius(20px)
+          background: #fff
+          span
+            border-bottom: 3px solid #822a3a
+            color: #822a3a
+  article
+    .field-type-text-long
+      a
+        display: inline-block
+        background-color: #822a3a
+        box-shadow: 0 3px 10px black
+        height: 40px
+        line-height: 40px
+        margin: 20px 10px 20px
+        text-align: center
+        transition: border-radius 1s ease 0s, background-color 1s ease 0s
+        border: none
+        padding: 0 20px
+        color: #fff
+        position: relative
+        white-space: nowrap
+        &:after
+          display: block
+          content: " "
+          position: absolute
+          left: 20px
+          right: 20px
+          bottom: 8px
+          height: 3px
+          background: #fff
+          z-index: 10
+        &:hover
+          +border-radius(20px)
+          background: #fff
+          color: #822a3a
+        &:hover:after
+          background: #822a3a
+  .field-name-addtoany
+    text-align: center
+    margin-right: 10px
+    #social-icons
+      display: inline-block
+
+
+
+
+
+
+
+
+
+
+
+hr
+  display: block
+  height: 1px
+  border: none
+  clear: both
