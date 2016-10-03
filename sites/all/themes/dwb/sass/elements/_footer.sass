@@ -1,0 +1,145 @@
+#footer
+	width: 100%
+	margin-left: 0
+	margin-right: 0
+	background: #fff
+	padding-bottom: 100px
+	@include breakpoint($t)
+		padding-bottom: 40px
+	@include breakpoint($m)
+		padding-bottom: 30px
+
+// Scroll to top
+
+.scroll-to-top
+	color: black
+	position: absolute
+	top: -35px
+	left: 50%
+	margin-left: -60px
+	width: 120px
+	.animate-anchor
+		text-decoration: none
+		color: black
+	.arrow-top-outer
+		width: 0
+		height: 0
+		border-style: solid
+		border-width: 0 57px 60px 57px
+		border-color: transparent transparent #ffffff transparent
+		margin: 0 auto
+	.top-button
+		text-transform: uppercase
+		font-size: $font-size-footer
+		text-align: center
+		font-weight: bold
+		margin-top: -24px
+		z-index: 1
+		@include breakpoint($t)
+			margin-top: -4px
+		@include breakpoint($m)
+			margin-top: -9px
+		a
+			text-decoration: none
+			color: black
+	.arrow-top
+		width: 16px
+		height: 16px
+		position: absolute
+		top: 16px
+		right: 51px
+		border-top: 2px solid #000
+		border-right: 2px solid #000
+		transform: rotate(-45deg)
+		z-index: 2
+
+// ------------------------------- Footer site menu
+
+#block-menu-block-1
+	text-align: center
+	margin-bottom: 30px
+	.block
+		margin-bottom: 0
+	ul.menu
+		list-style-type: none
+		margin: 0
+		padding: 0
+		li
+			list-style-type: none
+			list-style-image: none
+			display: inline-block
+			line-height: 24px
+			margin: 10px 10px
+			@include breakpoint($t)
+				margin: 5px 5px
+				display: list-item
+				&.first
+					margin-left: 5px !important
+				a
+					display: inline-block
+			@include breakpoint($m)
+				margin: 5px 5px
+				display: list-item
+				&.first
+					margin-left: 10px !important
+				a
+					display: inline-block
+			&.first
+				margin-left: 0
+			+menu-style
+
+//       Footer terms menu
+
+#block-menu-menu-footer-menu
+	margin-bottom: 0
+	text-align: center
+	ul.menu
+		list-style-type: none
+		margin: 0
+		padding: 0
+		font-size: $font-size-footer
+		li
+			list-style-type: none
+			list-style-image: none
+			display: inline-block
+			margin: 0 5px
+			@include breakpoint($t)
+				display: list-item
+			@include breakpoint($m)
+				display: list-item
+			a
+				text-decoration: none
+				color: $font-light-grey
+
+// ZIG ZAG
+
+.zigzag
+	margin-bottom: 15px
+	position: relative
+	height: $zz-height
+	z-index: 1
+	@include breakpoint($t)
+		margin: 0 33% 30px 33%
+	@include breakpoint($m)
+		margin: 0 33% 25px 33%
+	&:before,
+	&:after
+		content: ""
+		display: block
+		position: absolute
+		left: 0
+		right: 0
+	&:before
+		height: ($zz-height - $zz-offset)
+		top: $zz-thickness
+		background: linear-gradient(-135deg, $zz-linecolor $zz-halfheight, transparent 0) 0 $zz-halfheight, linear-gradient( 135deg, $zz-linecolor $zz-halfheight, transparent 0) 0 $zz-halfheight
+		background-position: top left
+		background-repeat: repeat-x
+		background-size: $zz-height $zz-height
+	&:after
+		height: $zz-height
+		top: 100%
+		background: linear-gradient(-135deg, white $zz-halfheight, transparent 0) 0 $zz-halfheight, linear-gradient( 135deg, white $zz-halfheight, transparent 0) 0 $zz-halfheight
+		background-position: top left
+		background-repeat: repeat-x
+		background-size: $zz-height $zz-height

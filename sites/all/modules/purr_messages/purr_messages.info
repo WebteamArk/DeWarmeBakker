@@ -1,0 +1,11 @@
+name = "Purr Messages"
+description = "A jQuery based override of Drupal's core message system"
+core = 7.x
+php = 5.1
+version = 7.x-2.x-dev
+; Information added by drupal.org packaging script on 2013-10-01
+version = "7.x-2.0+1-dev"
+core = "7.x"
+project = "purr_messages"
+datestamp = "1380624362"
+

@@ -1,0 +1,290 @@
+@import "variables"
+
+@mixin clearfix
+  clear: both
+  content: "."
+  display: block
+  height: 0
+  visibility: hidden
+@mixin ulReset
+  margin: 0
+  padding: 0
+  list-style-type: none
+  list-style-image: none
+  li
+    margin: 0
+    padding: 0
+    list-style-type: none
+    list-style-image: none
+@mixin limiter
+  margin-left:  auto
+  margin-right: auto
+  max-width: 1020px
+  +box-sizing(border-box)
+@mixin hover
+  +transition(all 300ms ease-in-out)
+  &:hover
+    opacity: 0.8
+@mixin animacja
+  +transition(all 300ms ease-in-out)
+@mixin darkshadow
+  -webkit-box-shadow: 0px 3px 10px rgba(0, 0, 0, 1)
+  -moz-box-shadow: 0px 3px 10px rgba(0, 0, 0, 1)
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 1)
+@mixin darkshadowhover
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 1)
+  -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 1)
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 1)
+@mixin tileshadow
+  -webkit-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.4)
+  -moz-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.4)
+  box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.4)
+@mixin shadow
+  box-shadow: 0 0 10px $input-footer-form
+@mixin textshadow
+  text-shadow: 0px 3px 10px rgba(0, 0, 0, 1)
+@mixin menu-style
+  a.active
+    border-bottom: 2px solid $menu-underline
+    line-height: 14px
+    font-size: $font-size-paragraph
+    padding-bottom: 4px
+    font-size: $font-size-paragraph
+    color: $menu-color
+    text-transform: uppercase
+    text-decoration: none
+  a:not(.active)
+    text-transform: uppercase
+    text-decoration: none
+    line-height: 24px
+    font-size: $font-size-paragraph
+    color: $menu-color
+    &:after
+      content: ''
+      display: block
+      border-bottom: solid 1px $menu-underline
+      transform: scaleX(0)
+      transition: transform 450ms ease-in
+    &:hover:after
+      transform: scaleX(1)
+  a.active
+    border-bottom: 1px solid $menu-underline
+    line-height: 14px
+    font-size: $font-size-paragraph
+    padding-bottom: 3px
+    &:after
+      content: ''
+    &:hover:after
+      transform: none
+
+@mixin menu-style-whois
+  a.active
+    border-bottom: 2px solid white
+    line-height: 14px
+    font-size: $font-size-paragraph
+    padding-bottom: 4px
+    font-size: $font-size-paragraph
+    color: white
+    text-transform: uppercase
+    text-decoration: none
+  a:not(.active)
+    text-transform: uppercase
+    text-decoration: none
+    line-height: 24px
+    font-size: $font-size-paragraph
+    color: white
+    &:after
+      content: ''
+      display: block
+      border-bottom: solid 1px white
+      transform: scaleX(0)
+      transition: transform 450ms ease-in
+    &:hover:after
+      transform: scaleX(1)
+  a.active
+    border-bottom: 1px solid white
+    line-height: 14px
+    font-size: $font-size-paragraph
+    padding-bottom: 3px
+    &:after
+      content: ''
+    &:hover:after
+      transform: none
+
+
+@mixin tilehover
+  &:hover
+    transition: all 0.5s ease
+    background: $transparent-white-hover
+    +tileshadow
+
+@mixin tile1hover
+  &:hover
+    .tile-title-outer
+      transition: border-radius 0.5s ease,background-color 0.5s ease
+      background-color: $font-dark-red
+      border-radius: 20px
+      .tile-title
+        // display: inline
+        color: white
+        border-bottom: 3px white solid
+    .group-left
+      img
+        transition: all 0.5s ease
+        background: $transparent-white-hover
+        +tileshadow
+
+@mixin tile4hover
+  &:hover
+    .squareToRound
+      transition: border-radius 0.5s ease,background-color 0.5s ease
+      background-color: white
+      border-radius: 20px
+      .tile-title
+        // display: inline
+        color: white
+        border-bottom: 3px white solid
+    .group-left
+      img
+        transition: all 0.5s ease
+        background: $transparent-white-hover
+        +tileshadow
+
+@mixin tile2hover
+  &:hover
+    .node
+      transition: all 0.5s ease
+      background: $transparent-white-hover
+      +tileshadow
+
+
+// ZIG ZAG BORDERS
+@mixin border-top-serrated($size, $color-outer)
+  &
+    position: relative
+    overflow: auto
+    padding-top: $size
+
+  &:before
+    top: 0px
+    background-position: left top
+    @include background(linear-gradient(-135deg, $color-outer $size / 2, transparent 0), linear-gradient(135deg, $color-outer $size / 2, transparent 0))
+    @include border-serrated-helper($size, $color-outer)
+
+@mixin border-bottom-serrated($size, $color-outer)
+  &
+    position: relative
+    overflow: auto
+    padding-bottom: $size
+
+  &:after
+    bottom: 0px
+    background-position: left bottom
+    @include background(linear-gradient(-45deg, $color-outer $size / 2, transparent 0), linear-gradient(45deg, $color-outer $size / 2, transparent 0))
+    @include border-serrated-helper($size, $color-outer)
+
+@mixin border-serrated-helper($size, $color-outer)
+  content: " "
+  display: block
+  position: absolute
+  left: 0px
+  width: 100%
+  height: $size
+  background-repeat: repeat-x
+  background-size: $size $size
+
+@mixin zz-border-bottom
+  -webkit-mask-image: linear-gradient(0deg, transparent 10px, white 10px), linear-gradient(-135deg, white 5px, transparent 5px), linear-gradient(135deg, white 5px, transparent 5px)
+  -webkit-mask-position: left bottom
+  -webkit-mask-repeat: repeat-x
+  -webkit-mask-size: 100% 100%, 10px 10px, 10px 10px
+
+@mixin zz-border-top
+  -webkit-mask-image: linear-gradient(180deg, transparent 10px, white 10px), linear-gradient(-45deg, white 5px, transparent 5px), linear-gradient(45deg, white 5px, transparent 5px)
+  -webkit-mask-position: left top
+  -webkit-mask-repeat: repeat-x
+  -webkit-mask-size: 100% 100%, 10px 10px, 10px 10px
+
+@mixin outer-border-bottom
+  // -webkit-mask-image: linear-gradient(0deg, transparent 10px, white 10px), linear-gradient(-135deg, white 5px, transparent 5px), linear-gradient(135deg, white 5px, transparent 5px)
+  // -webkit-mask-position: left bottom
+  // -webkit-mask-repeat: repeat-x
+  // -webkit-mask-size: 100% 100%, 10px 10px, 10px 10px
+  content: ''
+  position: absolute
+  bottom: -10px
+  width: 100%
+  height: 10px
+  background: url('../images/zigzagd.png') repeat-x
+  opacity: 0.6
+
+@mixin outer-border-bottom-white
+  // -webkit-mask-image: linear-gradient(0deg, transparent 10px, white 10px), linear-gradient(-135deg, white 5px, transparent 5px), linear-gradient(135deg, white 5px, transparent 5px)
+  // -webkit-mask-position: left bottom
+  // -webkit-mask-repeat: repeat-x
+  // -webkit-mask-size: 100% 100%, 10px 10px, 10px 10px
+  content: ''
+  position: absolute
+  bottom: -10px
+  width: 100%
+  height: 10px
+  background: url('../images/zigzagdb.png') repeat-x
+  opacity: 0.6
+  left: 0
+  visibility: visible
+
+@mixin outer-border-bottom-grey
+  // -webkit-mask-image: linear-gradient(0deg, transparent 10px, white 10px), linear-gradient(-135deg, white 5px, transparent 5px), linear-gradient(135deg, white 5px, transparent 5px)
+  // -webkit-mask-position: left bottom
+  // -webkit-mask-repeat: repeat-x
+  // -webkit-mask-size: 100% 100%, 10px 10px, 10px 10px
+  content: ''
+  position: relative
+  bottom: -10px
+  width: 100%
+  height: 10px
+  background: url('../images/zigzaggreyd.png') repeat-x
+  opacity: 1
+  left: 0
+  visibility: visible
+
+@mixin outer-border-top
+  // -webkit-mask-image: linear-gradient(180deg, transparent 10px, white 10px), linear-gradient(-45deg, white 5px, transparent 5px), linear-gradient(45deg, white 5px, transparent 5px)
+  // -webkit-mask-position: left bottom
+  // -webkit-mask-repeat: repeat-x
+  // -webkit-mask-size: 100% 100%, 10px 10px, 10px 10px
+  content: ''
+  position: absolute
+  top: -10px
+  width: 100%
+  height: 10px
+  background: url('../images/zigzag.png') repeat-x
+  opacity: 0.6
+
+@mixin outer-border-top-white
+  // -webkit-mask-image: linear-gradient(180deg, transparent 10px, white 10px), linear-gradient(-45deg, white 5px, transparent 5px), linear-gradient(45deg, white 5px, transparent 5px)
+  // -webkit-mask-position: left bottom
+  // -webkit-mask-repeat: repeat-x
+  // -webkit-mask-size: 100% 100%, 10px 10px, 10px 10px
+  content: ''
+  position: absolute
+  top: -10px
+  width: 100%
+  height: 10px
+  background: url('../images/zigzagb.png') repeat-x
+  opacity: 0.6
+  left: 0
+
+@mixin outer-border-top-grey
+  // -webkit-mask-image: linear-gradient(180deg, transparent 10px, white 10px), linear-gradient(-45deg, white 5px, transparent 5px), linear-gradient(45deg, white 5px, transparent 5px)
+  // -webkit-mask-position: left bottom
+  // -webkit-mask-repeat: repeat-x
+  // -webkit-mask-size: 100% 100%, 10px 10px, 10px 10px
+  content: ''
+  position: absolute
+  top: -10px
+  width: 100%
+  height: 10px
+  background: url('../images/zigzaggrey.png') repeat-x
+  opacity: 1
+  left: 0

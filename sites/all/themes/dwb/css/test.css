@@ -1,0 +1,42 @@
+
+.masonry-item,
+.masonry-grid-sizer {
+	width: 25%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	overflow: hidden;
+	position: relative;
+	box-shadow: 0 0 10px #d1d1d1;
+}
+
+.views-row {
+	display: inline-block;
+	float: left;
+}
+
+.masonry-item .node {
+	position: absolute;
+}
+
+.tile-shape-1 {
+	background: red;
+	padding-bottom: 25%;
+}
+
+.tile-shape-2 {
+	background: yellow;
+	padding-bottom: 50%;
+}
+
+.tile-shape-3 {
+	background: blue;
+	width: 50%;
+	padding-bottom: 25%;
+}
+
+.tile-shape-4 {
+	background: green;
+	width: 50%;
+	padding-bottom: 50%;
+}

@@ -1,0 +1,14 @@
+name = Admin Menu Hider
+description = Shows/hides admin menu with the press of a key.
+package = Administration
+core = 7.x
+dependencies[] = admin_menu
+files[] = admin_menu_dropdown.install
+files[] = admin_menu_dropdown.module
+
+; Information added by drupal.org packaging script on 2013-09-30
+version = "7.x-3.0-alpha1+6-dev"
+core = "7.x"
+project = "admin_menu_dropdown"
+datestamp = "1380552835"
+

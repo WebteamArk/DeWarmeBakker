@@ -1,0 +1,296 @@
+// HOMEPAGE
+#header
+  font-family: $font-stack
+  font-size: $font-size-paragraph
+
+#logo
+  width: 100px
+  height: 100px
+  margin-left: 100px
+  @include breakpoint($t)
+    margin-left: 20px
+  @include breakpoint($m)
+    width: 33%
+    height: 100%
+    display: block
+    text-align: center
+    margin: 0 auto
+
+
+.location-pin
+  @include breakpoint($i)
+    height: 60px
+    margin-top: 30px
+  @include breakpoint($sm)
+    height: 36px
+    margin-top: 20px
+
+.front
+  .header__logo
+    float: left
+
+// ------------  STYLES FOR HOMEPAGE AND SUBPAGES
+.header__logo
+  float: none
+
+.header__logo-image
+  vertical-align: initial
+  @include breakpoint($i)
+    width: 120px
+    height: 120px
+    max-width: none
+  @include breakpoint($sm)
+    width: 75px
+    height: 75px
+    max-width: none
+
+.views-field-field-image-logo
+  .field-content
+    text-align: center
+
+// HEADER TITLE
+
+.link-t-search
+  background: $header-find
+  text-align: center
+  @include breakpoint($m)
+    background: none
+    float: left
+    width: 33%
+    text-align: center
+  a.search-link
+    height: 100px
+    width: 100px
+    position: relative
+    text-decoration: none
+    display: block
+    overflow: hidden
+  span
+    color: $font-dark-red
+    font-weight: bold
+    width: 100%
+    height: 100%
+    display: block
+    position: relative
+    text-align: center
+    line-height: 16px
+    top: 50%
+    -ms-transform: translateY(-25%)
+    -webkit-transform: translateY(-25%)
+    transform: translateY(-25%)
+
+
+//NAVIGATION
+.region
+  &.region-navigation
+    text-align: center
+    margin: 20px 0 90px 0
+    @include breakpoint($m)
+      margin: 0
+
+.not-front
+  .region
+    &.region-navigation
+      text-align: center
+      margin: 60px 0 100px 0
+      @include breakpoint($m)
+        margin: 0
+
+
+ul#superfish-1,
+ul.language-switcher-locale-url
+  list-style-type: none
+  margin: 0
+  padding: 0
+  li
+    list-style-type: none
+    list-style-image: none
+    display: inline-block
+    margin: 10px
+    line-height: 24px
+    float: none
+  &.first
+    margin-left: 0
+  +menu-style
+ul#superfish-1
+  a
+    display: inline
+
+
+//MOBILE NAVIGATION
+
+.top-mobile-menu
+  @include breakpoint($m)
+    width: 33%
+    float: right
+    text-align: center
+
+#block-superfish-2
+  margin-top: 38px
+  @include breakpoint($sm)
+    margin-top: 15px
+
+#superfish-2-toggle
+  position: relative
+  display: inline-block
+  width: 44px
+  height: 44px
+  cursor: pointer
+  span
+    line-height: 0
+    font-size: 0
+    color: transparent
+  &:before, &:after
+    content: ''
+    position: absolute
+    transition: all .3s
+  width: 30px
+  height: 30px
+  border-bottom: 4px solid $font-dark-red
+  &:hover
+    border-bottom-color: $font-dark-red
+  &:hover:before, &:hover:after
+    background-color: $font-dark-red
+  &:before, &:after
+    background-color: $font-dark-red
+    height: 4px
+    width: 30px
+    top: 61%
+    left: 50%
+    margin-left: -15px
+  &:before
+    margin-top: -5px
+  &:after
+    margin-top: 3px
+
+ul#superfish-2-accordion
+  &.sf-expanded
+    position: absolute !important
+    top: 0px !important
+    right: 0px !important
+    width: 200px
+    padding: 120px 0 50px 0
+    z-index: 100
+    background: $font-dark-red
+  li
+    padding: 15px
+    box-sizing: border-box
+    &.fr
+      display: inline-block
+      width: 10%
+    &.nl
+      display: inline-block
+      width: 10%
+      float: left
+  a
+    color: white
+    text-decoration: none
+    text-transform: uppercase
+    font-size: $font-size-paragraph
+    text-align: left
+    display: inline
+    float: left
+    line-height: normal
+    &.active
+      border-bottom: 2px solid white
+
+a#superfish-2-toggle
+  &.sf-expanded
+    z-index: 101
+    border: 0
+    position: absolute
+    top: 50px
+    right: 225px
+    &:before,
+    &:after
+      position: absolute
+      content: ' '
+      height: 33px
+      width: 4px
+      background-color: $font-dark-red
+      margin: 0
+      top: 0
+    &:before
+      transform: rotate(45deg)
+    &:after
+      transform: rotate(-45deg)
+
+//LINK BUTTON
+
+.views-field-field-link-button
+  text-decoration: none
+  display: block
+  margin: 30px auto 0 auto
+  width: 200px
+  // .field-content
+  //   transition: border-radius 1s ease,background-color 1s ease
+  //   width: 200px
+  //   height: 40px
+  //   text-align: center
+  //   margin: 0 auto
+  //   background-color: white
+  //   +shadow
+  // a
+  //   transition: color 0.5s ease,border-color 0.5s ease
+  //   text-transform: uppercase
+  //   font-weight: bold
+  //   text-decoration: none
+  //   display: inline
+  //   border-bottom: 3px $font-dark-red solid
+  //   color: $font-dark-red
+  //   padding-bottom: $btn-padding-height
+  // &:hover
+  //   .field-content
+  //     transition: border-radius 0.5s ease,background-color 0.5s ease
+  //     background-color: $font-dark-red
+  //     border-radius: 20px
+  //     a
+  //       transition: color 0.5s ease,border-color 0.5s ease
+  //       color: white
+  //       border-color: white
+
+
+
+.squaretoRoundLink
+  text-decoration: none
+  .squareToRound
+    transition: border-radius 1s ease,background-color 1s ease
+    width: 200px
+    height: 40px
+    text-align: center
+    margin: 0 auto
+    margin-bottom: 50px
+    background-color: white
+    +darkshadow
+    p
+      transition: color 0.5s ease,border-color 0.5s ease
+      font-size: 14px
+      text-transform: uppercase
+      font-weight: bold
+      line-height: 35px
+      display: inline
+      color: $font-dark-red
+      border-bottom: 3px $font-dark-red solid
+  &:hover
+    .squareToRound
+      transition: border-radius 0.5s ease,background-color 0.5s ease
+      background-color: $font-dark-red
+      border-radius: 20px
+      p
+        transition: color 0.5s ease,border-color 0.5s ease
+        color: white
+        border-color: white
+
+
+
+
+// SUBPAGES
+
+.not-front
+  #logo
+    display: inline-block
+    text-align: center
+    margin: 0 auto
+    margin-right: -4px
+  .logo-search
+    text-align: center
