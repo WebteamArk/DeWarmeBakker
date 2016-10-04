@@ -237,7 +237,7 @@ Drupal.behaviors.dwbMultiselect = {
         onLoad: function (element) {
           $(element).hide();
           var $optionsWrapper = $(element).next('.ms-options-wrap').find('.ms-options');
-          $optionsWrapper.append('<div class="dwb-submit"><button type="submit"><span>' + Drupal.t('bevestigen') + '</span></button></div>');
+          $optionsWrapper.append('<div class="dwb-submit"><button type="submit"><span>' + Drupal.t('Zoek') + '</span></button></div>');
           $optionsWrapper.append('<button class="reset"><span>' + Drupal.t('reset') + '</span></button></div>');
           $optionsWrapper.find('.reset').click(function(e){
             e.preventDefault();
@@ -257,7 +257,7 @@ Drupal.behaviors.dwbMultiselect = {
         onLoad: function (element) {
           $(element).hide();
           var $optionsWrapper = $(element).next('.ms-options-wrap').find('.ms-options');
-          $optionsWrapper.append('<div class="dwb-submit"><button type="submit"><span>' + Drupal.t('bevestigen') + '</span></button></div>');
+          $optionsWrapper.append('<div class="dwb-submit"><button type="submit"><span>' + Drupal.t('Zoek') + '</span></button></div>');
           $optionsWrapper.append('<button class="reset"><span>' + Drupal.t('reset') + '</span></button></div>');
           $optionsWrapper.find('.reset').click(function(e){
             e.preventDefault();
@@ -315,17 +315,17 @@ Drupal.behaviors.dwbAnimateAnchor = {
   },
 };
 
-Drupal.behaviors.dwbMobileMenu = {
-  attach: function(context, settings) {
-//    console.debug('dwbMobileMenu');
-    $('#superfish-2 #superfish-2-accordion', context).once('dwb-mobile-menu', function () {
-      var $that = $(this);
-      $('#block-locale-language .language-switcher-locale-url li', context).each(function () {
-        $that.append($(this));
-      });
-    });
-  },
-};
+//Drupal.behaviors.dwbMobileMenu = {
+//  attach: function(context, settings) {
+//    $('#off-canvas-menu ul', context).once('dwb-mobile-menu', function () {
+//      console.debug('dwbMobileMenu');
+//      var $that = $(this);
+//      $('#block-locale-language ul.language-switcher-locale-url li', context).each(function () {
+//        $that.append($(this));
+//      });
+//    });
+//  },
+//};
 
 Drupal.behaviors.dwbLinkToButton = {
   attach: function(context, settings) {

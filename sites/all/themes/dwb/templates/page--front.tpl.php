@@ -30,7 +30,7 @@
       <?php endif; ?>
       <div class="link-t-search desktop">
         <a href="/node/5" class="search-link">
-          <span><?php print t('ZOEK EEN WARME BAKKER'); ?></span>
+          <span><?php print t('ZOEK JOUW WARME BAKKER'); ?></span>
           <a/>
         </div>
         <div class="top-mobile-menu">
