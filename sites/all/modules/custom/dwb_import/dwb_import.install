@@ -1,0 +1,12 @@
+<?php
+/**
+ * @file dwb_import.install
+ * @author Jacek Szmit
+ */
+
+function dwb_import_install() {
+  $dir_created = drupal_mkdir('private://dwb_import/');
+  if($dir_created === FALSE) {
+    drupal_set_message('Failed to create private://dwb_import/ directory.', 'warning');
+  }
+}

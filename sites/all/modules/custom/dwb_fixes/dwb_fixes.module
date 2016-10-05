@@ -1,0 +1,13 @@
+<?php
+/**
+ * @file dwb_fixes.module
+ * @author Jacek Szmit
+ */
+
+function dwb_fixes_leaflet_map_info_alter(&$map_info) {
+  foreach ($map_info as $map_id => $info) {
+    $map_info[$map_id]['settings']['touchZoom'] = FALSE;
+    //$map_info[$map_id]['settings']['tap'] = FALSE;
+    //$map_info[$map_id]['settings']['attributionControl'] = TRUE;
+  }
+}

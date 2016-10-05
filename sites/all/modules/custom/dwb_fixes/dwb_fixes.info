@@ -1,0 +1,5 @@
+name = DWB Fixes
+description = Fixes that can't be done from theme
+package = DWB
+core = 7.x
+dependencies[] = leaflet
