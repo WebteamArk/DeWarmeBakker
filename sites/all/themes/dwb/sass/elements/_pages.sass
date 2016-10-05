@@ -27,6 +27,7 @@
   #page-title
     font-family: $font-tile-title
     font-size: $font-size-whois-title
+    text-rendering: optimizeLegibility
     color: white
     text-transform: capitalize
     font-weight: bold
@@ -45,7 +46,7 @@
       width: 100%
   p
     color: white
-    font-size: $font-size-whois-p
+    font-size: 16px
   .paragraphs-item-par-long-text
     padding: 0 10%
   h2
@@ -173,10 +174,10 @@
         padding: 0 20px 20px 20px
 
 
+.ms-options
+  min-height: 0 !important
 //---------------------- NEWS
 .styles-news-overview-page
-  .ms-options
-    min-height: initial !important
   #edit-sort-by
     display: none
   .view-filters
@@ -245,9 +246,9 @@
     // @include breakpoint($sm)
     //   width: 200px
     //   margin-bottom: 0
-    #edit-city-wrapper
-      @include breakpoint($t)
-        float: none
+    // #edit-city-wrapper
+    //   @include breakpoint($t)
+    //     float: none
     #edit-city-wrapper,
     #edit-distance-wrapper,
     #edit-field-bakery-products-tid-wrapper
@@ -258,6 +259,17 @@
         .ms-options-wrap
           display: inline-block
           width: 80%
+    #edit-field-bakery-products-tid-wrapper
+      @include breakpoint($t)
+        clear: left
+    #edit-distance-wrapper
+      .form-item-distance-postal-code
+        span
+          font-size: $font-size-paragraph
+          color: $font-light-grey
+          padding-right: 15px
+          @include breakpoint($m)
+            display: block
     #edit-distance-postal-code
       width: 100px
       @include breakpoint($m)
@@ -266,7 +278,7 @@
     #edit-city
       width: 200px
       @include breakpoint($t)
-        width: 500px
+        width: 240px
       @include breakpoint($m)
         width: 80%
         clear: both
@@ -298,12 +310,12 @@
         span
           margin-top: 0
           border: none
-          border-bottom: 2px solid white
-          padding-bottom: 1px
+          // border-bottom: 2px solid white
+          // padding-bottom: 1px
           display: inline
           background: none
           color: white
-          font-weight: bold
+          font-weight: normal
           text-transform: uppercase
           margin: 0 10px
 

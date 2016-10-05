@@ -55,6 +55,7 @@ stylesheets[all][] = js/multiselect/jquery.multiselect.css
 stylesheets[all][] = js/ellipsis/ellipsis.css
 stylesheets[all][] = css/dwb.css
 stylesheets[all][] = wojtek/css/wojtek.css
+stylesheets[print][] = print.css
 
 ; Built-in conditional stylesheet support has been removed from Zen 7.x-5.x.
 ; Instead, Zen now adds conditional-comment-included classes to the html

@@ -288,9 +288,13 @@ a#superfish-2-toggle
 
 .views-field-field-link-button
   text-decoration: none
-  display: block
+  display: inline-block
   margin: 30px auto 0 auto
-  width: 200px
+  width: 100%
+  text-align: center
+  .field-content
+    display: inline-block
+
   // .field-content
   //   transition: border-radius 1s ease,background-color 1s ease
   //   width: 200px
@@ -324,8 +328,8 @@ a#superfish-2-toggle
   text-decoration: none
   .squareToRound
     transition: border-radius 1s ease,background-color 1s ease
-    width: 200px
-    height: 40px
+    // width: 200px
+    // height: 40px
     text-align: center
     margin: 0 auto
     background-color: white
@@ -334,20 +338,21 @@ a#superfish-2-toggle
       transition: color 0.5s ease,border-color 0.5s ease
       font-size: 14px
       text-transform: uppercase
-      font-weight: bold
-      line-height: 35px
+      font-weight: normal
+      line-height: 40px
       display: inline
+      padding: 0 30px
       color: $font-dark-red
-      border-bottom: 3px $font-dark-red solid
+      // border-bottom: 3px $font-dark-red solid
   &:hover
     .squareToRound
       transition: border-radius 0.5s ease,background-color 0.5s ease
-      background-color: $font-dark-red
+      // background-color: $font-dark-red
       border-radius: 20px
       p
         transition: color 0.5s ease,border-color 0.5s ease
-        color: white
-        border-color: white
+        // color: white
+        // border-color: white
 
 
 

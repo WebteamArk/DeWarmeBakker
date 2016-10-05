@@ -113,7 +113,7 @@
     display: none
   .tile-title-outer
     max-width: 200px
-    height: auto
+    // height: auto
     text-align: center
     margin: 0 auto
     background: white
@@ -125,7 +125,8 @@
     // margin: 0 auto
     +darkshadow
     position: relative
-    top: 40%
+    top: 42%
+    line-height: 0
     @include breakpoint($b)
       max-width: 160px
     @include breakpoint($t)
@@ -138,11 +139,11 @@
     .tile-title
       font-size: 14px
       text-transform: uppercase
-      font-weight: bold
+      font-weight: normal
       line-height: 20px
       // display: inline
       color: $font-dark-red
-      border-bottom: 3px $font-dark-red solid
+      // border-bottom: 3px $font-dark-red solid
       // border-bottom: 2px solid $font-dark-red
       // padding-bottom: $btn-padding-height
       // text-decoration: none
@@ -211,6 +212,7 @@
     line-height: 44px
     max-height: 88px
     overflow: hidden
+    padding-left: 3px
   .tile-text
     margin: 10px 0
     max-height: 60px
@@ -228,6 +230,11 @@
       -webkit-box-shadow: none
       -moz-box-shadow: none
       box-shadow: none
+      p
+        padding: 0
+        border-bottom: solid 1px $font-dark-red
+        line-height: 24px
+        padding-bottom: 2px
 
   .node
     // padding: 50px
@@ -292,11 +299,16 @@
     line-height: 44px
     max-height: 88px
     overflow: hidden
+    padding-left: 3px
   .tile-text
     margin: 10px 0
     max-height: 60px
     overflow: hidden
     line-height: 20px
+    @include breakpoint($t)
+      max-height: 40px
+    @include breakpoint($m)
+      max-height: 40px
   .tile-more-link
     text-transform: uppercase
     .squareToRound
@@ -309,6 +321,11 @@
       -webkit-box-shadow: none
       -moz-box-shadow: none
       box-shadow: none
+      p
+        padding: 0
+        border-bottom: solid 1px $font-dark-red
+        line-height: 24px
+        padding-bottom: 2px
   .node
     // padding: 50px
     // @include breakpoint($m)
@@ -327,12 +344,16 @@
         width: 41.5%
         position: relative
         @include breakpoint($t)
+          width: 41.5%
+        @include breakpoint($m)
           width: 45%
       & > .group-right
         width: 50%
         position: relative
         margin-left: 7%
         @include breakpoint($t)
+          margin-left: 4%
+        @include breakpoint($m)
           margin-left: 4%
         .field-item
           border-bottom: 2px solid $font-dark-red
@@ -456,6 +477,3 @@
           font-weight: bold
         .tile-text
           color: white
-
-.pager-load-more-empty
-  display: none

@@ -119,6 +119,10 @@ a
   display: none
   @include breakpoint($m)
     display: block
+
+.item-list
+  text-align: center
+
 .front
   ul.pager.pager-load-more
     li
@@ -127,7 +131,7 @@ a
       text-transform: uppercase
       max-width: 200px
       margin: 60px auto 60px auto
-      display: block
+      display: inline-block
     a
       color: $font-dark-red
       text-decoration: none
@@ -142,10 +146,14 @@ a
       text-transform: uppercase
       max-width: 200px
       margin: 0 auto
-      display: block
+      display: inline-block
     a
       color: $font-dark-red
       text-decoration: none
       font-weight: bold
       border-bottom: 2px solid $font-dark-red
       padding-bottom: $btn-padding-height
+
+
+.pager-load-more-empty
+  display: none
