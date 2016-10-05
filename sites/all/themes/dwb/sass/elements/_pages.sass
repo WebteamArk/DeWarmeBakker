@@ -192,7 +192,7 @@
   .marker-cluster-small
     background-color: white
     div
-      background-color: #333
+      background-color: #822a3a
       color: white
       font-weight: bold !important
   .form-item-distance-country
@@ -221,6 +221,7 @@
       +outer-border-bottom-white
     @include breakpoint($sm)
       width: 100%
+      margin: 10% 5% 0 5%
     h2
       margin: 0 0 3% 0
       text-transform: uppercase
@@ -228,47 +229,72 @@
       color: $font-dark-red
       text-decoration: none
       font-weight: bold
-  #views-exposed-form-find-dwb-block
-    width: 700px
-    margin: 0 auto
+  .view-filters
+    text-align: center
     margin-bottom: 100px
-    padding: 1%
-    @include breakpoint($t)
-      width: 400px
     @include breakpoint($m)
-      max-width: 300px
-    @include breakpoint($sm)
-      max-width: 300px
       margin-bottom: 0
-
-    #edit-distance-postal-code
-      height: 40px
-      max-width: 300px
+  #views-exposed-form-find-dwb-block
+    margin: 0 auto
+    padding: 1%
+    display: inline-block
+    // @include breakpoint($t)
+    //   width: 400px
+    // @include breakpoint($m)
+    //   max-width: 300px
+    // @include breakpoint($sm)
+    //   width: 200px
+    //   margin-bottom: 0
+    #edit-city-wrapper
       @include breakpoint($t)
-        max-width: 400px
+        float: none
+    #edit-city-wrapper,
+    #edit-distance-wrapper,
+    #edit-field-bakery-products-tid-wrapper
       @include breakpoint($m)
-        max-width: 300px
+        float: none
+        .form-item-field-bakery-products-tid
+          text-align: center
+        .ms-options-wrap
+          display: inline-block
+          width: 80%
+    #edit-distance-postal-code
+      width: 100px
+      @include breakpoint($m)
+        width: 80%
+        clear: both
+    #edit-city
+      width: 200px
+      @include breakpoint($t)
+        width: 500px
+      @include breakpoint($m)
+        width: 80%
+        clear: both
+    #edit-distance-postal-code,
+    #edit-city
+      height: 40px
       +darkshadow
       border: 1px solid $input-footer-form
     button
       padding: 5px 0 !important
       height: 40px
     .views-submit-button
-      height: 40px
-      background: $font-dark-red
-      padding: 0
-      margin-top: 8px
       @include breakpoint($m)
-        margin: 30px auto 20px auto
-        text-align: center
-        max-width: 60px
-      +darkshadow
+        width: 100%
       #edit-submit-find-dwb
         display: none
       .npxSearchMap
         background: transparent
         border: none
         padding: 10px
+        height: 40px
+        background: $font-dark-red
+        padding: 0
+        @include breakpoint($m)
+          margin: 30px auto 20px auto
+          text-align: center
+          max-width: 60px
+        +darkshadow
         span
           margin-top: 0
           border: none
@@ -289,3 +315,8 @@
     padding: 5%
   #main
     padding-top: 70px
+
+// ------------------------------------ RECEPTEN
+
+#views-exposed-form-recipes-overview-block
+  margin-bottom: 100px

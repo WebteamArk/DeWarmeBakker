@@ -42,6 +42,23 @@
       max-height: 200px
   .views-field-field-text
     padding-top: 30px
+  .paragraphs-item-par-images-2-links
+    .group-left,
+    .group-right
+      position: relative
+      .field-name-field-ref-1,
+      .field-name-field-ref-2
+        position: absolute
+        top: 0
+        width: 100%
+        height: 100%
+        a
+          width: 100%
+          height: 100%
+          display: block
+          line-height: 0
+          font-size: 0
+          color: transparent
 
 p
   margin: 30px 0
@@ -117,6 +134,14 @@ p
 .paragraphs-item-par-image-2,
 .paragraphs-item-par-image
   margin-top: 30px
+  .field-name-field-image
+    text-align: center
+  .group-left
+    @include breakpoint($m)
+      width: 100%
+  .group-right
+    @include breakpoint($m)
+      width: 100%
 
 .field-name-field-long-text-html
   ul
@@ -173,6 +198,7 @@ p
       display: none
     .ms-options-wrap
       width: 300px
+      text-align: left
       button
         text-align: center
         z-index: 100
@@ -193,7 +219,7 @@ p
 // ITEM SINGLE
 .node-type-recipe
   #content
-    .ds-1col
+    .group-bg
       ul
         margin: 30px 0
         padding-left: 5px
@@ -220,19 +246,54 @@ p
         @include breakpoint($m)
           width: 100%
 
+#block-views-related-recipes-block-1,
+#block-views-related-news-block-1,
+.view-about-bread-related-6-random
+  .view-footer
+    text-align: center
+  .squareToRound
+    max-width: 300px
+    width: auto
+    height: auto
+    display: inline-block
+    padding: 0 10px 5px
+
+.view-display-id-block_1
+  .view-filters
+    margin-bottom: 0 !important
+
+.section-product-product-family
+  .region-headerbottom
+    height: 560px
+    margin-bottom: 100px
+    @include breakpoint($t)
+      margin-bottom: 50px
+      height: 462px
+    @include breakpoint($m)
+      height: 462px
+      margin-bottom: 50px
+    @include breakpoint($sm)
+      margin-bottom: 50px
+      height: 210px
 
 
+.position-relative.view .view-content
+  position: relative
 
 .node-type-product,
 .node-type-news,
 .node-type-about-bread,
 .node-type-recipe,
 .styles-disclaimer
-  .view-y-random-6-recipes
+  .view-y-random-6-recipes,
+  .view-related-recipes,
+  .view-about-bread-related-6-random,
+  .view-related-news
     h2
       text-transform: uppercase
       text-align: center
       margin: 60px 0 50px 0
+      font-weight: normal
   #content
     margin-top: -75px
     line-height: normal
@@ -268,6 +329,7 @@ p
       margin-top: -50px
     .region-headerbottom
       height: 462px
+      margin-top: 50px
   @include breakpoint($sm)
     #content
       margin-top: -30px
@@ -289,13 +351,19 @@ p
   float: right
   @include breakpoint($t)
     float: none
-    margin: 0 auto
+    text-align: center
+    #social-icons
+      display: inline-block
   @include breakpoint($m)
     float: none
-    margin: 0 auto
+    text-align: center
+    #social-icons
+      display: inline-block
   @include breakpoint($sm)
     float: none
-    margin: 0 auto
+    text-align: center
+    #social-icons
+      display: inline-block
 
 .embedded-video
   max-width: 600px

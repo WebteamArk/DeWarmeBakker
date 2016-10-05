@@ -77,4 +77,11 @@
     visibility: hidden;
     display: none;
   }
+  #header {
+    display: none;
+  }
+
+  .outer-container {
+    display: none;
+  }
 }

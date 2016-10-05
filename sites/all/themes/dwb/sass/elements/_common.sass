@@ -3,6 +3,10 @@
   body:before
     content: "smartphone"
     display: none
+@include breakpoint($sp)
+  body:before
+    content: "smartphone-portrait"
+    display: none
 @include breakpoint($t)
   body:before
     content: "tablet"
@@ -17,6 +21,9 @@
     display: none
 
 // COMMON STYLES
+.mm-page
+  background-color: transparent !important
+
 body
   font-family: $font-stack
   font-size: $font-size-paragraph
@@ -112,18 +119,33 @@ a
   display: none
   @include breakpoint($m)
     display: block
-
-ul.pager.pager-load-more
-  li
-    text-align: center
-    padding: 15px 10px
-    text-transform: uppercase
-    max-width: 200px
-    margin: 60px auto 60px auto
-    display: block
-  a
-    color: $font-dark-red
-    text-decoration: none
-    font-weight: bold
-    border-bottom: 2px solid $font-dark-red
-    padding-bottom: $btn-padding-height
+.front
+  ul.pager.pager-load-more
+    li
+      text-align: center
+      padding: 15px 10px
+      text-transform: uppercase
+      max-width: 200px
+      margin: 60px auto 60px auto
+      display: block
+    a
+      color: $font-dark-red
+      text-decoration: none
+      font-weight: bold
+      border-bottom: 2px solid $font-dark-red
+      padding-bottom: $btn-padding-height
+.not-front
+  ul.pager.pager-load-more
+    li
+      text-align: center
+      padding: 15px 10px
+      text-transform: uppercase
+      max-width: 200px
+      margin: 0 auto
+      display: block
+    a
+      color: $font-dark-red
+      text-decoration: none
+      font-weight: bold
+      border-bottom: 2px solid $font-dark-red
+      padding-bottom: $btn-padding-height

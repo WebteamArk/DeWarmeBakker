@@ -134,13 +134,13 @@
         background: $transparent-white-hover
         +tileshadow
 
-@mixin tile4hover
+@mixin tile4hoverwhite
   &:hover
     .squareToRound
       transition: border-radius 0.5s ease,background-color 0.5s ease
-      background-color: white
+      background-color: $font-dark-red
       border-radius: 20px
-      .tile-title
+      p
         // display: inline
         color: white
         border-bottom: 3px white solid
@@ -149,6 +149,40 @@
         transition: all 0.5s ease
         background: $transparent-white-hover
         +tileshadow
+    .node
+      .ds-2col
+        & > .group-right
+          width: 100%
+          background: white
+          transition: all 0.5s ease
+          &:before
+            transition: all 0.5s ease
+            opacity: 1
+          &:after
+            transition: all 0.5s ease
+            opacity: 1
+
+
+@mixin tile4hover
+  &:hover
+    .group-left
+      img
+        transition: all 0.5s ease
+        background: $transparent-white-hover
+        +tileshadow
+    .node-action
+      .ds-2col
+        & > .group-right
+          width: 100%
+          background: $font-dark-red
+      .squareToRound
+        transition: border-radius 0.5s ease,background-color 0.5s ease
+        background-color: white
+        border-radius: 20px
+        p
+          // display: inline
+          color: $font-dark-red
+          border-bottom: 3px $font-dark-red solid
 
 @mixin tile2hover
   &:hover

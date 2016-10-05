@@ -60,18 +60,21 @@
     getColNumber: function () {
       var columns = 0;
       switch(this._breakpoint.value) {
-        case 'smartphone':
+        case 'smartphone-portrait':
           columns = 1;
           break;
-        case 'tablet':
+        case 'smartphone':
           columns = 2;
-          break
+          break;
+        case 'tablet':
+          columns = 3;
+          break;
         case 'desktop':
           columns = 3;
-          break
+          break;
         case 'bigscreen':
           columns = 4;
-          break
+          break;
       }
       return columns;
     },
@@ -278,7 +281,14 @@
         }
       }
 //      $tiles.closest('.view-content').height((this._lastRow + 1) * pixelWidth);
-      $(this.container).find('> .view-content').height((this._lastRow + 1) * pixelWidth);
+      var viewContent = $(this.container).find('> .view-content');
+      if(!viewContent.length) {
+        viewContent = $tiles.closest('.view-content');
+      }
+//      $(this.container).find('> .view-content').height((this._lastRow + 1) * pixelWidth);
+//      $(this.container).find('> .view-content').css('position', 'relative');
+      $(viewContent).height((this._lastRow + 1) * pixelWidth);
+      $(viewContent).css('position', 'relative');
     },
     cleanup: function () {
       var $tiles = $(this.container).find(this.settings.gridItem);
