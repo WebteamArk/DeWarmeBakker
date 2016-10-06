@@ -41,3 +41,19 @@ img.print-logo {border: 0;}
 .print-source_url {font-size: small;}
 .print-links {font-size: small;}
 .print-footer {text-align: center;}
+
+
+.ytabs,
+.header-outer,
+.region-navigation,
+.region-headerbottom,
+.a2a_kit,
+.view-y-overview-to-recipes,
+#block-views-related-recipes-block-1,
+#block-views-related-news-block-1,
+#block-views-aeb2beb011333597521f6a5e1060220c,
+.outer-container,
+.region-page-bottom
+ {
+  display: none;
+}

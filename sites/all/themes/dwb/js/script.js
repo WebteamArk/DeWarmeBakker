@@ -335,6 +335,12 @@ Drupal.behaviors.dwbLinkToButton = {
       $(this).addClass('squaretoRoundLink');
       $(this).html(html);
     });
+//    $('.field-name-field-p-basic .field-name-field-link a', context).once('dwb-link-to-button', function () {
+//      var text = $(this).text();
+//      var html = '<div class="squareToRound"><p>' + text + '</p></div>';
+//      $(this).addClass('squaretoRoundLink');
+//      $(this).html(html);
+//    });
   },
 };
 
@@ -355,6 +361,7 @@ Drupal.behaviors.dwbPlaceholder = {
     });
     $('#views-exposed-form-find-dwb-block #edit-distance-postal-code', context).once('dwb-placeholder', function () {
       $(this).attr('placeholder', Drupal.t('Postcode'));
+      $(this).closest('.form-item').prepend('<span>' + Drupal.t('of') + '</span>');
     });
   },
 };

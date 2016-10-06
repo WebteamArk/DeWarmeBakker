@@ -1,0 +1,7 @@
+name = DWB Import
+description = Bakeries import
+package = DWB
+core = 7.x
+dependencies[] = file
+dependencies[] = entity
+dependencies[] = location

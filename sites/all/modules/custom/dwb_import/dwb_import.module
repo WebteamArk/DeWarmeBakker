@@ -1,0 +1,201 @@
+<?php
+/**
+ * @file dwb_import.module
+ * @author Jacek Szmit
+ */
+define('DWB_IMPORT_NODE_TYPE', 'bakery');
+//define('DWB_IMPORT_VOCABULARY_ID', 1);
+define('DWB_IMPORT_FILES_DIR', 'private://dwb_import/');
+
+/**
+ * Implements hook_menu().
+ */
+function dwb_import_menu() {
+  $items['admin/content/dwb-import'] = array(
+    'title' => 'Bakeries import',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('dwb_import_bakeries_form'),
+    'access arguments' => array('bakeries import'),
+    'type' => MENU_SUGGESTED_ITEM,
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function dwb_import_permission() {
+  return array(
+    'bakeries import' => array(
+      'title' => t('Bakeries import'),
+      'description' => t('Import bakeries from CSV.'),
+      'restrict access' => true,
+    ),
+  );
+}
+
+/**
+ * dwb_import_bakeries_form CALLBACK
+ */
+function dwb_import_bakeries_form($form, &$form_state) {
+  $form['dwb_import'] = array(
+      '#type' => 'fieldset',
+      '#title' => 'Import form'
+  );
+
+//  $vocabulary = taxonomy_get_tree(NOPIX_IMPORT_VOCABULARY_ID);
+//   $options = array();
+
+//   foreach ($vocabulary as $term) {
+//     $options[$term->tid] = $term->name;
+//   }
+
+  $form['dwb_import']['import_file'] = array(
+      '#type' => 'managed_file',
+      '#title' => 'CSV file',
+      '#description' => 'File format: CSV. <span style="color: red; font-weight: bold;">You have to use UTF-8 encoded file.</span>',
+      '#default_value' => variable_get('import_file', ''),
+      '#upload_validators' => array(
+        'file_validate_extensions' => array('csv'),
+      ),
+      '#upload_location' => DWB_IMPORT_FILES_DIR,
+      '#required' => TRUE
+  );
+
+  $form['dwb_import']['import_submit'] = array(
+      '#type' => 'submit',
+      '#value' => 'Import',
+  );
+
+  return $form;
+}
+
+/**
+ * dwb_import_bakeries_form_submit CALLBACK
+ */
+function dwb_import_bakeries_form_submit(&$form, &$form_state) {
+  $file = file_load($form_state['values']['import_file']);
+  $file->status = FILE_STATUS_PERMANENT;
+  $uploaded = file_save($file);
+  
+  if ($uploaded == TRUE) {
+    drupal_set_message(t('The file has been uploaded.'));
+  }
+  else {
+    drupal_set_message(t('The file could not be uploaded.'), 'error');
+    return;
+  }
+
+  $file_path = drupal_realpath($file->uri);
+
+  _dwb_import_csv_file_process($file_path);
+
+  file_delete($file);
+}
+
+/**
+ * Process CSV file
+ * 
+ * @param string $file_path
+ */
+function _dwb_import_csv_file_process($file_path) {
+  $rows = array();
+  $csv = fopen($file_path, 'r');
+  while (($line = fgetcsv($csv)) !== FALSE) {
+    $tmp = implode('', $line);
+    if(!mb_detect_encoding($tmp, 'UTF-8', true)) {
+      drupal_set_message('Incorrect character encoding.', 'error');
+      return;
+    }
+  
+    $rows[] = $line;
+  }
+  fclose($csv);
+  
+  if(empty($rows)) {
+    drupal_set_message('Nothing to be imported.', 'warning');
+    return;
+  }
+  
+  $column_names = array (
+    0 => 'Name',
+    1 => 'Adres',
+    2 => 'adres 2',
+    3 => 'Postal code',
+    4 => 'City',
+    5 => 'Email',
+    6 => 'lattitude',
+    7 => 'logitude',
+  );
+  
+  $data_columns = array_shift($rows);
+  
+  if($data_columns == $column_names) {
+    drupal_set_message('Headers OK.');
+  } else {
+    drupal_set_message('Incorrect headers.', 'error');
+    return;
+  }
+  
+  $import_count_ok = 0;
+  $import_count_err = 0;
+  $import_ok = array();
+  $import_errors = array();
+  foreach($rows as $key => $row) {
+    if(_dwb_import_create_bakery_node($row)) {
+      $import_count_ok++;
+      $import_ok[] = sprintf('<p><strong>Row index: %s</strong>, Bakery name: %s</p>', $key+1, $row[0]);
+    } else {
+      $import_count_err++;
+      $import_errors[] = sprintf('<p><strong>Row index: %s</strong>, Bakery name: %s</p>', $key+1, $row[0]);
+    }
+  }
+  
+  drupal_set_message('Imported '.$import_count_ok.' rows.');
+  if($import_count_ok > 0) {
+    drupal_set_message(implode('', $import_ok));
+  }
+  if($import_count_err > 0) {
+    drupal_set_message('Errors '.$import_count_err, 'error');
+    drupal_set_message(implode('', $import_errors), 'error');
+  }
+}
+
+function  _dwb_import_create_bakery_node($data) {
+  global $user;
+  
+  $values = array(
+    'type' => DWB_IMPORT_NODE_TYPE,
+    'language' => 'nl',
+    'uid' => $user->uid,
+    'status' => 1,
+    'comment' => 0,
+    'promote' => 0,
+  );
+  
+  $entity = entity_create('node', $values);
+  
+  $ewrapper = entity_metadata_wrapper('node', $entity);
+  
+  $ewrapper->title->set($data[0]);
+  $new_node = new stdClass();
+  
+  $location = array(
+    'name' => $data[0],
+    'street' => $data[1],
+    'city' => $data[4],
+    'postal_code' => $data[3],
+    'country' => 'be',
+    'latitude' => $data[6],
+    'longitude' => $data[7],
+    'inhibit_geocode' => TRUE,
+  );
+  $locationID = location_save($location);
+  
+  $entity->locations[0]['lid'] = $locationID;
+  
+  $ewrapper->save();
+  
+  return isset($entity->nid) && $entity->nid > 0;
+}
