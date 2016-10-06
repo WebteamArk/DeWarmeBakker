@@ -1,5 +1,8 @@
 // Footer newsletter
 #block-webform-client-block-1
+  text-align: center
+  #webform-client-form-1
+    display: inline-block
   .webform-submit
     padding: 11px 20px
     text-align: center
@@ -15,7 +18,10 @@
       margin-top: 15px
     &:hover
       transition: all 0.5s ease
-      background: $btn-light-grey-hover
+      // background: $btn-light-grey-hover
+      transition: border-radius 0.5s ease,background-color 0.5s ease
+      // background-color: $font-dark-red
+      border-radius: 20px
     // span
     //   border-bottom: 2px solid white
     //   padding-bottom: 1px
@@ -42,6 +48,7 @@ input#edit-submitted-e-mail
   width: 480px
   +shadow
   border: 1px solid $input-footer-form
+  transition: border-radius 0.5s ease,background-color 0.5s ease
   margin-right: 20px
   @include breakpoint($t)
     width: 70%
@@ -49,6 +56,12 @@ input#edit-submitted-e-mail
   @include breakpoint($m)
     width: 80%
     margin: 0
+  &:hover,
+  &:focus
+    transition: border-radius 0.5s ease,background-color 0.5s ease
+    // background-color: $font-dark-red
+    border-radius: 20px
+    outline: 0
 
 
 input[placeholder]

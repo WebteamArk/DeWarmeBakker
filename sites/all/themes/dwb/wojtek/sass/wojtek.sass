@@ -172,6 +172,7 @@
       font-weight: 500
       color: #888
       margin: 15px 0 0 0
+      font-style: italic
     .form-required
       color: #888
     .webform-layout-box.horiz > *,
@@ -188,12 +189,12 @@
     .webform-component--street-group
       .webform-component--street-group--straat
         width: 66%
-        margin-right: 2%
+        margin-right: 0%
       .webform-component--street-group--nr
-        width: 15%
-        margin-right: 2%
+        width: 17%
+        margin-right: 0%
       .webform-component--street-group--bus
-        width: 15%
+        width: 17%
         margin-right: 0%
       @include breakpoint($m)
         .webform-component--street-group--straat,
@@ -209,10 +210,10 @@
           margin-right: 0%
     .webform-component--city-group
       .webform-component--city-group--postcode
-        width: 32%
-        margin-right: 2%
+        width: 33%
+        margin-right: 0%
       .webform-component--city-group--gemeente
-        width: 66%
+        width: 67%
         margin-right: 0%
       @include breakpoint($m)
         .webform-component--city-group--postcode,
@@ -231,30 +232,36 @@
     .form-actions
       text-align: center
       button
+        +box-shadow(0 0 10px 1px rgba(0,0,0,0.2))
         display: inline-block
-        background-color: #822a3a
-        box-shadow: 0 3px 10px black
-        height: 40px
-        margin: 0 auto 50px
+        padding: 5px 10px
+        line-height: 30px
         text-align: center
+        text-transform: uppercase
         transition: border-radius 1s ease 0s, background-color 1s ease 0s
+        color: #333
+        font-weight: 500
+        text-decoration: none
         border: none
-        padding: 0 20px
-        span
-          border-bottom: 3px solid #fff
-          color: #fff
-          display: inline
-          font-size: 14px
-          font-weight: bold
-          line-height: 35px
-          text-transform: uppercase
-          transition: color 0.5s ease 0s, border-color 0.5s ease 0s
+        background: #fff
+        min-width: 200px
+        text-align: center
+        // span
+        //   border-bottom: 3px solid #fff
+        //   color: #fff
+        //   display: inline
+        //   font-size: 14px
+        //   font-weight: bold
+        //   line-height: 35px
+        //   text-transform: uppercase
+        //   transition: color 0.5s ease 0s, border-color 0.5s ease 0s
         &:hover
-          +border-radius(20px)
-          background: #fff
-          span
-            border-bottom: 3px solid #822a3a
-            color: #822a3a
+          border-radius: 20px
+          transition: border-radius 0.5s ease 0s, background-color 0.5s ease 0s
+
+          // span
+          //   border-bottom: 3px solid #822a3a
+          //   color: #822a3a
   article
     .field-type-text-long
       a

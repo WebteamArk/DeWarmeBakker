@@ -315,17 +315,17 @@ Drupal.behaviors.dwbAnimateAnchor = {
   },
 };
 
-//Drupal.behaviors.dwbMobileMenu = {
-//  attach: function(context, settings) {
-//    $('#off-canvas-menu ul', context).once('dwb-mobile-menu', function () {
-//      console.debug('dwbMobileMenu');
-//      var $that = $(this);
-//      $('#block-locale-language ul.language-switcher-locale-url li', context).each(function () {
-//        $that.append($(this));
-//      });
-//    });
-//  },
-//};
+Drupal.behaviors.dwbMobileMenu = {
+  attach: function(context, settings) {
+    $('#off-canvas-menu ul', context).once('dwb-mobile-menu', function () {
+      console.debug('dwbMobileMenu');
+      var $that = $(this);
+      $('#block-locale-language ul.language-switcher-locale-url li', context).each(function () {
+        $that.append($(this));
+      });
+    });
+  },
+};
 
 Drupal.behaviors.dwbLinkToButton = {
   attach: function(context, settings) {
@@ -365,13 +365,34 @@ Drupal.behaviors.dwbPlaceholder = {
     });
   },
 };
+Drupal.behaviors.dwbFixTileTitle = {
+  attach: function(context, settings) {
+    setInterval(function () {
+      $('.tile-shape-1 .node .ds-2col > .group-right h2.tile-title', context).once('dwb-fix-tile-title', function () {
+        Drupal.behaviors.dwbFixTileTitle.calculateHeight(this);
+      });
+    }, 300);
+  },
+  calculateHeight: function (elem) {
+    var height = $(elem).height();
+    $(elem).closest('.group-right').css('margin-top', -(height/2) - 10);
+  },
+};
 
-$(document).ajaxComplete(function(){
+$(document).ajaxComplete(function() {
   Drupal.attachBehaviors();
+  $('.tile-shape-1 .node .ds-2col > .group-right h2.tile-title').each(function () {
+    Drupal.behaviors.dwbFixTileTitle.calculateHeight(this);
+  });
 });
 
 $(window).resize( function () {
-  Drupal.attachBehaviors('#superfish-2');
+  //Drupal.attachBehaviors('#off-canvas-menu');
+  setInterval(function () {
+    $('.tile-shape-1 .node .ds-2col > .group-right h2.tile-title').each( function () {
+      Drupal.behaviors.dwbFixTileTitle.calculateHeight(this);
+    });
+  }, 300);
 });
 
 })(jQuery, Drupal, this, this.document);

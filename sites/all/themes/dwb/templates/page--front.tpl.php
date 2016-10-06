@@ -6,11 +6,13 @@
     position: absolute;
     overflow: hidden;
     width: 100%;
-    height: 20px;
+    height: 100px;
     left: 0;
-    bottom: -14px;
+    top: 100%;
     z-index: 10;
-    background: transparent url('http://slot1.dummysite.eu/sites/all/themes/dwb/css/i/zigzag.png') repeat-x left bottom;
+    background: transparent url('http://slot1.dummysite.eu/sites/all/themes/dwb/css/i/zigzag4.png') repeat-x left bottom;
+    margin-top: -5px;
+    pointer-events: none;
   }
 
 </style>

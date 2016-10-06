@@ -104,7 +104,7 @@ body {
 a {
   color: #822a3a;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: normal;
 }
 /* line 61, ../sass/elements/_common.sass */
 a:hover {
@@ -227,7 +227,7 @@ a:hover {
 .front ul.pager.pager-load-more a {
   color: #822a3a;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: normal;
   border-bottom: 2px solid #822a3a;
   padding-bottom: 2px;
 }
@@ -375,8 +375,8 @@ a:hover {
 .tile-shape-1 {
   padding-bottom: 25%;
 }
-/* line 123, ../sass/_mixins.sass */
-.tile-shape-1:hover .tile-title-outer {
+/* line 129, ../sass/_mixins.sass */
+.tile-shape-1:hover .tile-title {
   transition: border-radius 0.5s ease, background-color 0.5s ease;
   border-radius: 20px;
 }
@@ -424,132 +424,128 @@ a:hover {
 }
 /* line 114, ../sass/elements/_masonry.sass */
 .tile-shape-1 .tile-title-outer {
-  max-width: 200px;
   text-align: center;
   margin: 0 auto;
-  background: white;
-  box-sizing: border-box;
-  padding: 10px;
-  transition: border-radius 1s ease, background-color 1s ease;
-  -webkit-box-shadow: 0px 3px 10px black;
-  -moz-box-shadow: 0px 3px 10px black;
-  box-shadow: 0px 3px 10px black;
+  padding: 0 20%;
+  text-align: center;
+  display: block;
   position: relative;
-  top: 42%;
-  line-height: 0;
 }
-@media (min-width: 1280px) {
-  /* line 114, ../sass/elements/_masonry.sass */
-  .tile-shape-1 .tile-title-outer {
-    max-width: 160px;
-  }
-}
-@media (min-width: 768px) and (max-width: 1019px) {
-  /* line 114, ../sass/elements/_masonry.sass */
-  .tile-shape-1 .tile-title-outer {
-    max-width: 60%;
-  }
-}
-@media (max-width: 767px) {
-  /* line 114, ../sass/elements/_masonry.sass */
-  .tile-shape-1 .tile-title-outer {
-    max-width: 60%;
-  }
-}
-/* line 139, ../sass/elements/_masonry.sass */
+/* line 134, ../sass/elements/_masonry.sass */
 .tile-shape-1 .tile-title-outer .tile-title {
   font-size: 14px;
   text-transform: uppercase;
   font-weight: normal;
   line-height: 20px;
   color: #822a3a;
-  display: inline-block;
-  margin: 0;
+  display: block;
   max-height: 40px;
   overflow: hidden;
   -webkit-margin-before: 0;
   -webkit-margin-after: 0;
   -webkit-margin-start: 0;
   -webkit-margin-end: 0;
+  background: white;
+  padding: 0 10px;
+  border-top: 10px solid white;
+  border-bottom: 10px solid white;
+  transition: border-radius 1s ease, background-color 1s ease;
+  -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+  margin: 0 auto 0 auto;
+  max-width: 500px;
 }
-/* line 162, ../sass/elements/_masonry.sass */
+@media (min-width: 768px) and (max-width: 1019px) {
+  /* line 134, ../sass/elements/_masonry.sass */
+  .tile-shape-1 .tile-title-outer .tile-title {
+    font-size: 12px;
+    line-height: 15px;
+    max-height: 30px;
+  }
+}
+/* line 173, ../sass/elements/_masonry.sass */
 .tile-shape-1 .node {
   padding: 25px;
+  position: relative;
 }
 @media (max-width: 767px) {
-  /* line 162, ../sass/elements/_masonry.sass */
+  /* line 173, ../sass/elements/_masonry.sass */
   .tile-shape-1 .node {
     padding: 15px;
   }
 }
 @media (min-width: 768px) and (max-width: 1019px) {
-  /* line 162, ../sass/elements/_masonry.sass */
+  /* line 173, ../sass/elements/_masonry.sass */
   .tile-shape-1 .node {
     padding: 20px;
   }
 }
-/* line 169, ../sass/elements/_masonry.sass */
+/* line 181, ../sass/elements/_masonry.sass */
 .tile-shape-1 .node .ds-2col > .group-left {
-  width: 100%;
+  width: auto;
+  float: none;
   position: relative;
 }
-/* line 172, ../sass/elements/_masonry.sass */
+/* line 185, ../sass/elements/_masonry.sass */
 .tile-shape-1 .node .ds-2col > .group-left img {
   transition: all 0.5s ease;
 }
-/* line 174, ../sass/elements/_masonry.sass */
+/* line 187, ../sass/elements/_masonry.sass */
 .tile-shape-1 .node .ds-2col > .group-right {
   width: 100%;
   position: absolute;
-  height: 100%;
-  top: 0;
+  top: 50%;
   left: 0;
+  display: block;
+  box-sizing: border-box;
+  padding: 0;
 }
-/* line 180, ../sass/elements/_masonry.sass */
+/* line 195, ../sass/elements/_masonry.sass */
 .tile-shape-1 .node .ds-2col > .group-right .field-item {
   border-bottom: 2px solid #822a3a;
   padding-bottom: 2px;
   display: inline-block;
 }
 
-/* line 187, ../sass/elements/_masonry.sass */
+/* line 202, ../sass/elements/_masonry.sass */
 .tile-shape-2 {
   padding-bottom: 50%;
 }
-/* line 189, ../sass/_mixins.sass */
+/* line 195, ../sass/_mixins.sass */
 .tile-shape-2:hover .node {
   transition: all 0.5s ease;
   background: rgba(255, 255, 255, 0.9);
 }
-/* line 191, ../sass/elements/_masonry.sass */
+/* line 206, ../sass/elements/_masonry.sass */
 .tile-shape-2 .field-name-node-link {
   display: none;
 }
 @media (max-width: 767px) {
-  /* line 187, ../sass/elements/_masonry.sass */
+  /* line 202, ../sass/elements/_masonry.sass */
   .tile-shape-2 {
     padding-bottom: 100%;
   }
 }
 @media (min-width: 768px) and (max-width: 1019px) {
-  /* line 187, ../sass/elements/_masonry.sass */
+  /* line 202, ../sass/elements/_masonry.sass */
   .tile-shape-2 {
     padding-bottom: 100%;
   }
 }
 @media (min-width: 1020px) {
-  /* line 187, ../sass/elements/_masonry.sass */
+  /* line 202, ../sass/elements/_masonry.sass */
   .tile-shape-2 {
     padding-bottom: 66%;
   }
 }
 @media (min-width: 1280px) {
-  /* line 187, ../sass/elements/_masonry.sass */
+  /* line 202, ../sass/elements/_masonry.sass */
   .tile-shape-2 {
     padding-bottom: 50%;
   }
 }
-/* line 201, ../sass/elements/_masonry.sass */
+/* line 216, ../sass/elements/_masonry.sass */
 .tile-shape-2 .tile-title {
   font-family: "Dancing Script", cursive;
   font-size: 35px;
@@ -566,18 +562,18 @@ a:hover {
   overflow: hidden;
   padding-left: 3px;
 }
-/* line 216, ../sass/elements/_masonry.sass */
+/* line 231, ../sass/elements/_masonry.sass */
 .tile-shape-2 .tile-text {
   margin: 10px 0;
   max-height: 60px;
   overflow: hidden;
   line-height: 20px;
 }
-/* line 221, ../sass/elements/_masonry.sass */
+/* line 236, ../sass/elements/_masonry.sass */
 .tile-shape-2 .tile-more-link {
   text-transform: uppercase;
 }
-/* line 223, ../sass/elements/_masonry.sass */
+/* line 238, ../sass/elements/_masonry.sass */
 .tile-shape-2 .tile-more-link .squareToRound {
   transition: none;
   width: auto;
@@ -589,14 +585,14 @@ a:hover {
   -moz-box-shadow: none;
   box-shadow: none;
 }
-/* line 233, ../sass/elements/_masonry.sass */
+/* line 248, ../sass/elements/_masonry.sass */
 .tile-shape-2 .tile-more-link .squareToRound p {
   padding: 0;
   border-bottom: solid 1px #822a3a;
   line-height: 24px;
   padding-bottom: 2px;
 }
-/* line 239, ../sass/elements/_masonry.sass */
+/* line 254, ../sass/elements/_masonry.sass */
 .tile-shape-2 .node {
   height: calc(100% - 50px);
   background: rgba(255, 255, 255, 0.6);
@@ -604,86 +600,86 @@ a:hover {
   transition: all 0.5s ease;
 }
 @media (max-width: 767px) {
-  /* line 239, ../sass/elements/_masonry.sass */
+  /* line 254, ../sass/elements/_masonry.sass */
   .tile-shape-2 .node {
     padding: 15px;
     height: calc(100% - 30px);
   }
 }
 @media (min-width: 768px) and (max-width: 1019px) {
-  /* line 239, ../sass/elements/_masonry.sass */
+  /* line 254, ../sass/elements/_masonry.sass */
   .tile-shape-2 .node {
     padding: 20px;
     height: calc(100% - 40px);
   }
 }
-/* line 252, ../sass/elements/_masonry.sass */
+/* line 267, ../sass/elements/_masonry.sass */
 .tile-shape-2 .node .ds-2col > .group-left {
   width: 100%;
   position: relative;
 }
-/* line 255, ../sass/elements/_masonry.sass */
+/* line 270, ../sass/elements/_masonry.sass */
 .tile-shape-2 .node .ds-2col > .group-right {
   width: 100%;
   position: relative;
 }
 
-/* line 262, ../sass/elements/_masonry.sass */
+/* line 277, ../sass/elements/_masonry.sass */
 .tile-shape-3 {
   width: 50%;
   padding-bottom: 25%;
 }
-/* line 189, ../sass/_mixins.sass */
+/* line 195, ../sass/_mixins.sass */
 .tile-shape-3:hover .node {
   transition: all 0.5s ease;
   background: rgba(255, 255, 255, 0.9);
 }
-/* line 268, ../sass/elements/_masonry.sass */
+/* line 283, ../sass/elements/_masonry.sass */
 .tile-shape-3 .node {
   background: rgba(255, 255, 255, 0.6);
   padding: 25px;
   height: calc(100% - 50px);
 }
-/* line 272, ../sass/elements/_masonry.sass */
+/* line 287, ../sass/elements/_masonry.sass */
 .tile-shape-3 .field-name-node-link {
   display: none;
 }
 @media (max-width: 640px) {
-  /* line 262, ../sass/elements/_masonry.sass */
+  /* line 277, ../sass/elements/_masonry.sass */
   .tile-shape-3 {
     width: 100%;
     padding-bottom: 100%;
   }
 }
 @media (max-width: 767px) {
-  /* line 262, ../sass/elements/_masonry.sass */
+  /* line 277, ../sass/elements/_masonry.sass */
   .tile-shape-3 {
     width: 100%;
     padding-bottom: 50%;
   }
 }
 @media (min-width: 768px) and (max-width: 1019px) {
-  /* line 262, ../sass/elements/_masonry.sass */
+  /* line 277, ../sass/elements/_masonry.sass */
   .tile-shape-3 {
     width: 100%;
     padding-bottom: 50%;
   }
 }
 @media (min-width: 1020px) {
-  /* line 262, ../sass/elements/_masonry.sass */
+  /* line 277, ../sass/elements/_masonry.sass */
   .tile-shape-3 {
     width: 66%;
     padding-bottom: 33%;
   }
 }
 @media (min-width: 1280px) {
-  /* line 262, ../sass/elements/_masonry.sass */
+  /* line 277, ../sass/elements/_masonry.sass */
   .tile-shape-3 {
     width: 50%;
     padding-bottom: 25%;
   }
 }
-/* line 289, ../sass/elements/_masonry.sass */
+/* line 304, ../sass/elements/_masonry.sass */
 .tile-shape-3 .tile-title {
   font-family: "Dancing Script", cursive;
   font-size: 35px;
@@ -699,7 +695,7 @@ a:hover {
   overflow: hidden;
   padding-left: 3px;
 }
-/* line 303, ../sass/elements/_masonry.sass */
+/* line 318, ../sass/elements/_masonry.sass */
 .tile-shape-3 .tile-text {
   margin: 10px 0;
   max-height: 60px;
@@ -707,22 +703,22 @@ a:hover {
   line-height: 20px;
 }
 @media (min-width: 768px) and (max-width: 1019px) {
-  /* line 303, ../sass/elements/_masonry.sass */
+  /* line 318, ../sass/elements/_masonry.sass */
   .tile-shape-3 .tile-text {
     max-height: 40px;
   }
 }
 @media (max-width: 767px) {
-  /* line 303, ../sass/elements/_masonry.sass */
+  /* line 318, ../sass/elements/_masonry.sass */
   .tile-shape-3 .tile-text {
     max-height: 40px;
   }
 }
-/* line 312, ../sass/elements/_masonry.sass */
+/* line 327, ../sass/elements/_masonry.sass */
 .tile-shape-3 .tile-more-link {
   text-transform: uppercase;
 }
-/* line 314, ../sass/elements/_masonry.sass */
+/* line 329, ../sass/elements/_masonry.sass */
 .tile-shape-3 .tile-more-link .squareToRound {
   transition: none;
   width: auto;
@@ -734,137 +730,137 @@ a:hover {
   -moz-box-shadow: none;
   box-shadow: none;
 }
-/* line 324, ../sass/elements/_masonry.sass */
+/* line 339, ../sass/elements/_masonry.sass */
 .tile-shape-3 .tile-more-link .squareToRound p {
   padding: 0;
   border-bottom: solid 1px #822a3a;
   line-height: 24px;
   padding-bottom: 2px;
 }
-/* line 329, ../sass/elements/_masonry.sass */
+/* line 344, ../sass/elements/_masonry.sass */
 .tile-shape-3 .node {
   transition: all 0.5s ease;
 }
 @media (max-width: 767px) {
-  /* line 329, ../sass/elements/_masonry.sass */
+  /* line 344, ../sass/elements/_masonry.sass */
   .tile-shape-3 .node {
     padding: 15px;
     height: calc(100% - 30px);
   }
 }
 @media (min-width: 768px) and (max-width: 1019px) {
-  /* line 329, ../sass/elements/_masonry.sass */
+  /* line 344, ../sass/elements/_masonry.sass */
   .tile-shape-3 .node {
     padding: 20px;
     height: calc(100% - 40px);
   }
 }
-/* line 343, ../sass/elements/_masonry.sass */
+/* line 358, ../sass/elements/_masonry.sass */
 .tile-shape-3 .node .ds-2col > .group-left {
   width: 41.5%;
   position: relative;
 }
 @media (min-width: 768px) and (max-width: 1019px) {
-  /* line 343, ../sass/elements/_masonry.sass */
+  /* line 358, ../sass/elements/_masonry.sass */
   .tile-shape-3 .node .ds-2col > .group-left {
     width: 41.5%;
   }
 }
 @media (max-width: 767px) {
-  /* line 343, ../sass/elements/_masonry.sass */
+  /* line 358, ../sass/elements/_masonry.sass */
   .tile-shape-3 .node .ds-2col > .group-left {
     width: 45%;
   }
 }
-/* line 350, ../sass/elements/_masonry.sass */
+/* line 365, ../sass/elements/_masonry.sass */
 .tile-shape-3 .node .ds-2col > .group-right {
   width: 50%;
   position: relative;
   margin-left: 7%;
 }
 @media (min-width: 768px) and (max-width: 1019px) {
-  /* line 350, ../sass/elements/_masonry.sass */
+  /* line 365, ../sass/elements/_masonry.sass */
   .tile-shape-3 .node .ds-2col > .group-right {
     margin-left: 4%;
   }
 }
 @media (max-width: 767px) {
-  /* line 350, ../sass/elements/_masonry.sass */
+  /* line 365, ../sass/elements/_masonry.sass */
   .tile-shape-3 .node .ds-2col > .group-right {
     margin-left: 4%;
   }
 }
-/* line 358, ../sass/elements/_masonry.sass */
+/* line 373, ../sass/elements/_masonry.sass */
 .tile-shape-3 .node .ds-2col > .group-right .field-item {
   border-bottom: 2px solid #822a3a;
   padding-bottom: 2px;
   display: inline-block;
 }
 
-/* line 365, ../sass/elements/_masonry.sass */
+/* line 380, ../sass/elements/_masonry.sass */
 .tile-shape-4 {
   width: 50%;
   padding-bottom: 50%;
 }
-/* line 139, ../sass/_mixins.sass */
+/* line 145, ../sass/_mixins.sass */
 .tile-shape-4:hover .squareToRound {
   transition: border-radius 0.5s ease, background-color 0.5s ease;
   border-radius: 20px;
 }
-/* line 148, ../sass/_mixins.sass */
+/* line 154, ../sass/_mixins.sass */
 .tile-shape-4:hover .group-left img {
   transition: all 0.5s ease;
   background: rgba(255, 255, 255, 0);
 }
-/* line 154, ../sass/_mixins.sass */
+/* line 160, ../sass/_mixins.sass */
 .tile-shape-4:hover .node .ds-2col > .group-right {
   width: 100%;
   background: rgba(255, 255, 255, 0.9);
   transition: all 0.5s ease;
 }
-/* line 158, ../sass/_mixins.sass */
+/* line 164, ../sass/_mixins.sass */
 .tile-shape-4:hover .node .ds-2col > .group-right:before {
   transition: all 0.5s ease;
   opacity: 0.9;
 }
-/* line 161, ../sass/_mixins.sass */
+/* line 167, ../sass/_mixins.sass */
 .tile-shape-4:hover .node .ds-2col > .group-right:after {
   transition: all 0.5s ease;
   opacity: 0.9;
 }
-/* line 370, ../sass/elements/_masonry.sass */
+/* line 385, ../sass/elements/_masonry.sass */
 .tile-shape-4 .field-name-node-link {
   display: none;
 }
 @media (max-width: 767px) {
-  /* line 365, ../sass/elements/_masonry.sass */
+  /* line 380, ../sass/elements/_masonry.sass */
   .tile-shape-4 {
     width: 100%;
     padding-bottom: 100%;
   }
 }
 @media (min-width: 768px) and (max-width: 1019px) {
-  /* line 365, ../sass/elements/_masonry.sass */
+  /* line 380, ../sass/elements/_masonry.sass */
   .tile-shape-4 {
     width: 100%;
     padding-bottom: 100%;
   }
 }
 @media (min-width: 1020px) {
-  /* line 365, ../sass/elements/_masonry.sass */
+  /* line 380, ../sass/elements/_masonry.sass */
   .tile-shape-4 {
     width: 66%;
     padding-bottom: 66%;
   }
 }
 @media (min-width: 1280px) {
-  /* line 365, ../sass/elements/_masonry.sass */
+  /* line 380, ../sass/elements/_masonry.sass */
   .tile-shape-4 {
     width: 50%;
     padding-bottom: 50%;
   }
 }
-/* line 384, ../sass/elements/_masonry.sass */
+/* line 399, ../sass/elements/_masonry.sass */
 .tile-shape-4 .tile-title {
   text-align: center;
   font-family: "Dancing Script", cursive;
@@ -883,7 +879,15 @@ a:hover {
   max-height: 120px;
   overflow: hidden;
 }
-/* line 402, ../sass/elements/_masonry.sass */
+@media (min-width: 768px) and (max-width: 1019px) {
+  /* line 399, ../sass/elements/_masonry.sass */
+  .tile-shape-4 .tile-title {
+    font-size: 25px;
+    line-height: 30px;
+    max-height: 60px;
+  }
+}
+/* line 421, ../sass/elements/_masonry.sass */
 .tile-shape-4 .tile-text {
   text-align: center;
   margin: 20px 50px;
@@ -892,7 +896,15 @@ a:hover {
   max-height: 60px;
   overflow: hidden;
 }
-/* line 409, ../sass/elements/_masonry.sass */
+@media (min-width: 768px) and (max-width: 1019px) {
+  /* line 421, ../sass/elements/_masonry.sass */
+  .tile-shape-4 .tile-text {
+    font-size: 12px;
+    line-height: 16px;
+    max-height: 48px;
+  }
+}
+/* line 432, ../sass/elements/_masonry.sass */
 .tile-shape-4 .tile-more-link {
   text-align: center;
   padding: 15px 10px;
@@ -902,31 +914,31 @@ a:hover {
   display: block;
   margin: 0 auto;
 }
-/* line 419, ../sass/elements/_masonry.sass */
+/* line 442, ../sass/elements/_masonry.sass */
 .tile-shape-4 .tile-more-link .squareToRound {
   margin-bottom: 40px;
 }
-/* line 422, ../sass/elements/_masonry.sass */
+/* line 445, ../sass/elements/_masonry.sass */
 .tile-shape-4 .node {
   padding: 25px;
   box-sizing: border-box;
 }
-/* line 431, ../sass/elements/_masonry.sass */
+/* line 454, ../sass/elements/_masonry.sass */
 .tile-shape-4 .node .ds-2col {
   width: 100%;
   height: 100%;
   position: relative;
 }
-/* line 435, ../sass/elements/_masonry.sass */
+/* line 458, ../sass/elements/_masonry.sass */
 .tile-shape-4 .node .ds-2col > .group-left {
   width: 100%;
   position: relative;
 }
-/* line 438, ../sass/elements/_masonry.sass */
+/* line 461, ../sass/elements/_masonry.sass */
 .tile-shape-4 .node .ds-2col > .group-left img {
   transition: all 0.5s ease;
 }
-/* line 440, ../sass/elements/_masonry.sass */
+/* line 463, ../sass/elements/_masonry.sass */
 .tile-shape-4 .node .ds-2col > .group-right {
   width: 100%;
   transition: all 0.5s ease;
@@ -935,7 +947,7 @@ a:hover {
   top: 25%;
   left: 0;
 }
-/* line 447, ../sass/elements/_masonry.sass */
+/* line 470, ../sass/elements/_masonry.sass */
 .tile-shape-4 .node .ds-2col > .group-right:before {
   content: "";
   position: absolute;
@@ -947,7 +959,7 @@ a:hover {
   left: 0;
   transition: all 0.5s ease;
 }
-/* line 450, ../sass/elements/_masonry.sass */
+/* line 473, ../sass/elements/_masonry.sass */
 .tile-shape-4 .node .ds-2col > .group-right:after {
   content: "";
   position: absolute;
@@ -960,38 +972,38 @@ a:hover {
   visibility: visible;
   transition: all 0.5s ease;
 }
-/* line 453, ../sass/elements/_masonry.sass */
+/* line 476, ../sass/elements/_masonry.sass */
 .tile-shape-4 .node .ds-2col > .group-right .field-item {
   border-bottom: 2px solid #822a3a;
   padding-bottom: 2px;
   display: inline-block;
 }
 
-/* line 169, ../sass/_mixins.sass */
+/* line 175, ../sass/_mixins.sass */
 .tile-shape-4:hover .group-left img {
   transition: all 0.5s ease;
   background: rgba(255, 255, 255, 0);
 }
-/* line 175, ../sass/_mixins.sass */
+/* line 181, ../sass/_mixins.sass */
 .tile-shape-4:hover .node-action .ds-2col > .group-right {
   width: 100%;
   background: rgba(130, 42, 58, 0.9);
 }
-/* line 178, ../sass/_mixins.sass */
+/* line 184, ../sass/_mixins.sass */
 .tile-shape-4:hover .node-action .squareToRound {
   transition: border-radius 0.5s ease, background-color 0.5s ease;
   background-color: white;
   border-radius: 20px;
 }
-/* line 182, ../sass/_mixins.sass */
+/* line 188, ../sass/_mixins.sass */
 .tile-shape-4:hover .node-action .squareToRound p {
   color: #822a3a;
 }
-/* line 462, ../sass/elements/_masonry.sass */
+/* line 485, ../sass/elements/_masonry.sass */
 .tile-shape-4 .node-action .ds-2col > .group-right {
   background: rgba(130, 42, 58, 0.7);
 }
-/* line 464, ../sass/elements/_masonry.sass */
+/* line 487, ../sass/elements/_masonry.sass */
 .tile-shape-4 .node-action .ds-2col > .group-right:before {
   content: "";
   position: absolute;
@@ -1001,7 +1013,7 @@ a:hover {
   background: url("../images/zigzag.png") repeat-x;
   opacity: 0.7;
 }
-/* line 466, ../sass/elements/_masonry.sass */
+/* line 489, ../sass/elements/_masonry.sass */
 .tile-shape-4 .node-action .ds-2col > .group-right:after {
   content: "";
   position: absolute;
@@ -1011,13 +1023,13 @@ a:hover {
   background: url("../images/zigzagd.png") repeat-x;
   opacity: 0.7;
 }
-/* line 468, ../sass/elements/_masonry.sass */
+/* line 491, ../sass/elements/_masonry.sass */
 .tile-shape-4 .node-action .ds-2col > .group-right .field-item {
   border-bottom: 2px solid #822a3a;
   padding-bottom: 2px;
   display: inline-block;
 }
-/* line 472, ../sass/elements/_masonry.sass */
+/* line 495, ../sass/elements/_masonry.sass */
 .tile-shape-4 .node-action .ds-2col > .group-right .tile-title {
   font-family: "Open Sans", sans-serif;
   font-size: 50px;
@@ -1025,9 +1037,25 @@ a:hover {
   color: white;
   font-weight: bold;
 }
-/* line 478, ../sass/elements/_masonry.sass */
+@media (min-width: 768px) and (max-width: 1019px) {
+  /* line 495, ../sass/elements/_masonry.sass */
+  .tile-shape-4 .node-action .ds-2col > .group-right .tile-title {
+    font-size: 30px;
+    line-height: 33px;
+    max-height: 66px;
+  }
+}
+/* line 505, ../sass/elements/_masonry.sass */
 .tile-shape-4 .node-action .ds-2col > .group-right .tile-text {
   color: white;
+}
+@media (min-width: 768px) and (max-width: 1019px) {
+  /* line 505, ../sass/elements/_masonry.sass */
+  .tile-shape-4 .node-action .ds-2col > .group-right .tile-text {
+    font-size: 12px;
+    line-height: 16px;
+    max-height: 48px;
+  }
 }
 
 /* line 2, ../sass/elements/_header.sass */
@@ -1140,7 +1168,7 @@ a:hover {
 /* line 70, ../sass/elements/_header.sass */
 .link-t-search span {
   color: #822a3a;
-  font-weight: bold;
+  font-weight: normal;
   width: 100%;
   height: 100%;
   display: block;
@@ -1199,10 +1227,10 @@ ul#superfish-1.first,
 ul.language-switcher-locale-url.first {
   margin-left: 0;
 }
-/* line 47, ../sass/_mixins.sass */
+/* line 51, ../sass/_mixins.sass */
 ul#superfish-1 a.active,
 ul.language-switcher-locale-url a.active {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.6);
   line-height: 14px;
   font-size: 14px;
   padding-bottom: 4px;
@@ -1210,8 +1238,9 @@ ul.language-switcher-locale-url a.active {
   color: rgba(0, 0, 0, 0.6);
   text-transform: uppercase;
   text-decoration: none;
+  font-weight: normal;
 }
-/* line 56, ../sass/_mixins.sass */
+/* line 61, ../sass/_mixins.sass */
 ul#superfish-1 a:not(.active),
 ul.language-switcher-locale-url a:not(.active) {
   text-transform: uppercase;
@@ -1220,34 +1249,34 @@ ul.language-switcher-locale-url a:not(.active) {
   font-size: 14px;
   color: rgba(0, 0, 0, 0.6);
 }
-/* line 62, ../sass/_mixins.sass */
+/* line 67, ../sass/_mixins.sass */
 ul#superfish-1 a:not(.active):after,
 ul.language-switcher-locale-url a:not(.active):after {
   content: "";
   display: block;
-  border-bottom: solid 1px black;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.6);
   transform: scaleX(0);
   transition: transform 450ms ease-in;
 }
-/* line 68, ../sass/_mixins.sass */
+/* line 73, ../sass/_mixins.sass */
 ul#superfish-1 a:not(.active):hover:after,
 ul.language-switcher-locale-url a:not(.active):hover:after {
   transform: scaleX(1);
 }
-/* line 70, ../sass/_mixins.sass */
+/* line 75, ../sass/_mixins.sass */
 ul#superfish-1 a.active,
 ul.language-switcher-locale-url a.active {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
   line-height: 14px;
   font-size: 14px;
   padding-bottom: 3px;
 }
-/* line 75, ../sass/_mixins.sass */
+/* line 80, ../sass/_mixins.sass */
 ul#superfish-1 a.active:after,
 ul.language-switcher-locale-url a.active:after {
   content: "";
 }
-/* line 77, ../sass/_mixins.sass */
+/* line 82, ../sass/_mixins.sass */
 ul#superfish-1 a.active:hover:after,
 ul.language-switcher-locale-url a.active:hover:after {
   transform: none;
@@ -1495,9 +1524,9 @@ a#superfish-2-toggle.sf-expanded:after {
   text-align: center;
   margin: 0 auto;
   background-color: white;
-  -webkit-box-shadow: 0px 3px 10px black;
-  -moz-box-shadow: 0px 3px 10px black;
-  box-shadow: 0px 3px 10px black;
+  -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
 }
 /* line 337, ../sass/elements/_header.sass */
 .squaretoRoundLink .squareToRound p {
@@ -1520,16 +1549,24 @@ a#superfish-2-toggle.sf-expanded:after {
   transition: color 0.5s ease, border-color 0.5s ease;
 }
 
-/* line 363, ../sass/elements/_header.sass */
-.not-front #logo {
-  display: inline-block;
+/* line 372, ../sass/elements/_header.sass */
+.not-front #header {
   text-align: center;
-  margin: 0 auto;
-  margin-right: -4px;
 }
-/* line 368, ../sass/elements/_header.sass */
+/* line 374, ../sass/elements/_header.sass */
 .not-front .logo-search {
-  text-align: center;
+  display: inline-block;
+}
+/* line 376, ../sass/elements/_header.sass */
+.not-front #logo {
+  float: left;
+  display: block;
+  margin: 0;
+}
+/* line 381, ../sass/elements/_header.sass */
+.not-front .link-t-search.desktop {
+  float: left;
+  display: block;
 }
 
 /* line 1, ../sass/elements/_footer.sass */
@@ -1581,7 +1618,7 @@ a#superfish-2-toggle.sf-expanded:after {
   text-transform: uppercase;
   font-size: 12px;
   text-align: center;
-  font-weight: bold;
+  font-weight: normal;
   margin-top: -24px;
   z-index: 1;
 }
@@ -1672,9 +1709,9 @@ a#superfish-2-toggle.sf-expanded:after {
 #block-menu-block-1 ul.menu li.first {
   margin-left: 0;
 }
-/* line 47, ../sass/_mixins.sass */
+/* line 51, ../sass/_mixins.sass */
 #block-menu-block-1 ul.menu li a.active {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.6);
   line-height: 14px;
   font-size: 14px;
   padding-bottom: 4px;
@@ -1682,8 +1719,9 @@ a#superfish-2-toggle.sf-expanded:after {
   color: rgba(0, 0, 0, 0.6);
   text-transform: uppercase;
   text-decoration: none;
+  font-weight: normal;
 }
-/* line 56, ../sass/_mixins.sass */
+/* line 61, ../sass/_mixins.sass */
 #block-menu-block-1 ul.menu li a:not(.active) {
   text-transform: uppercase;
   text-decoration: none;
@@ -1691,30 +1729,30 @@ a#superfish-2-toggle.sf-expanded:after {
   font-size: 14px;
   color: rgba(0, 0, 0, 0.6);
 }
-/* line 62, ../sass/_mixins.sass */
+/* line 67, ../sass/_mixins.sass */
 #block-menu-block-1 ul.menu li a:not(.active):after {
   content: "";
   display: block;
-  border-bottom: solid 1px black;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.6);
   transform: scaleX(0);
   transition: transform 450ms ease-in;
 }
-/* line 68, ../sass/_mixins.sass */
+/* line 73, ../sass/_mixins.sass */
 #block-menu-block-1 ul.menu li a:not(.active):hover:after {
   transform: scaleX(1);
 }
-/* line 70, ../sass/_mixins.sass */
+/* line 75, ../sass/_mixins.sass */
 #block-menu-block-1 ul.menu li a.active {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
   line-height: 14px;
   font-size: 14px;
   padding-bottom: 3px;
 }
-/* line 75, ../sass/_mixins.sass */
+/* line 80, ../sass/_mixins.sass */
 #block-menu-block-1 ul.menu li a.active:after {
   content: "";
 }
-/* line 77, ../sass/_mixins.sass */
+/* line 82, ../sass/_mixins.sass */
 #block-menu-block-1 ul.menu li a.active:hover:after {
   transform: none;
 }
@@ -1805,14 +1843,14 @@ a#superfish-2-toggle.sf-expanded:after {
 /* line 3, ../sass/elements/_paragraphs.sass */
 #block-views-front-block-bottom-block-1 .view-display-id-block_1 {
   position: relative;
-  max-width: 300px;
+  max-width: 400px;
   margin: 0 auto;
   margin-bottom: 100px;
 }
 /* line 8, ../sass/elements/_paragraphs.sass */
 #block-views-front-block-bottom-block-1 .views-field-nothing {
   position: absolute;
-  top: 50%;
+  top: 45%;
   width: 100%;
   text-align: center;
 }
@@ -1855,11 +1893,22 @@ a#superfish-2-toggle.sf-expanded:after {
   padding-top: 30px;
 }
 /* line 46, ../sass/elements/_paragraphs.sass */
+.not-front .paragraphs-item-par-images-2-links {
+  margin-top: 30px;
+}
+/* line 48, ../sass/elements/_paragraphs.sass */
 .not-front .paragraphs-item-par-images-2-links .group-left,
 .not-front .paragraphs-item-par-images-2-links .group-right {
   position: relative;
 }
-/* line 49, ../sass/elements/_paragraphs.sass */
+@media (max-width: 767px) {
+  /* line 48, ../sass/elements/_paragraphs.sass */
+  .not-front .paragraphs-item-par-images-2-links .group-left,
+  .not-front .paragraphs-item-par-images-2-links .group-right {
+    width: 100%;
+  }
+}
+/* line 53, ../sass/elements/_paragraphs.sass */
 .not-front .paragraphs-item-par-images-2-links .group-left .field-name-field-link-1,
 .not-front .paragraphs-item-par-images-2-links .group-left .field-name-field-link-2,
 .not-front .paragraphs-item-par-images-2-links .group-right .field-name-field-link-1,
@@ -1869,7 +1918,7 @@ a#superfish-2-toggle.sf-expanded:after {
   width: 100%;
   height: 100%;
 }
-/* line 55, ../sass/elements/_paragraphs.sass */
+/* line 59, ../sass/elements/_paragraphs.sass */
 .not-front .paragraphs-item-par-images-2-links .group-left .field-name-field-link-1 a,
 .not-front .paragraphs-item-par-images-2-links .group-left .field-name-field-link-2 a,
 .not-front .paragraphs-item-par-images-2-links .group-right .field-name-field-link-1 a,
@@ -1881,38 +1930,52 @@ a#superfish-2-toggle.sf-expanded:after {
   font-size: 0;
   color: transparent;
 }
+/* line 67, ../sass/elements/_paragraphs.sass */
+.not-front .group-one-column .group-left,
+.not-front .group-one-column .group-right {
+  width: 50%;
+  float: none;
+}
+@media (max-width: 767px) {
+  /* line 67, ../sass/elements/_paragraphs.sass */
+  .not-front .group-one-column .group-left,
+  .not-front .group-one-column .group-right {
+    width: 100%;
+  }
+}
 
-/* line 63, ../sass/elements/_paragraphs.sass */
+/* line 75, ../sass/elements/_paragraphs.sass */
 p {
   margin: 30px 0;
   line-height: normal;
 }
 @media (max-width: 320px) {
-  /* line 63, ../sass/elements/_paragraphs.sass */
+  /* line 75, ../sass/elements/_paragraphs.sass */
   p {
     margin: 10px 0;
   }
 }
 
-/* line 70, ../sass/elements/_paragraphs.sass */
+/* line 82, ../sass/elements/_paragraphs.sass */
 .field-name-title h1 {
   font-family: "Dancing Script", cursive;
-  font-size: 50px;
+  font-size: 55px;
   margin: 0;
   line-height: normal;
   -webkit-margin-before: 0;
   -webkit-margin-after: 0;
   -webkit-margin-start: 0;
   -webkit-margin-end: 0;
+  font-weight: normal;
 }
 @media (min-width: 768px) and (max-width: 1019px) {
-  /* line 70, ../sass/elements/_paragraphs.sass */
+  /* line 82, ../sass/elements/_paragraphs.sass */
   .field-name-title h1 {
     font-size: 35px;
   }
 }
 @media (max-width: 767px) {
-  /* line 70, ../sass/elements/_paragraphs.sass */
+  /* line 82, ../sass/elements/_paragraphs.sass */
   .field-name-title h1 {
     font-size: 26px;
     overflow-wrap: break-word;
@@ -1920,28 +1983,28 @@ p {
   }
 }
 @media (max-width: 320px) {
-  /* line 70, ../sass/elements/_paragraphs.sass */
+  /* line 82, ../sass/elements/_paragraphs.sass */
   .field-name-title h1 {
     font-size: 18px;
   }
 }
 
-/* line 89, ../sass/elements/_paragraphs.sass */
+/* line 102, ../sass/elements/_paragraphs.sass */
 .paragraphs-item-subtitle h2 {
   margin: 75px 0 0 0;
   line-height: normal;
   text-transform: uppercase;
-  font-size: 35px;
+  font-size: 30px;
 }
 @media (min-width: 768px) and (max-width: 1019px) {
-  /* line 89, ../sass/elements/_paragraphs.sass */
+  /* line 102, ../sass/elements/_paragraphs.sass */
   .paragraphs-item-subtitle h2 {
     margin: 50px 0 0 0;
     font-size: 35px;
   }
 }
 @media (max-width: 767px) {
-  /* line 89, ../sass/elements/_paragraphs.sass */
+  /* line 102, ../sass/elements/_paragraphs.sass */
   .paragraphs-item-subtitle h2 {
     margin: 50px 0 0 0;
     font-size: 26px;
@@ -1950,14 +2013,14 @@ p {
   }
 }
 @media (max-width: 320px) {
-  /* line 89, ../sass/elements/_paragraphs.sass */
+  /* line 102, ../sass/elements/_paragraphs.sass */
   .paragraphs-item-subtitle h2 {
     margin: 30px 0 0 0;
     font-size: 18px;
   }
 }
 
-/* line 106, ../sass/elements/_paragraphs.sass */
+/* line 119, ../sass/elements/_paragraphs.sass */
 #page-title {
   margin-bottom: 30px;
   line-height: normal;
@@ -1966,14 +2029,14 @@ p {
   font-size: 35px;
 }
 @media (min-width: 768px) and (max-width: 1019px) {
-  /* line 106, ../sass/elements/_paragraphs.sass */
+  /* line 119, ../sass/elements/_paragraphs.sass */
   #page-title {
     margin: 50px 0 0 0;
     font-size: 35px;
   }
 }
 @media (max-width: 767px) {
-  /* line 106, ../sass/elements/_paragraphs.sass */
+  /* line 119, ../sass/elements/_paragraphs.sass */
   #page-title {
     margin: 50px 0 0 0;
     font-size: 26px;
@@ -1982,67 +2045,67 @@ p {
   }
 }
 @media (max-width: 320px) {
-  /* line 106, ../sass/elements/_paragraphs.sass */
+  /* line 119, ../sass/elements/_paragraphs.sass */
   #page-title {
     margin: 30px 0 0 0;
     font-size: 18px;
   }
 }
 
-/* line 124, ../sass/elements/_paragraphs.sass */
+/* line 137, ../sass/elements/_paragraphs.sass */
 .field-name-field-title-1,
 .field-name-field-title-2 {
   margin-top: 20px;
 }
 
 @media (max-width: 320px) {
-  /* line 129, ../sass/elements/_paragraphs.sass */
+  /* line 142, ../sass/elements/_paragraphs.sass */
   .ds-2col-fluid > .group-left {
     width: 100%;
   }
 
-  /* line 131, ../sass/elements/_paragraphs.sass */
+  /* line 144, ../sass/elements/_paragraphs.sass */
   .ds-2col-fluid > .group-right {
     width: 100%;
   }
 }
-/* line 134, ../sass/elements/_paragraphs.sass */
+/* line 147, ../sass/elements/_paragraphs.sass */
 .paragraphs-item-par-image-2,
 .paragraphs-item-par-image {
   margin-top: 30px;
 }
-/* line 137, ../sass/elements/_paragraphs.sass */
+/* line 150, ../sass/elements/_paragraphs.sass */
 .paragraphs-item-par-image-2 .field-name-field-image,
 .paragraphs-item-par-image .field-name-field-image {
   text-align: center;
 }
 @media (max-width: 767px) {
-  /* line 139, ../sass/elements/_paragraphs.sass */
+  /* line 152, ../sass/elements/_paragraphs.sass */
   .paragraphs-item-par-image-2 .group-left,
   .paragraphs-item-par-image .group-left {
     width: 100%;
   }
 }
 @media (max-width: 767px) {
-  /* line 142, ../sass/elements/_paragraphs.sass */
+  /* line 155, ../sass/elements/_paragraphs.sass */
   .paragraphs-item-par-image-2 .group-right,
   .paragraphs-item-par-image .group-right {
     width: 100%;
   }
 }
 
-/* line 147, ../sass/elements/_paragraphs.sass */
+/* line 160, ../sass/elements/_paragraphs.sass */
 .field-name-field-long-text-html ul {
   list-style: none;
   margin-left: 0;
   padding-left: 1em;
   margin-bottom: 0;
 }
-/* line 152, ../sass/elements/_paragraphs.sass */
+/* line 165, ../sass/elements/_paragraphs.sass */
 .field-name-field-long-text-html ul li {
   line-height: 2em;
 }
-/* line 154, ../sass/elements/_paragraphs.sass */
+/* line 167, ../sass/elements/_paragraphs.sass */
 .field-name-field-long-text-html ul li:before {
   display: inline-block;
   content: "-";
@@ -2050,12 +2113,12 @@ p {
   margin-left: -1em;
 }
 
-/* line 160, ../sass/elements/_paragraphs.sass */
+/* line 173, ../sass/elements/_paragraphs.sass */
 .paragraphs-item-link {
   text-align: center;
   margin: 75px 0;
 }
-/* line 163, ../sass/elements/_paragraphs.sass */
+/* line 176, ../sass/elements/_paragraphs.sass */
 .paragraphs-item-link .field-name-field-link {
   transition: border-radius 1s ease, background-color 1s ease;
   background: #822a3a;
@@ -2067,19 +2130,19 @@ p {
   -moz-box-shadow: 0px 3px 10px black;
   box-shadow: 0px 3px 10px black;
 }
-/* line 171, ../sass/elements/_paragraphs.sass */
+/* line 184, ../sass/elements/_paragraphs.sass */
 .paragraphs-item-link .field-name-field-link:hover {
   transition: border-radius 0.5s ease, background-color 0.5s ease;
   background-color: white;
   border-radius: 20px;
 }
-/* line 175, ../sass/elements/_paragraphs.sass */
+/* line 188, ../sass/elements/_paragraphs.sass */
 .paragraphs-item-link .field-name-field-link:hover a {
   color: #822a3a;
   border-bottom: 2px solid #822a3a;
   padding-bottom: 2px;
 }
-/* line 179, ../sass/elements/_paragraphs.sass */
+/* line 192, ../sass/elements/_paragraphs.sass */
 .paragraphs-item-link a {
   color: white;
   text-decoration: none;
@@ -2088,71 +2151,72 @@ p {
   padding-bottom: 2px;
 }
 
-/* line 188, ../sass/elements/_paragraphs.sass */
+/* line 201, ../sass/elements/_paragraphs.sass */
 .node .view-content {
   position: relative;
 }
-/* line 190, ../sass/elements/_paragraphs.sass */
+/* line 203, ../sass/elements/_paragraphs.sass */
 .node .view-filters {
   max-width: 630px;
   margin: 0 auto;
 }
 @media (max-width: 767px) {
-  /* line 190, ../sass/elements/_paragraphs.sass */
+  /* line 203, ../sass/elements/_paragraphs.sass */
   .node .view-filters {
     max-width: 300px;
   }
 }
-/* line 195, ../sass/elements/_paragraphs.sass */
+/* line 208, ../sass/elements/_paragraphs.sass */
 .node .view-filters label {
   display: none;
 }
-/* line 197, ../sass/elements/_paragraphs.sass */
+/* line 210, ../sass/elements/_paragraphs.sass */
 .node .view-filters #edit-submit-recipes-overview {
   display: none;
 }
-/* line 199, ../sass/elements/_paragraphs.sass */
+/* line 212, ../sass/elements/_paragraphs.sass */
 .node .view-filters .ms-options-wrap {
   width: 300px;
   text-align: left;
 }
-/* line 202, ../sass/elements/_paragraphs.sass */
+/* line 215, ../sass/elements/_paragraphs.sass */
 .node .view-filters .ms-options-wrap button {
   text-align: center;
   z-index: 100;
   text-transform: uppercase;
   color: #822a3a;
-  font-weight: bold;
+  font-weight: normal;
   font-size: 14px;
   border: none;
   padding: 15px 0;
+  height: 40px;
 }
-/* line 211, ../sass/elements/_paragraphs.sass */
+/* line 225, ../sass/elements/_paragraphs.sass */
 .node .view-filters .ms-options-wrap button:after {
   border-top-color: #822a3a;
 }
-/* line 213, ../sass/elements/_paragraphs.sass */
+/* line 227, ../sass/elements/_paragraphs.sass */
 .node .view-filters .ms-options-wrap > .ms-options {
   border: none;
   z-index: 90 !important;
 }
 
-/* line 223, ../sass/elements/_paragraphs.sass */
+/* line 237, ../sass/elements/_paragraphs.sass */
 .node-type-recipe #content .group-bg ul {
   margin: 30px 0;
   padding-left: 5px;
 }
-/* line 226, ../sass/elements/_paragraphs.sass */
+/* line 240, ../sass/elements/_paragraphs.sass */
 .node-type-recipe #content .group-bg ul li {
   list-style: none;
   margin: 0 0 4px 9px;
   text-indent: -9px;
 }
-/* line 230, ../sass/elements/_paragraphs.sass */
+/* line 244, ../sass/elements/_paragraphs.sass */
 .node-type-recipe #content .group-bg ul li:before {
   content: "· ";
 }
-/* line 232, ../sass/elements/_paragraphs.sass */
+/* line 246, ../sass/elements/_paragraphs.sass */
 .node-type-recipe #content .group-bg .field-name-field-title-1,
 .node-type-recipe #content .group-bg .field-name-field-title-2,
 .node-type-recipe #content .group-bg .field-name-field-title-3 {
@@ -2160,84 +2224,80 @@ p {
   text-transform: uppercase;
   margin-top: 40px;
 }
-/* line 238, ../sass/elements/_paragraphs.sass */
+/* line 252, ../sass/elements/_paragraphs.sass */
 .node-type-recipe #content .group-bg .group-left {
   width: 30%;
   margin-right: 10%;
 }
 @media (max-width: 767px) {
-  /* line 238, ../sass/elements/_paragraphs.sass */
+  /* line 252, ../sass/elements/_paragraphs.sass */
   .node-type-recipe #content .group-bg .group-left {
     width: 100%;
     margin-right: 0;
   }
 }
-/* line 244, ../sass/elements/_paragraphs.sass */
+/* line 258, ../sass/elements/_paragraphs.sass */
 .node-type-recipe #content .group-bg .group-right {
   width: 60%;
 }
 @media (max-width: 767px) {
-  /* line 244, ../sass/elements/_paragraphs.sass */
+  /* line 258, ../sass/elements/_paragraphs.sass */
   .node-type-recipe #content .group-bg .group-right {
     width: 100%;
   }
 }
 
-/* line 252, ../sass/elements/_paragraphs.sass */
+/* line 266, ../sass/elements/_paragraphs.sass */
 #block-views-related-recipes-block-1 .view-footer,
 #block-views-related-news-block-1 .view-footer,
 .view-about-bread-related-6-random .view-footer {
   text-align: center;
 }
-/* line 254, ../sass/elements/_paragraphs.sass */
-#block-views-related-recipes-block-1 .squareToRound,
-#block-views-related-news-block-1 .squareToRound,
-.view-about-bread-related-6-random .squareToRound {
-  max-width: 300px;
-  width: auto;
-  height: auto;
+/* line 268, ../sass/elements/_paragraphs.sass */
+#block-views-related-recipes-block-1 .squaretoRoundLink,
+#block-views-related-news-block-1 .squaretoRoundLink,
+.view-about-bread-related-6-random .squaretoRoundLink {
   display: inline-block;
-  padding: 0 10px 5px;
 }
 
-/* line 262, ../sass/elements/_paragraphs.sass */
+/* line 278, ../sass/elements/_paragraphs.sass */
 .view-display-id-block_1 .view-filters {
   margin-bottom: 0 !important;
 }
 
-/* line 266, ../sass/elements/_paragraphs.sass */
+/* line 282, ../sass/elements/_paragraphs.sass */
 .section-product-product-family .region-headerbottom {
   height: 560px;
   margin-bottom: 100px;
 }
 @media (min-width: 768px) and (max-width: 1019px) {
-  /* line 266, ../sass/elements/_paragraphs.sass */
+  /* line 282, ../sass/elements/_paragraphs.sass */
   .section-product-product-family .region-headerbottom {
     margin-bottom: 50px;
     height: 462px;
   }
 }
 @media (max-width: 767px) {
-  /* line 266, ../sass/elements/_paragraphs.sass */
+  /* line 282, ../sass/elements/_paragraphs.sass */
   .section-product-product-family .region-headerbottom {
     height: 462px;
     margin-bottom: 50px;
   }
 }
 @media (max-width: 320px) {
-  /* line 266, ../sass/elements/_paragraphs.sass */
+  /* line 282, ../sass/elements/_paragraphs.sass */
   .section-product-product-family .region-headerbottom {
     margin-bottom: 50px;
     height: 210px;
   }
 }
 
-/* line 280, ../sass/elements/_paragraphs.sass */
+/* line 296, ../sass/elements/_paragraphs.sass */
 .position-relative.view .view-content {
   position: relative;
 }
 
-/* line 292, ../sass/elements/_paragraphs.sass */
+/* line 308, ../sass/elements/_paragraphs.sass */
 .node-type-product .view-y-random-6-recipes h2,
 .node-type-product .view-related-recipes h2,
 .node-type-product .view-about-bread-related-6-random h2,
@@ -2263,7 +2323,7 @@ p {
   margin: 60px 0 50px 0;
   font-weight: normal;
 }
-/* line 297, ../sass/elements/_paragraphs.sass */
+/* line 313, ../sass/elements/_paragraphs.sass */
 .node-type-product #content,
 .node-type-news #content,
 .node-type-about-bread #content,
@@ -2273,7 +2333,7 @@ p {
   line-height: normal;
   margin-bottom: 100px;
 }
-/* line 301, ../sass/elements/_paragraphs.sass */
+/* line 317, ../sass/elements/_paragraphs.sass */
 .node-type-product .group-bg,
 .node-type-news .group-bg,
 .node-type-about-bread .group-bg,
@@ -2282,7 +2342,7 @@ p {
   padding: 75px 100px;
 }
 @media (min-width: 768px) and (max-width: 1019px) {
-  /* line 301, ../sass/elements/_paragraphs.sass */
+  /* line 317, ../sass/elements/_paragraphs.sass */
   .node-type-product .group-bg,
   .node-type-news .group-bg,
   .node-type-about-bread .group-bg,
@@ -2292,7 +2352,7 @@ p {
   }
 }
 @media (max-width: 767px) {
-  /* line 301, ../sass/elements/_paragraphs.sass */
+  /* line 317, ../sass/elements/_paragraphs.sass */
   .node-type-product .group-bg,
   .node-type-news .group-bg,
   .node-type-about-bread .group-bg,
@@ -2302,7 +2362,7 @@ p {
   }
 }
 @media (max-width: 320px) {
-  /* line 301, ../sass/elements/_paragraphs.sass */
+  /* line 317, ../sass/elements/_paragraphs.sass */
   .node-type-product .group-bg,
   .node-type-news .group-bg,
   .node-type-about-bread .group-bg,
@@ -2311,7 +2371,7 @@ p {
     padding: 30px 10%;
   }
 }
-/* line 309, ../sass/elements/_paragraphs.sass */
+/* line 325, ../sass/elements/_paragraphs.sass */
 .node-type-product .group-bg,
 .node-type-product .view-mode-disclaimer,
 .node-type-news .group-bg,
@@ -2328,7 +2388,7 @@ p {
   box-sizing: border-box;
   position: relative;
 }
-/* line 316, ../sass/elements/_paragraphs.sass */
+/* line 332, ../sass/elements/_paragraphs.sass */
 .node-type-product .group-bg:before,
 .node-type-product .view-mode-disclaimer:before,
 .node-type-news .group-bg:before,
@@ -2348,7 +2408,7 @@ p {
   opacity: 0.7;
   left: 0;
 }
-/* line 318, ../sass/elements/_paragraphs.sass */
+/* line 334, ../sass/elements/_paragraphs.sass */
 .node-type-product .group-bg:after,
 .node-type-product .view-mode-disclaimer:after,
 .node-type-news .group-bg:after,
@@ -2369,7 +2429,7 @@ p {
   left: 0;
   visibility: visible;
 }
-/* line 320, ../sass/elements/_paragraphs.sass */
+/* line 336, ../sass/elements/_paragraphs.sass */
 .node-type-product .region-headerbottom,
 .node-type-news .region-headerbottom,
 .node-type-about-bread .region-headerbottom,
@@ -2378,7 +2438,7 @@ p {
   height: 560px;
 }
 @media (min-width: 768px) and (max-width: 1019px) {
-  /* line 323, ../sass/elements/_paragraphs.sass */
+  /* line 339, ../sass/elements/_paragraphs.sass */
   .node-type-product #content,
   .node-type-news #content,
   .node-type-about-bread #content,
@@ -2386,7 +2446,7 @@ p {
   .styles-disclaimer #content {
     margin-top: -50px;
   }
-  /* line 325, ../sass/elements/_paragraphs.sass */
+  /* line 341, ../sass/elements/_paragraphs.sass */
   .node-type-product .region-headerbottom,
   .node-type-news .region-headerbottom,
   .node-type-about-bread .region-headerbottom,
@@ -2396,7 +2456,7 @@ p {
   }
 }
 @media (max-width: 767px) {
-  /* line 328, ../sass/elements/_paragraphs.sass */
+  /* line 344, ../sass/elements/_paragraphs.sass */
   .node-type-product #content,
   .node-type-news #content,
   .node-type-about-bread #content,
@@ -2404,7 +2464,7 @@ p {
   .styles-disclaimer #content {
     margin-top: -50px;
   }
-  /* line 330, ../sass/elements/_paragraphs.sass */
+  /* line 346, ../sass/elements/_paragraphs.sass */
   .node-type-product .region-headerbottom,
   .node-type-news .region-headerbottom,
   .node-type-about-bread .region-headerbottom,
@@ -2415,7 +2475,7 @@ p {
   }
 }
 @media (max-width: 320px) {
-  /* line 334, ../sass/elements/_paragraphs.sass */
+  /* line 350, ../sass/elements/_paragraphs.sass */
   .node-type-product #content,
   .node-type-news #content,
   .node-type-about-bread #content,
@@ -2423,7 +2483,7 @@ p {
   .styles-disclaimer #content {
     margin-top: -30px;
   }
-  /* line 336, ../sass/elements/_paragraphs.sass */
+  /* line 352, ../sass/elements/_paragraphs.sass */
   .node-type-product .region-headerbottom,
   .node-type-news .region-headerbottom,
   .node-type-about-bread .region-headerbottom,
@@ -2433,73 +2493,73 @@ p {
   }
 }
 
-/* line 340, ../sass/elements/_paragraphs.sass */
+/* line 356, ../sass/elements/_paragraphs.sass */
 .node-type-recipe .group-bg {
   padding: 45px 100px;
 }
 @media (min-width: 768px) and (max-width: 1019px) {
-  /* line 340, ../sass/elements/_paragraphs.sass */
+  /* line 356, ../sass/elements/_paragraphs.sass */
   .node-type-recipe .group-bg {
     padding: 30px 10%;
   }
 }
 @media (max-width: 767px) {
-  /* line 340, ../sass/elements/_paragraphs.sass */
+  /* line 356, ../sass/elements/_paragraphs.sass */
   .node-type-recipe .group-bg {
     padding: 30px 10%;
   }
 }
 @media (max-width: 320px) {
-  /* line 340, ../sass/elements/_paragraphs.sass */
+  /* line 356, ../sass/elements/_paragraphs.sass */
   .node-type-recipe .group-bg {
     padding: 20px 10%;
   }
 }
 
-/* line 350, ../sass/elements/_paragraphs.sass */
+/* line 366, ../sass/elements/_paragraphs.sass */
 .a2a_kit {
   float: right;
 }
 @media (min-width: 768px) and (max-width: 1019px) {
-  /* line 350, ../sass/elements/_paragraphs.sass */
+  /* line 366, ../sass/elements/_paragraphs.sass */
   .a2a_kit {
     float: none;
     text-align: center;
   }
-  /* line 355, ../sass/elements/_paragraphs.sass */
+  /* line 371, ../sass/elements/_paragraphs.sass */
   .a2a_kit #social-icons {
     display: inline-block;
   }
 }
 @media (max-width: 767px) {
-  /* line 350, ../sass/elements/_paragraphs.sass */
+  /* line 366, ../sass/elements/_paragraphs.sass */
   .a2a_kit {
     float: none;
     text-align: center;
   }
-  /* line 360, ../sass/elements/_paragraphs.sass */
+  /* line 376, ../sass/elements/_paragraphs.sass */
   .a2a_kit #social-icons {
     display: inline-block;
   }
 }
 @media (max-width: 320px) {
-  /* line 350, ../sass/elements/_paragraphs.sass */
+  /* line 366, ../sass/elements/_paragraphs.sass */
   .a2a_kit {
     float: none;
     text-align: center;
   }
-  /* line 365, ../sass/elements/_paragraphs.sass */
+  /* line 381, ../sass/elements/_paragraphs.sass */
   .a2a_kit #social-icons {
     display: inline-block;
   }
 }
 
-/* line 368, ../sass/elements/_paragraphs.sass */
+/* line 384, ../sass/elements/_paragraphs.sass */
 .embedded-video {
   max-width: 600px;
   margin: 0 auto;
 }
-/* line 371, ../sass/elements/_paragraphs.sass */
+/* line 387, ../sass/elements/_paragraphs.sass */
 .embedded-video .player {
   position: relative;
   padding-bottom: 56.25%;
@@ -2507,7 +2567,7 @@ p {
   height: 0;
   overflow: hidden;
 }
-/* line 377, ../sass/elements/_paragraphs.sass */
+/* line 393, ../sass/elements/_paragraphs.sass */
 .embedded-video .player iframe,
 .embedded-video .player object,
 .embedded-video .player embed {
@@ -2518,27 +2578,26 @@ p {
   height: 100%;
 }
 
-/* line 387, ../sass/elements/_paragraphs.sass */
+/* line 403, ../sass/elements/_paragraphs.sass */
 .ms-options-wrap {
   -webkit-box-shadow: 0px 3px 10px black;
   -moz-box-shadow: 0px 3px 10px black;
   box-shadow: 0px 3px 10px black;
 }
-/* line 389, ../sass/elements/_paragraphs.sass */
+/* line 405, ../sass/elements/_paragraphs.sass */
 .ms-options-wrap button {
   z-index: 100;
   overflow: hidden;
-  padding: 15px 20px 15px 15px !important;
+  padding: 10px 20px 10px 15px !important;
   white-space: normal;
 }
-/* line 394, ../sass/elements/_paragraphs.sass */
+/* line 410, ../sass/elements/_paragraphs.sass */
 .ms-options-wrap button .filter-text {
-  border-bottom: 2px solid #822a3a;
   position: relative;
   display: inline-block;
   padding-right: 30px;
 }
-/* line 399, ../sass/elements/_paragraphs.sass */
+/* line 415, ../sass/elements/_paragraphs.sass */
 .ms-options-wrap button .filter-text .filter-arrow {
   width: 12px;
   height: 12px;
@@ -2549,12 +2608,12 @@ p {
   transform: rotate(135deg);
   right: 4px;
 }
-/* line 408, ../sass/elements/_paragraphs.sass */
+/* line 424, ../sass/elements/_paragraphs.sass */
 .ms-options-wrap button:after {
   display: none;
 }
 
-/* line 410, ../sass/elements/_paragraphs.sass */
+/* line 426, ../sass/elements/_paragraphs.sass */
 .ms-options {
   margin-top: 0 !important;
   -webkit-box-shadow: 0px 0px 10px black;
@@ -2562,7 +2621,7 @@ p {
   box-shadow: 0px 0px 10px black;
   z-index: 90 !important;
 }
-/* line 414, ../sass/elements/_paragraphs.sass */
+/* line 430, ../sass/elements/_paragraphs.sass */
 .ms-options button {
   display: block;
   float: left;
@@ -2571,36 +2630,30 @@ p {
   background: none;
   margin: 10px 0;
 }
-/* line 421, ../sass/elements/_paragraphs.sass */
+/* line 437, ../sass/elements/_paragraphs.sass */
 .ms-options button:hover {
   color: white !important;
   background: #822a3a;
 }
-/* line 424, ../sass/elements/_paragraphs.sass */
-.ms-options button:hover span {
-  border-bottom: 2px solid white;
-}
-/* line 426, ../sass/elements/_paragraphs.sass */
+/* line 442, ../sass/elements/_paragraphs.sass */
 .ms-options button span {
-  border-bottom: 2px solid #822a3a;
   line-height: 14px;
   font-size: 14px;
-  padding-bottom: 3px;
 }
-/* line 431, ../sass/elements/_paragraphs.sass */
+/* line 447, ../sass/elements/_paragraphs.sass */
 .ms-options ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-/* line 435, ../sass/elements/_paragraphs.sass */
+/* line 451, ../sass/elements/_paragraphs.sass */
 .ms-options ul input[type="checkbox"] {
   margin: 0 10px 0 30px;
   border: 0;
   background: none;
   display: none;
 }
-/* line 440, ../sass/elements/_paragraphs.sass */
+/* line 456, ../sass/elements/_paragraphs.sass */
 .ms-options label {
   font-weight: normal;
   font-size: 14px;
@@ -2608,22 +2661,22 @@ p {
   padding: 10px 4px !important;
   margin: 0 !important;
 }
-/* line 446, ../sass/elements/_paragraphs.sass */
+/* line 462, ../sass/elements/_paragraphs.sass */
 .ms-options label span {
   margin-left: 50px;
 }
-/* line 448, ../sass/elements/_paragraphs.sass */
+/* line 464, ../sass/elements/_paragraphs.sass */
 .ms-options label:hover {
   background: #822a3a !important;
   color: white;
 }
-/* line 452, ../sass/elements/_paragraphs.sass */
+/* line 468, ../sass/elements/_paragraphs.sass */
 .ms-options .selected label {
   font-weight: normal;
   color: white;
   background: #822a3a !important;
 }
-/* line 457, ../sass/elements/_paragraphs.sass */
+/* line 473, ../sass/elements/_paragraphs.sass */
 .ms-options .selected label span::before {
   content: "✓";
   position: absolute;
@@ -2640,7 +2693,15 @@ p {
   margin-bottom: 0;
 }
 
-/* line 3, ../sass/elements/_forms.sass */
+/* line 2, ../sass/elements/_forms.sass */
+#block-webform-client-block-1 {
+  text-align: center;
+}
+/* line 4, ../sass/elements/_forms.sass */
+#block-webform-client-block-1 #webform-client-form-1 {
+  display: inline-block;
+}
+/* line 6, ../sass/elements/_forms.sass */
 #block-webform-client-block-1 .webform-submit {
   padding: 11px 20px;
   text-align: center;
@@ -2652,116 +2713,124 @@ p {
   transition: all 1s ease;
 }
 @media (min-width: 768px) and (max-width: 1019px) {
-  /* line 3, ../sass/elements/_forms.sass */
+  /* line 6, ../sass/elements/_forms.sass */
   #block-webform-client-block-1 .webform-submit {
     margin-top: 20px;
   }
 }
 @media (max-width: 767px) {
-  /* line 3, ../sass/elements/_forms.sass */
+  /* line 6, ../sass/elements/_forms.sass */
   #block-webform-client-block-1 .webform-submit {
     margin-top: 15px;
   }
 }
-/* line 16, ../sass/elements/_forms.sass */
+/* line 19, ../sass/elements/_forms.sass */
 #block-webform-client-block-1 .webform-submit:hover {
   transition: all 0.5s ease;
-  background: rgba(0, 0, 0, 0.4);
+  transition: border-radius 0.5s ease, background-color 0.5s ease;
+  border-radius: 20px;
 }
-/* line 23, ../sass/elements/_forms.sass */
+/* line 29, ../sass/elements/_forms.sass */
 #block-webform-client-block-1 .form-actions {
   display: inline-block;
 }
 @media (min-width: 768px) and (max-width: 1019px) {
-  /* line 23, ../sass/elements/_forms.sass */
+  /* line 29, ../sass/elements/_forms.sass */
   #block-webform-client-block-1 .form-actions {
     display: block;
     text-align: center;
   }
 }
 @media (max-width: 767px) {
-  /* line 23, ../sass/elements/_forms.sass */
+  /* line 29, ../sass/elements/_forms.sass */
   #block-webform-client-block-1 .form-actions {
     display: block;
     text-align: center;
   }
 }
-/* line 31, ../sass/elements/_forms.sass */
+/* line 37, ../sass/elements/_forms.sass */
 #block-webform-client-block-1 .webform-component--e-mail {
   display: inline-block;
 }
 @media (min-width: 768px) and (max-width: 1019px) {
-  /* line 31, ../sass/elements/_forms.sass */
+  /* line 37, ../sass/elements/_forms.sass */
   #block-webform-client-block-1 .webform-component--e-mail {
     display: block;
     text-align: center;
   }
 }
 @media (max-width: 767px) {
-  /* line 31, ../sass/elements/_forms.sass */
+  /* line 37, ../sass/elements/_forms.sass */
   #block-webform-client-block-1 .webform-component--e-mail {
     display: block;
     text-align: center;
   }
 }
 
-/* line 40, ../sass/elements/_forms.sass */
+/* line 46, ../sass/elements/_forms.sass */
 input#edit-submitted-e-mail {
   height: 40px;
   width: 480px;
   box-shadow: 0 0 10px #d1d1d1;
   border: 1px solid #d1d1d1;
+  transition: border-radius 0.5s ease, background-color 0.5s ease;
   margin-right: 20px;
 }
 @media (min-width: 768px) and (max-width: 1019px) {
-  /* line 40, ../sass/elements/_forms.sass */
+  /* line 46, ../sass/elements/_forms.sass */
   input#edit-submitted-e-mail {
     width: 70%;
     margin: 0;
   }
 }
 @media (max-width: 767px) {
-  /* line 40, ../sass/elements/_forms.sass */
+  /* line 46, ../sass/elements/_forms.sass */
   input#edit-submitted-e-mail {
     width: 80%;
     margin: 0;
   }
 }
+/* line 59, ../sass/elements/_forms.sass */
+input#edit-submitted-e-mail:hover, input#edit-submitted-e-mail:focus {
+  transition: border-radius 0.5s ease, background-color 0.5s ease;
+  border-radius: 20px;
+  outline: 0;
+}
 
-/* line 54, ../sass/elements/_forms.sass */
+/* line 67, ../sass/elements/_forms.sass */
 input[placeholder] {
   font-style: italic;
   text-align: center;
 }
 
-/* line 60, ../sass/elements/_forms.sass */
+/* line 73, ../sass/elements/_forms.sass */
 #block-webform-client-block-1 {
   margin-bottom: 40px;
 }
 @media (max-width: 767px) {
-  /* line 60, ../sass/elements/_forms.sass */
+  /* line 73, ../sass/elements/_forms.sass */
   #block-webform-client-block-1 {
     margin-bottom: 30px;
   }
 }
-/* line 64, ../sass/elements/_forms.sass */
+/* line 77, ../sass/elements/_forms.sass */
 #block-webform-client-block-1 .block {
   margin-bottom: 0;
 }
-/* line 66, ../sass/elements/_forms.sass */
+/* line 79, ../sass/elements/_forms.sass */
 #block-webform-client-block-1 .form-item {
   margin: 0;
 }
-/* line 68, ../sass/elements/_forms.sass */
+/* line 81, ../sass/elements/_forms.sass */
 #block-webform-client-block-1 label {
   display: none;
 }
-/* line 70, ../sass/elements/_forms.sass */
+/* line 83, ../sass/elements/_forms.sass */
 #block-webform-client-block-1 label span {
   display: none;
 }
 @media (min-width: 768px) and (max-width: 1019px) {
-  /* line 68, ../sass/elements/_forms.sass */
+  /* line 81, ../sass/elements/_forms.sass */
   #block-webform-client-block-1 label {
     display: block;
     font-style: italic;
@@ -2771,7 +2840,7 @@ input[placeholder] {
   }
 }
 @media (max-width: 767px) {
-  /* line 68, ../sass/elements/_forms.sass */
+  /* line 81, ../sass/elements/_forms.sass */
   #block-webform-client-block-1 label {
     display: block;
     font-style: italic;
@@ -2780,23 +2849,23 @@ input[placeholder] {
     color: #d1d1d1;
   }
 }
-/* line 84, ../sass/elements/_forms.sass */
+/* line 97, ../sass/elements/_forms.sass */
 #block-webform-client-block-1 [placeholder]::-webkit-input-placeholder {
   font-style: italic;
   text-align: center;
 }
-/* line 87, ../sass/elements/_forms.sass */
+/* line 100, ../sass/elements/_forms.sass */
 #block-webform-client-block-1 [placeholder]::-webkit-input-placeholder#edit-submitted-e-mail {
   text-align: center;
 }
 @media (min-width: 768px) and (max-width: 1019px) {
-  /* line 84, ../sass/elements/_forms.sass */
+  /* line 97, ../sass/elements/_forms.sass */
   #block-webform-client-block-1 [placeholder]::-webkit-input-placeholder {
     opacity: 0;
   }
 }
 @media (max-width: 767px) {
-  /* line 84, ../sass/elements/_forms.sass */
+  /* line 97, ../sass/elements/_forms.sass */
   #block-webform-client-block-1 [placeholder]::-webkit-input-placeholder {
     opacity: 0;
   }
@@ -2921,7 +2990,7 @@ input[placeholder] {
   color: black;
   padding: 0 30px;
 }
-/* line 81, ../sass/_mixins.sass */
+/* line 86, ../sass/_mixins.sass */
 .styles-who-is ul#superfish-1 a.active,
 .styles-who-is ul.language-switcher-locale-url a.active {
   border-bottom: 2px solid white;
@@ -2932,8 +3001,9 @@ input[placeholder] {
   color: white;
   text-transform: uppercase;
   text-decoration: none;
+  font-weight: normal;
 }
-/* line 90, ../sass/_mixins.sass */
+/* line 96, ../sass/_mixins.sass */
 .styles-who-is ul#superfish-1 a:not(.active),
 .styles-who-is ul.language-switcher-locale-url a:not(.active) {
   text-transform: uppercase;
@@ -2942,7 +3012,7 @@ input[placeholder] {
   font-size: 14px;
   color: white;
 }
-/* line 96, ../sass/_mixins.sass */
+/* line 102, ../sass/_mixins.sass */
 .styles-who-is ul#superfish-1 a:not(.active):after,
 .styles-who-is ul.language-switcher-locale-url a:not(.active):after {
   content: "";
@@ -2951,12 +3021,12 @@ input[placeholder] {
   transform: scaleX(0);
   transition: transform 450ms ease-in;
 }
-/* line 102, ../sass/_mixins.sass */
+/* line 108, ../sass/_mixins.sass */
 .styles-who-is ul#superfish-1 a:not(.active):hover:after,
 .styles-who-is ul.language-switcher-locale-url a:not(.active):hover:after {
   transform: scaleX(1);
 }
-/* line 104, ../sass/_mixins.sass */
+/* line 110, ../sass/_mixins.sass */
 .styles-who-is ul#superfish-1 a.active,
 .styles-who-is ul.language-switcher-locale-url a.active {
   border-bottom: 1px solid white;
@@ -2964,12 +3034,12 @@ input[placeholder] {
   font-size: 14px;
   padding-bottom: 3px;
 }
-/* line 109, ../sass/_mixins.sass */
+/* line 115, ../sass/_mixins.sass */
 .styles-who-is ul#superfish-1 a.active:after,
 .styles-who-is ul.language-switcher-locale-url a.active:after {
   content: "";
 }
-/* line 111, ../sass/_mixins.sass */
+/* line 117, ../sass/_mixins.sass */
 .styles-who-is ul#superfish-1 a.active:hover:after,
 .styles-who-is ul.language-switcher-locale-url a.active:hover:after {
   transform: none;
