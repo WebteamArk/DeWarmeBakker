@@ -138,14 +138,23 @@
 //---------------------------------------TABLES
 
 .not-front
+  table.table1 + p
+    display: none
+  table.table2 + p
+    display: none
+  table.table3 + p
+    display: none
+  table.table4 + p
+    display: none
   table
     width: 24%
-    float: left
+    float: none
     border: 1px solid $font-dark-red
     margin: 0 5px 75px 0
     text-align: center
+    display: inline-block
     @include breakpoint($t)
-      width: 48%
+      width: 47%
       margin: 0 0 30px 0
       &.table2,
       &.table4
@@ -153,6 +162,9 @@
     @include breakpoint($m)
       width: 100%
       margin: 0 0 20px 0
+      display: inline-table
+      // display: block
+      // float: left
     .firstrow
       background: $font-dark-red
       height: 50px
@@ -190,6 +202,11 @@
     padding-bottom: 30px
   #content
     margin-bottom: 100px
+  .view-empty
+    text-align: center
+  .leaflet-popup-content
+    strong
+      color: $font-dark-red
   .marker-cluster-small
     background-color: white
     div
@@ -285,7 +302,7 @@
     #edit-distance-postal-code,
     #edit-city
       height: 40px
-      +darkshadow
+      +buttonshadow
       border: 1px solid $input-footer-form
     button
       padding: 5px 0 !important
@@ -306,7 +323,7 @@
           margin: 30px auto 20px auto
           text-align: center
           max-width: 60px
-        +darkshadow
+        +buttonshadow
         span
           margin-top: 0
           border: none

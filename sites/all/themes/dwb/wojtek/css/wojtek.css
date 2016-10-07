@@ -1,11 +1,17 @@
 /* line 6, ../sass/wojtek.sass */
+#page {
+  position: relative;
+  z-index: 10;
+}
+
+/* line 9, ../sass/wojtek.sass */
 .addtoany_list {
   display: block;
   float: none;
   clear: both;
   margin-top: 75px;
 }
-/* line 11, ../sass/wojtek.sass */
+/* line 14, ../sass/wojtek.sass */
 .addtoany_list::after {
   clear: both;
   content: ".";
@@ -13,7 +19,7 @@
   height: 0;
   visibility: hidden;
 }
-/* line 18, ../sass/wojtek.sass */
+/* line 21, ../sass/wojtek.sass */
 .addtoany_list #social-icons > a {
   width: 40px;
   height: 40px;
@@ -24,139 +30,139 @@
   display: block;
   float: right;
 }
-/* line 27, ../sass/wojtek.sass */
+/* line 30, ../sass/wojtek.sass */
 .addtoany_list #social-icons > a > span {
   text-indent: -9990px;
 }
-/* line 29, ../sass/wojtek.sass */
+/* line 32, ../sass/wojtek.sass */
 .addtoany_list #social-icons > a > span.a2a_svg {
   display: none;
 }
-/* line 31, ../sass/wojtek.sass */
+/* line 34, ../sass/wojtek.sass */
 .addtoany_list #social-icons > a.a2a_button_facebook {
   background-position: 0 0;
 }
-/* line 33, ../sass/wojtek.sass */
+/* line 36, ../sass/wojtek.sass */
 .addtoany_list #social-icons > a.a2a_button_pinterest {
   background-position: -40px 0;
 }
-/* line 35, ../sass/wojtek.sass */
+/* line 38, ../sass/wojtek.sass */
 .addtoany_list #social-icons > a.a2a_button_email {
   background-position: -80px 0;
 }
-/* line 37, ../sass/wojtek.sass */
+/* line 40, ../sass/wojtek.sass */
 .addtoany_list #social-icons > a.a2a_button_print {
   background-position: -120px 0;
 }
-/* line 39, ../sass/wojtek.sass */
+/* line 42, ../sass/wojtek.sass */
 .addtoany_list #social-icons > a.a2a_button_printfriendly {
   background-position: -120px 0;
   display: none;
 }
-/* line 42, ../sass/wojtek.sass */
+/* line 45, ../sass/wojtek.sass */
 .addtoany_list #social-icons > a.a2a_button_facebook:hover {
   background-position: 0 -40px;
 }
-/* line 44, ../sass/wojtek.sass */
+/* line 47, ../sass/wojtek.sass */
 .addtoany_list #social-icons > a.a2a_button_pinterest:hover {
   background-position: -40px -40px;
 }
-/* line 46, ../sass/wojtek.sass */
+/* line 49, ../sass/wojtek.sass */
 .addtoany_list #social-icons > a.a2a_button_email:hover {
   background-position: -80px -40px;
 }
-/* line 48, ../sass/wojtek.sass */
+/* line 51, ../sass/wojtek.sass */
 .addtoany_list #social-icons > a.a2a_button_print:hover {
   background-position: -120px -40px;
 }
-/* line 50, ../sass/wojtek.sass */
+/* line 53, ../sass/wojtek.sass */
 .addtoany_list #social-icons > a.a2a_button_printfriendly:hover {
   background-position: -120px -40px;
 }
 
 @media (max-width: 320px) {
-  /* line 53, ../sass/wojtek.sass */
+  /* line 56, ../sass/wojtek.sass */
   .addtoany_list {
     display: block;
     width: 180px;
   }
-  /* line 57, ../sass/wojtek.sass */
+  /* line 60, ../sass/wojtek.sass */
   .addtoany_list #social-icons > a {
     width: 30px;
     height: 30px;
     margin: 0 0 0 20px;
   }
-  /* line 61, ../sass/wojtek.sass */
+  /* line 64, ../sass/wojtek.sass */
   .addtoany_list #social-icons > a.a2a_button_facebook {
     background-position: 0 -80px;
     margin: 0 0 0 0px;
   }
-  /* line 64, ../sass/wojtek.sass */
+  /* line 67, ../sass/wojtek.sass */
   .addtoany_list #social-icons > a.a2a_button_pinterest {
     background-position: -30px -80px;
   }
-  /* line 66, ../sass/wojtek.sass */
+  /* line 69, ../sass/wojtek.sass */
   .addtoany_list #social-icons > a.a2a_button_email {
     background-position: -60px -80px;
   }
-  /* line 68, ../sass/wojtek.sass */
+  /* line 71, ../sass/wojtek.sass */
   .addtoany_list #social-icons > a.a2a_button_print {
     background-position: -90px -80px;
   }
-  /* line 70, ../sass/wojtek.sass */
+  /* line 73, ../sass/wojtek.sass */
   .addtoany_list #social-icons > a.a2a_button_printfriendly {
     background-position: -90px -80px;
   }
-  /* line 72, ../sass/wojtek.sass */
+  /* line 75, ../sass/wojtek.sass */
   .addtoany_list #social-icons > a.a2a_button_facebook:hover {
     background-position: 0 -110px;
   }
-  /* line 74, ../sass/wojtek.sass */
+  /* line 77, ../sass/wojtek.sass */
   .addtoany_list #social-icons > a.a2a_button_pinterest:hover {
     background-position: -30px -110px;
   }
-  /* line 76, ../sass/wojtek.sass */
+  /* line 79, ../sass/wojtek.sass */
   .addtoany_list #social-icons > a.a2a_button_email:hover {
     background-position: -60px -110px;
   }
-  /* line 78, ../sass/wojtek.sass */
+  /* line 81, ../sass/wojtek.sass */
   .addtoany_list #social-icons > a.a2a_button_print:hover {
     background-position: -90px -110px;
   }
-  /* line 80, ../sass/wojtek.sass */
+  /* line 83, ../sass/wojtek.sass */
   .addtoany_list #social-icons > a.a2a_button_printfriendly:hover {
     background-position: -90px -110px;
   }
 }
-/* line 85, ../sass/wojtek.sass */
+/* line 88, ../sass/wojtek.sass */
 .node-type-action #content {
   margin-top: -75px;
   line-height: normal;
   margin-bottom: 100px;
 }
-/* line 89, ../sass/wojtek.sass */
+/* line 92, ../sass/wojtek.sass */
 .node-type-action .group-bg {
   padding: 75px 100px;
 }
 @media (min-width: 768px) and (max-width: 1019px) {
-  /* line 89, ../sass/wojtek.sass */
+  /* line 92, ../sass/wojtek.sass */
   .node-type-action .group-bg {
     padding: 50px 10%;
   }
 }
 @media (max-width: 767px) {
-  /* line 89, ../sass/wojtek.sass */
+  /* line 92, ../sass/wojtek.sass */
   .node-type-action .group-bg {
     padding: 50px 10%;
   }
 }
 @media (max-width: 320px) {
-  /* line 89, ../sass/wojtek.sass */
+  /* line 92, ../sass/wojtek.sass */
   .node-type-action .group-bg {
     padding: 30px 10%;
   }
 }
-/* line 97, ../sass/wojtek.sass */
+/* line 100, ../sass/wojtek.sass */
 .node-type-action .group-bg {
   width: 90%;
   margin: 0 auto;
@@ -164,7 +170,7 @@
   box-sizing: border-box;
   position: relative;
 }
-/* line 103, ../sass/wojtek.sass */
+/* line 106, ../sass/wojtek.sass */
 .node-type-action .group-bg:before {
   content: "";
   position: absolute;
@@ -176,7 +182,7 @@
   left: 0;
   background: transparent url("../../images/zigzagb.png") repeat-x scroll 0 0;
 }
-/* line 106, ../sass/wojtek.sass */
+/* line 109, ../sass/wojtek.sass */
 .node-type-action .group-bg:after {
   content: "";
   position: absolute;
@@ -189,58 +195,59 @@
   visibility: visible;
   background: transparent url("../../images/zigzagdb.png") repeat-x scroll 0 0;
 }
-/* line 109, ../sass/wojtek.sass */
+/* line 112, ../sass/wojtek.sass */
 .node-type-action .region-headerbottom {
   height: 560px;
 }
 @media (min-width: 768px) and (max-width: 1019px) {
-  /* line 112, ../sass/wojtek.sass */
+  /* line 115, ../sass/wojtek.sass */
   .node-type-action #content {
     margin-top: -50px;
   }
-  /* line 114, ../sass/wojtek.sass */
+  /* line 117, ../sass/wojtek.sass */
   .node-type-action .region-headerbottom {
     height: 462px;
   }
 }
 @media (max-width: 767px) {
-  /* line 117, ../sass/wojtek.sass */
+  /* line 120, ../sass/wojtek.sass */
   .node-type-action #content {
     margin-top: -50px;
   }
-  /* line 119, ../sass/wojtek.sass */
+  /* line 122, ../sass/wojtek.sass */
   .node-type-action .region-headerbottom {
     height: 462px;
   }
 }
 @media (max-width: 320px) {
-  /* line 122, ../sass/wojtek.sass */
+  /* line 125, ../sass/wojtek.sass */
   .node-type-action #content {
     margin-top: -30px;
   }
-  /* line 124, ../sass/wojtek.sass */
+  /* line 127, ../sass/wojtek.sass */
   .node-type-action .region-headerbottom {
     height: 210px;
   }
 }
-/* line 126, ../sass/wojtek.sass */
+/* line 129, ../sass/wojtek.sass */
 .node-type-action h1 {
   font-family: "Dancing Script", cursive;
-  font-size: 50px;
+  font-size: 55px;
   line-height: normal;
   margin: 0;
+  font-weight: normal;
 }
-/* line 131, ../sass/wojtek.sass */
+/* line 135, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form {
   max-width: 500px;
   padding: 0;
   margin: 0 auto;
 }
-/* line 135, ../sass/wojtek.sass */
+/* line 139, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form .form-item {
   margin: 0 0;
 }
-/* line 137, ../sass/wojtek.sass */
+/* line 141, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form input, .node-type-action .field-name-field-p-basic form.webform-client-form select {
   height: 40px;
   background: #fff;
@@ -248,24 +255,33 @@
   padding: 0;
   margin: 0;
   width: 100%;
+  transition: border-radius 1s ease 0s, background-color 1s ease 0s;
+  -moz-box-shadow: 0 0 10px #d1d1d1;
+  -webkit-box-shadow: 0 0 10px #d1d1d1;
+  box-shadow: 0 0 10px #d1d1d1;
 }
-/* line 144, ../sass/wojtek.sass */
+/* line 150, ../sass/wojtek.sass */
+.node-type-action .field-name-field-p-basic form.webform-client-form input:hover, .node-type-action .field-name-field-p-basic form.webform-client-form select:hover {
+  border-radius: 20px;
+  transition: border-radius 0.5s ease 0s, background-color 0.5s ease 0s;
+}
+/* line 153, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form input {
-  -moz-box-shadow: 0px 2px 10px 0 #999;
-  -webkit-box-shadow: 0px 2px 10px 0 #999;
-  box-shadow: 0px 2px 10px 0 #999;
+  -moz-box-shadow: 0 0 10px #d1d1d1;
+  -webkit-box-shadow: 0 0 10px #d1d1d1;
+  box-shadow: 0 0 10px #d1d1d1;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding-left: 10px;
 }
-/* line 148, ../sass/wojtek.sass */
+/* line 157, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form .ms-options-wrap {
   -moz-box-shadow: 0px 2px 10px 0 #999;
   -webkit-box-shadow: 0px 2px 10px 0 #999;
   box-shadow: 0px 2px 10px 0 #999;
 }
-/* line 150, ../sass/wojtek.sass */
+/* line 159, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form .ms-options-wrap > button {
   background-color: #fff;
   border: none;
@@ -281,18 +297,18 @@
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 164, ../sass/wojtek.sass */
+/* line 173, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form .ms-options-wrap > .ms-options {
   -moz-box-shadow: 0px 2px 10px 0 #999;
   -webkit-box-shadow: 0px 2px 10px 0 #999;
   box-shadow: 0px 2px 10px 0 #999;
   border: none;
 }
-/* line 168, ../sass/wojtek.sass */
+/* line 177, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form .ms-options-wrap > .ms-options ul > li:nth-child(1) {
   display: none;
 }
-/* line 170, ../sass/wojtek.sass */
+/* line 179, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form label {
   line-height: 30px;
   font-weight: 500;
@@ -300,11 +316,11 @@
   margin: 15px 0 0 0;
   font-style: italic;
 }
-/* line 176, ../sass/wojtek.sass */
+/* line 185, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form .form-required {
   color: #888;
 }
-/* line 178, ../sass/wojtek.sass */
+/* line 187, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form .webform-layout-box.horiz > *,
 .node-type-action .field-name-field-p-basic form.webform-client-form .webform-layout-box.equal > * {
   display: inline-block;
@@ -312,36 +328,36 @@
   word-spacing: normal;
 }
 @media (max-width: 767px) {
-  /* line 178, ../sass/wojtek.sass */
+  /* line 187, ../sass/wojtek.sass */
   .node-type-action .field-name-field-p-basic form.webform-client-form .webform-layout-box.horiz > *,
   .node-type-action .field-name-field-p-basic form.webform-client-form .webform-layout-box.equal > * {
     display: block;
   }
 }
 @media (max-width: 320px) {
-  /* line 178, ../sass/wojtek.sass */
+  /* line 187, ../sass/wojtek.sass */
   .node-type-action .field-name-field-p-basic form.webform-client-form .webform-layout-box.horiz > *,
   .node-type-action .field-name-field-p-basic form.webform-client-form .webform-layout-box.equal > * {
     display: block;
   }
 }
-/* line 190, ../sass/wojtek.sass */
+/* line 199, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component--street-group .webform-component--street-group--straat {
   width: 66%;
-  margin-right: 0%;
+  margin-right: 2%;
 }
-/* line 193, ../sass/wojtek.sass */
+/* line 202, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component--street-group .webform-component--street-group--nr {
-  width: 17%;
-  margin-right: 0%;
+  width: 15%;
+  margin-right: 2%;
 }
-/* line 196, ../sass/wojtek.sass */
+/* line 205, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component--street-group .webform-component--street-group--bus {
-  width: 17%;
+  width: 15%;
   margin-right: 0%;
 }
 @media (max-width: 767px) {
-  /* line 200, ../sass/wojtek.sass */
+  /* line 209, ../sass/wojtek.sass */
   .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component--street-group .webform-component--street-group--straat,
   .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component--street-group .webform-component--street-group--nr,
   .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component--street-group .webform-component--street-group--bus {
@@ -350,7 +366,7 @@
   }
 }
 @media (max-width: 320px) {
-  /* line 206, ../sass/wojtek.sass */
+  /* line 215, ../sass/wojtek.sass */
   .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component--street-group .webform-component--street-group--straat,
   .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component--street-group .webform-component--street-group--nr,
   .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component--street-group .webform-component--street-group--bus {
@@ -358,18 +374,18 @@
     margin-right: 0%;
   }
 }
-/* line 212, ../sass/wojtek.sass */
+/* line 221, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component--city-group .webform-component--city-group--postcode {
   width: 33%;
-  margin-right: 0%;
+  margin-right: 2%;
 }
-/* line 215, ../sass/wojtek.sass */
+/* line 224, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component--city-group .webform-component--city-group--gemeente {
-  width: 67%;
+  width: 65%;
   margin-right: 0%;
 }
 @media (max-width: 767px) {
-  /* line 219, ../sass/wojtek.sass */
+  /* line 228, ../sass/wojtek.sass */
   .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component--city-group .webform-component--city-group--postcode,
   .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component--city-group .webform-component--city-group--gemeente {
     width: 100%;
@@ -377,24 +393,24 @@
   }
 }
 @media (max-width: 320px) {
-  /* line 224, ../sass/wojtek.sass */
+  /* line 233, ../sass/wojtek.sass */
   .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component--city-group .webform-component--city-group--postcode,
   .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component--city-group .webform-component--city-group--gemeente {
     width: 100%;
     margin-right: 0%;
   }
 }
-/* line 228, ../sass/wojtek.sass */
+/* line 237, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component-markup {
   margin: 40px auto;
   text-align: center;
   color: #888;
 }
-/* line 232, ../sass/wojtek.sass */
+/* line 241, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form .form-actions {
   text-align: center;
 }
-/* line 234, ../sass/wojtek.sass */
+/* line 243, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form .form-actions button {
   -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
@@ -413,62 +429,22 @@
   min-width: 200px;
   text-align: center;
 }
-/* line 258, ../sass/wojtek.sass */
+/* line 267, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form .form-actions button:hover {
   border-radius: 20px;
   transition: border-radius 0.5s ease 0s, background-color 0.5s ease 0s;
 }
-/* line 267, ../sass/wojtek.sass */
-.node-type-action article .field-type-text-long a {
-  display: inline-block;
-  background-color: #822a3a;
-  box-shadow: 0 3px 10px black;
-  height: 40px;
-  line-height: 40px;
-  margin: 20px 10px 20px;
-  text-align: center;
-  transition: border-radius 1s ease 0s, background-color 1s ease 0s;
-  border: none;
-  padding: 0 20px;
-  color: #fff;
-  position: relative;
-  white-space: nowrap;
-}
-/* line 281, ../sass/wojtek.sass */
-.node-type-action article .field-type-text-long a:after {
-  display: block;
-  content: " ";
-  position: absolute;
-  left: 20px;
-  right: 20px;
-  bottom: 8px;
-  height: 3px;
-  background: #fff;
-  z-index: 10;
-}
-/* line 291, ../sass/wojtek.sass */
-.node-type-action article .field-type-text-long a:hover {
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
-  background: #fff;
-  color: #822a3a;
-}
-/* line 295, ../sass/wojtek.sass */
-.node-type-action article .field-type-text-long a:hover:after {
-  background: #822a3a;
-}
-/* line 297, ../sass/wojtek.sass */
+/* line 306, ../sass/wojtek.sass */
 .node-type-action .field-name-addtoany {
   text-align: center;
   margin-right: 10px;
 }
-/* line 300, ../sass/wojtek.sass */
+/* line 309, ../sass/wojtek.sass */
 .node-type-action .field-name-addtoany #social-icons {
   display: inline-block;
 }
 
-/* line 313, ../sass/wojtek.sass */
+/* line 322, ../sass/wojtek.sass */
 hr {
   display: block;
   height: 1px;

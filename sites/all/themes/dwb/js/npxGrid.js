@@ -14,6 +14,7 @@
       gridSizer: ".masonry-grid-sizer",
       gridItem: ".views-row",
       fixedItem: ".node-action",
+      smallItem: ".node-page",
       forceSmall: false,
     };
 
@@ -105,11 +106,14 @@
             if($(item).find(this.settings.fixedItem).length) {
               rand = 4;
             }
+            else if($(item).find(this.settings.smallItem).length) {
+              rand = 1;
+            }
             this.addTile(rand, i + offset);
           }
           else {
             this.addTile(1, i + offset);
-          } 
+          }
         }
         ok = !this.findGaps();
         console.debug('new iteration: ' + iteration);
@@ -144,6 +148,9 @@
           }
           if($(item).find(this.settings.fixedItem).length) {
             rand = 4;
+          }
+          else if($(item).find(this.settings.smallItem).length) {
+            rand = 1;
           }
           this.addTile(rand, i);
         }

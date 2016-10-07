@@ -81,6 +81,16 @@
       content: ''
     &:hover:after
       transform: none
+  li.active-trail
+    a
+      border-bottom: 1px solid $menu-underline
+      line-height: 14px
+      font-size: $font-size-paragraph
+      padding-bottom: 3px
+      &:after
+        content: ''
+      &:hover:after
+        transform: none
 
 @mixin menu-style-whois
   a.active
@@ -116,6 +126,16 @@
       content: ''
     &:hover:after
       transform: none
+  li.active-trail
+    a
+      border-bottom: 1px solid white
+      line-height: 14px
+      font-size: $font-size-paragraph
+      padding-bottom: 3px
+      &:after
+        content: ''
+      &:hover:after
+        transform: none
 
 
 @mixin tilehover
@@ -130,6 +150,14 @@
       transition: border-radius 0.5s ease,background-color 0.5s ease
       // background-color: $font-dark-red
       border-radius: 20px
+    .node
+      transition: background-color 0.5s ease
+      background: $transparent-white-node
+      .ds-2col
+        & > .group-left
+          img
+            transform: scale(1.01)
+            transition: all 1s ease
       // .tile-title
         // display: inline
         // color: white
@@ -196,6 +224,11 @@
       transition: all 0.5s ease
       background: $transparent-white-node-hover
       // +tileshadow
+      .ds-2col
+        & > .group-left
+          img
+            transform: scale(1.01)
+            transition: all 1s ease
 
 
 // ZIG ZAG BORDERS

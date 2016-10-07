@@ -170,9 +170,14 @@
         font-size: 12px
         line-height: 15px
         max-height: 30px
+      @include breakpoint($fix)
+        font-size: 11px
+        line-height: 14px
+        max-height: 28px
   .node
     padding: 25px
     position: relative
+    transition: background-color 1s ease
     @include breakpoint($m)
       padding: 15px
     @include breakpoint($t)
@@ -183,7 +188,8 @@
         float: none
         position: relative
         img
-          transition: all 0.5s ease
+          transition: all 1s ease
+          display: block
       & > .group-right
         width: 100%
         position: absolute
@@ -228,6 +234,10 @@
     max-height: 88px
     overflow: hidden
     padding-left: 3px
+    @include breakpoint($fix)
+      font-size: 30px
+      line-height: 37px
+      max-height: 74px
   .tile-text
     margin: 10px 0
     max-height: 60px
@@ -267,6 +277,8 @@
       & > .group-left
         width: 100%
         position: relative
+        img
+          transition: all 1s ease
       & > .group-right
         width: 100%
         position: relative
@@ -315,6 +327,10 @@
     max-height: 88px
     overflow: hidden
     padding-left: 3px
+    @include breakpoint($fix)
+      font-size: 30px
+      line-height: 37px
+      max-height: 74px
   .tile-text
     margin: 10px 0
     max-height: 60px
@@ -358,6 +374,8 @@
       & > .group-left
         width: 41.5%
         position: relative
+        img
+          transition: all 1s ease
         @include breakpoint($t)
           width: 41.5%
         @include breakpoint($m)

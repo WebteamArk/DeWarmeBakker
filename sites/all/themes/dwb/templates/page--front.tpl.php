@@ -9,7 +9,7 @@
     height: 100px;
     left: 0;
     top: 100%;
-    z-index: 10;
+    z-index: 0;
     background: transparent url('http://slot1.dummysite.eu/sites/all/themes/dwb/css/i/zigzag4.png') repeat-x left bottom;
     margin-top: -5px;
     pointer-events: none;

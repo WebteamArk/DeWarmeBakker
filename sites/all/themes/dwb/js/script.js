@@ -5,6 +5,10 @@
  * @author Jacek Szmit
  */
 (function ($, Drupal, window, document, undefined) {
+  $(document).bind('leaflet.map', function (e, map, lMap) {
+    globalMapLeaflet = map;
+    globalMapLeafletL = lMap;
+  });
 
 Drupal.behaviors.dwbExternalLinks = {
   attach: function(context, settings) {
@@ -317,13 +321,15 @@ Drupal.behaviors.dwbAnimateAnchor = {
 
 Drupal.behaviors.dwbMobileMenu = {
   attach: function(context, settings) {
-    $('#off-canvas-menu ul', context).once('dwb-mobile-menu', function () {
-      console.debug('dwbMobileMenu');
-      var $that = $(this);
-      $('#block-locale-language ul.language-switcher-locale-url li', context).each(function () {
-        $that.append($(this));
+    setInterval( function () {
+      $('#off-canvas-menu ul', context).once('dwb-mobile-menu', function () {
+        console.debug('dwbMobileMenu');
+        var $that = $(this);
+        $('#block-locale-language ul.language-switcher-locale-url li', context).each(function () {
+          $that.append($(this).clone());
+        });
       });
-    });
+    }, 300);
   },
 };
 
@@ -365,6 +371,7 @@ Drupal.behaviors.dwbPlaceholder = {
     });
   },
 };
+
 Drupal.behaviors.dwbFixTileTitle = {
   attach: function(context, settings) {
     setInterval(function () {
@@ -376,6 +383,52 @@ Drupal.behaviors.dwbFixTileTitle = {
   calculateHeight: function (elem) {
     var height = $(elem).height();
     $(elem).closest('.group-right').css('margin-top', -(height/2) - 10);
+  },
+};
+
+Drupal.behaviors.dwbFindFix = {
+  attach: function(context, settings) {
+    $('.view-find-dwb', context).once('dwb-find-fix', function () {
+      var $empty = $(this).find('.view-empty');
+      var $content = $(this).find('.view-content');
+      if($empty.length) {
+        $content.prepend($empty);
+      }
+    });
+  },
+};
+
+Drupal.behaviors.dwbMapSize = {
+  attach: function(context, settings) {
+    $('.view-find-dwb', context).once('dwb-map-size', function () {
+      var that = this;
+      setInterval(function () {
+        Drupal.behaviors.dwbMapSize.resizeMap(that);
+      }, 300);
+    });
+  },
+  resizeMap: function (elem) {
+    var bp = window.getComputedStyle(document.querySelector('body'), ':before').getPropertyValue('content').replace(/\"/g, '');
+    var mapHeight = 500;
+    switch(bp) {
+      case 'smartphone-portrait':
+        mapHeight = 200;
+        break;
+      case 'smartphone':
+        mapHeight = 300;
+        break;
+      case 'tablet':
+        mapHeight = 400;
+        break;
+      case 'desktop':
+        mapHeight = 500;
+        break;
+      case 'bigscreen':
+        mapHeight = 500;
+        break;
+    }
+    $(elem).find('.leaflet-container').css('height', mapHeight);
+    globalMapLeafletL.invalidateSize();
   },
 };
 
@@ -393,6 +446,13 @@ $(window).resize( function () {
       Drupal.behaviors.dwbFixTileTitle.calculateHeight(this);
     });
   }, 300);
+  $('.view-find-dwb').each( function () {
+    var that = this;
+    setInterval(function () {
+      Drupal.behaviors.dwbMapSize.resizeMap(that);
+    }, 300);
+  });
+
 });
 
 })(jQuery, Drupal, this, this.document);
