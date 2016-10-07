@@ -1,0 +1,1 @@
+Drupal.locale = { 'strings': {"":{"Postcode":"Code postal","Sorteer":"Sortez","Stad":"Ville","Zoek":"Cherchez"}} };
