@@ -1,4 +1,8 @@
+.tile-shape-1 .tile-title-outer .tile-title {
+	padding: 0 10px;
+}
 
+/*
 .masonry-item,
 .masonry-grid-sizer {
 	width: 25%;
@@ -39,4 +43,4 @@
 	background: green;
 	width: 50%;
 	padding-bottom: 50%;
-}
+}*/

@@ -2,12 +2,12 @@
 #block-views-front-block-bottom-block-1
   .view-display-id-block_1
     position: relative
-    max-width: 300px
+    max-width: 400px
     margin: 0 auto
     margin-bottom: 100px
   .views-field-nothing
     position: absolute
-    top: 50%
+    top: 45%
     width: 100%
     text-align: center
     .squaretoRoundLink
@@ -42,10 +42,14 @@
       max-height: 200px
   .views-field-field-text
     padding-top: 30px
+
   .paragraphs-item-par-images-2-links
+    margin-top: 30px
     .group-left,
     .group-right
       position: relative
+      @include breakpoint($m)
+        width: 100%
       .field-name-field-link-1,
       .field-name-field-link-2
         position: absolute
@@ -59,6 +63,14 @@
           line-height: 0
           font-size: 0
           color: transparent
+  .group-one-column
+    .group-left,
+    .group-right
+      width: 50%
+      float: none
+      @include breakpoint($m)
+        width: 100%
+
 
 p
   margin: 30px 0
@@ -69,13 +81,14 @@ p
 .field-name-title
   h1
     font-family: $font-tile-title
-    font-size: $font-size-tile-action
+    font-size: $font-size-h1-title
     margin: 0
     line-height: normal
     -webkit-margin-before: 0
     -webkit-margin-after: 0
     -webkit-margin-start: 0
     -webkit-margin-end: 0
+    font-weight: normal
     @include breakpoint($t)
       font-size: $font-size-subpages-title
     @include breakpoint($m)
@@ -90,7 +103,7 @@ p
     margin: 75px 0 0 0
     line-height: normal
     text-transform: uppercase
-    font-size: $font-size-subpages-title
+    font-size: $font-size-subpages-h2
     @include breakpoint($t)
       margin: 50px 0 0 0
       font-size: $font-size-subpages-title
@@ -161,27 +174,27 @@ p
   text-align: center
   margin: 75px 0
   .field-name-field-link
-    transition: border-radius 1s ease,background-color 1s ease
-    background: $font-dark-red
-    text-align: center
-    padding: 15px 10px
-    text-transform: uppercase
     display: inline-block
-    +darkshadow
-    &:hover
-      transition: border-radius 0.5s ease,background-color 0.5s ease
-      background-color: white
-      border-radius: 20px
-      a
+    a
+      color: $font-dark-red
+      transition: border-radius 1s ease,background-color 1s ease
+      background: white
+      text-align: center
+      padding: 10px 30px
+      text-transform: uppercase
+      display: block
+      +buttonshadow
+      &:hover
         color: $font-dark-red
-        border-bottom: 2px solid $font-dark-red
-        padding-bottom: $btn-padding-height
-  a
-    color: white
-    text-decoration: none
-    font-weight: bold
-    border-bottom: 2px solid white
-    padding-bottom: $btn-padding-height
+        transition: border-radius 0.5s ease,background-color 0.5s ease
+        background-color: white
+        border-radius: 20px
+  // a
+  //   color: white
+  //   text-decoration: none
+  //   font-weight: bold
+  //   border-bottom: 2px solid white
+  //   padding-bottom: $btn-padding-height
 
 
 .node
@@ -204,10 +217,11 @@ p
         z-index: 100
         text-transform: uppercase
         color: $font-dark-red
-        font-weight: bold
+        font-weight: normal
         font-size: $font-size-paragraph
         border: none
         padding: 15px 0
+        height: 40px
         &:after
           border-top-color: $font-dark-red
       > .ms-options
@@ -251,12 +265,14 @@ p
 .view-about-bread-related-6-random
   .view-footer
     text-align: center
-  .squareToRound
-    max-width: 300px
-    width: auto
-    height: auto
+  .squaretoRoundLink
     display: inline-block
-    padding: 0 10px 5px
+  // .squareToRound
+  //   max-width: 300px
+  //   width: auto
+  //   height: auto
+  //   display: inline-block
+  //   padding: 0 10px 5px
 
 .view-display-id-block_1
   .view-filters
@@ -385,14 +401,14 @@ p
 
 // ------------------------ FILTERS
 .ms-options-wrap
-  +darkshadow
+  +buttonshadow
   button
     z-index: 100
     overflow: hidden
-    padding: 15px 20px 15px 15px !important
+    padding: 10px 20px 10px 15px !important
     white-space: normal
     .filter-text
-      border-bottom: 2px solid $font-dark-red
+      // border-bottom: 2px solid $font-dark-red
       position: relative
       display: inline-block
       padding-right: 30px
@@ -409,7 +425,7 @@ p
       display: none
 .ms-options
   margin-top: 0 !important
-  +darkshadowhover
+  +buttonshadow
   z-index: 90 !important
   button
     display: block
@@ -421,13 +437,13 @@ p
     &:hover
       color: white !important
       background: $font-dark-red
-      span
-        border-bottom: 2px solid white
+      // span
+      //   border-bottom: 2px solid white
     span
-      border-bottom: 2px solid $font-dark-red
+      // border-bottom: 2px solid $font-dark-red
       line-height: 14px
       font-size: $font-size-paragraph
-      padding-bottom: 3px
+      // padding-bottom: 3px
   ul
     margin: 0
     padding: 0

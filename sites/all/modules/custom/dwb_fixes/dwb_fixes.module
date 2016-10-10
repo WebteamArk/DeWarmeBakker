@@ -4,10 +4,61 @@
  * @author Jacek Szmit
  */
 
+/**
+ * Implements hook_leaflet_map_info_alter().
+ */
 function dwb_fixes_leaflet_map_info_alter(&$map_info) {
   foreach ($map_info as $map_id => $info) {
     $map_info[$map_id]['settings']['touchZoom'] = FALSE;
     //$map_info[$map_id]['settings']['tap'] = FALSE;
     //$map_info[$map_id]['settings']['attributionControl'] = TRUE;
+  }
+}
+
+/**
+ * Implements hook_webform_autocomplete_options_alter().
+ */
+function dwb_fixes_webform_autocomplete_options_alter(&$options, $node, $cid, $str) {
+  $component = $node->webform['components'][$cid];
+  $match_rule = $component['extra']['autocomplete_match_rule'];
+
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+  ->entityCondition('bundle', 'bakery')
+  ->propertyCondition('status', NODE_PUBLISHED)
+  ->propertyCondition('language', $node->language, '=');
+
+  switch ($match_rule) {
+    case WEBFORM_AUTOCOMPLETE_MATCH_BEGIN:
+      $query->propertyCondition('title', db_like($str) . '%', 'like');
+      break;
+    case WEBFORM_AUTOCOMPLETE_MATCH_END:
+      $query->propertyCondition('title', '%' . db_like($str), 'like');
+      break;
+    default:
+      $query->propertyCondition('title', '%' . db_like($str) . '%', 'like');
+      break;
+  }
+
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    foreach (node_load_multiple(array_keys($result['node'])) as $webform_node) {
+      $options[$webform_node->title] = $webform_node->title;
+    }
+  }
+
+  natcasesort($options);
+}
+
+/**
+ * Implements hook_views_query_alter()
+ */
+function dwb_fixes_views_query_alter(&$view, &$query) {
+  if ($view->name == 'find_dwb') {
+    //dpm($query->where);
+     if (!isset($query->where[1]['conditions'][3]) && !isset($query->where[1]['conditions'][4] )) {
+       $query->where[1]['conditions'][0]['value'] = '-1';
+     }
   }
 }

@@ -1,0 +1,512 @@
+.masonry-item,
+.masonry-grid-sizer
+  width: 25%
+  margin: 0
+  padding: 0
+  border: 0
+  overflow: hidden
+  position: relative
+  @include breakpoint($m)
+    width: 50%
+  @include breakpoint($sp)
+    width: 100%
+  @include breakpoint($t)
+    width: 33%
+  @include breakpoint($d)
+    width: 33%
+  @include breakpoint($b)
+    width: 25%
+
+.masonry-item
+  padding: 25px !important
+  box-sizing: border-box
+  @include breakpoint($m)
+    padding: 15px !important
+  @include breakpoint($t)
+    padding: 20px !important
+
+// .masonry-item .node
+//   bottom: 50px
+//   left: 50px
+//   position: absolute
+//   right: 50px
+//   top: 50px
+//   padding: 0
+//   @include breakpoint($m)
+//     bottom: 30px
+//     left: 30px
+//     position: absolute
+//     right: 30px
+//     top: 30px
+//     padding: 0
+//   @include breakpoint($t)
+//     bottom: 40px
+//     left: 40px
+//     position: absolute
+//     right: 40px
+//     top: 40px
+//     padding: 0
+
+.field-name-ds-link-to-node,
+.link-to-taxonomy-term
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  display: block
+  a
+    display: block
+    height: 100%
+    left: -50px
+    padding: 50px
+    position: absolute
+    top: -50px
+    width: 100%
+    line-height: 0
+    font-size: 0
+    color: transparent
+
+.view-id-y_term_tid_from_reference
+  a
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    text-indent: -9990px
+    display: block
+    z-index: 10
+.view-id-y_term_tid_from_reference
+  &.contextual-links-region
+    position: static
+
+.node.node-node-term.node-teaser.view-mode-teaser
+  position: static
+
+.node.node-node-term.node-teaser.view-mode-teaser
+  .view-y-term-tid-from-reference
+    .view-content
+      position: static
+
+// -----------------------------------------------  TILE 1 x 1
+
+.tile-shape-1
+  //background: red
+  padding-bottom: 25%
+  +tile1hover
+  @include breakpoint($sp)
+    padding-bottom: 100%
+  @include breakpoint($m)
+    padding-bottom: 50%
+  @include breakpoint($t)
+    padding-bottom: 50%
+  @include breakpoint($d)
+    padding-bottom: 33%
+  @include breakpoint($b)
+    padding-bottom: 25%
+  .tile-text
+    display: none
+  .tile-more-link
+    display: none
+  .field-name-node-link
+    display: none
+  .tile-title-outer
+    // height: auto
+    text-align: center
+    margin: 0 auto
+    // position: relative
+    // top: 42%
+    // line-height: 0
+    // max-width: 60%
+    padding: 0 20%
+    text-align: center
+    display: block
+    // @include breakpoint($b)
+    //   max-width: 60%
+      // line-height: 16px
+    // @include breakpoint($m)
+    //   max-width: 60%
+    //-ms-transform: translateY(-25%)
+    //-webkit-transform: translateY(-25%)
+    //transform: translateY(-25%)
+    position: relative
+    .tile-title
+      font-size: 14px
+      text-transform: uppercase
+      font-weight: normal
+      line-height: 20px
+      // display: inline
+      color: $font-dark-red
+      // border-bottom: 3px $font-dark-red solid
+      // border-bottom: 2px solid $font-dark-red
+      // padding-bottom: $btn-padding-height
+      // text-decoration: none
+      // font-weight: bold
+      // color: $font-dark-red
+      // font-size: $font-size-paragraph
+      // text-transform: uppercase
+      display: block
+      max-height: 40px
+      overflow: hidden
+      -webkit-margin-before: 0
+      -webkit-margin-after: 0
+      -webkit-margin-start: 0
+      -webkit-margin-end: 0
+      background: white
+      // box-sizing: border-box
+      padding: 0 10px
+      border-top: 10px solid white
+      border-bottom: 10px solid white
+      transition: border-radius 1s ease,background-color 1s ease
+      +buttonshadow
+      // text-align: center
+      // max-width: 200px
+      // margin: 0 auto
+      margin: 0 auto 0 auto
+      max-width: 500px
+      @include breakpoint($t)
+        // max-width: 60%
+        font-size: 12px
+        line-height: 15px
+        max-height: 30px
+  .node
+    padding: 25px
+    position: relative
+    @include breakpoint($m)
+      padding: 15px
+    @include breakpoint($t)
+      padding: 20px
+    .ds-2col
+      & > .group-left
+        width: auto
+        float: none
+        position: relative
+        img
+          transition: all 0.5s ease
+      & > .group-right
+        width: 100%
+        position: absolute
+        top: 50%
+        left: 0
+        display: block
+        box-sizing: border-box
+        padding: 0
+        .field-item
+          border-bottom: 2px solid $font-dark-red
+          padding-bottom: $btn-padding-height
+          display: inline-block
+
+// -----------------------------------------------  TILE 1 x 2
+
+.tile-shape-2
+  //background: yellow
+  padding-bottom: 50%
+  +tile2hover
+  .field-name-node-link
+    display: none
+  @include breakpoint($m)
+    padding-bottom: 100%
+  @include breakpoint($t)
+    padding-bottom: 100%
+  @include breakpoint($d)
+    padding-bottom: 66%
+  @include breakpoint($b)
+    padding-bottom: 50%
+  .tile-title
+    font-family: $font-tile-title
+    font-size: $font-size-tile-title
+    margin: 0
+    line-height: normal
+    padding-top: 20px
+    -webkit-margin-before: 0
+    -webkit-margin-after: 0
+    -webkit-margin-start: 0
+    -webkit-margin-end: 0
+    font-weight: normal
+    line-height: 44px
+    max-height: 88px
+    overflow: hidden
+    padding-left: 3px
+    @include breakpoint($fix)
+      font-size: 20px
+  .tile-text
+    margin: 10px 0
+    max-height: 60px
+    overflow: hidden
+    line-height: 20px
+  .tile-more-link
+    text-transform: uppercase
+    .squareToRound
+      transition: none
+      width: auto
+      height: auto
+      text-align: left
+      margin: 0 auto
+      background-color: transparent
+      -webkit-box-shadow: none
+      -moz-box-shadow: none
+      box-shadow: none
+      p
+        padding: 0
+        border-bottom: solid 1px $font-dark-red
+        line-height: 24px
+        padding-bottom: 2px
+
+  .node
+    // padding: 50px
+    height: calc(100% - 50px)
+    background: $transparent-white
+    padding: 25px
+    transition: all 0.5s ease
+    @include breakpoint($m)
+      padding: 15px
+      height: calc(100% - 30px)
+    @include breakpoint($t)
+      padding: 20px
+      height: calc(100% - 40px)
+    .ds-2col
+      & > .group-left
+        width: 100%
+        position: relative
+      & > .group-right
+        width: 100%
+        position: relative
+
+
+// -----------------------------------------------  TILE 2 x 1
+
+.tile-shape-3
+  //background: blue
+  +tile2hover
+  width: 50%
+  padding-bottom: 25%
+  // background: $transparent-white
+  .node
+    background: $transparent-white
+    padding: 25px
+    height: calc(100% - 50px)
+  .field-name-node-link
+    display: none
+  @include breakpoint($sp)
+    width: 100%
+    padding-bottom: 100%
+  @include breakpoint($m)
+    width: 100%
+    padding-bottom: 50%
+  @include breakpoint($t)
+    width: 100%
+    padding-bottom: 50%
+  @include breakpoint($d)
+    width: 66%
+    padding-bottom: 33%
+  @include breakpoint($b)
+    width: 50%
+    padding-bottom: 25%
+  .tile-title
+    font-family: $font-tile-title
+    font-size: $font-size-tile-title
+    margin: 0
+    line-height: normal
+    -webkit-margin-before: 0
+    -webkit-margin-after: 0
+    -webkit-margin-start: 0
+    -webkit-margin-end: 0
+    font-weight: normal
+    line-height: 44px
+    max-height: 88px
+    overflow: hidden
+    padding-left: 3px
+  .tile-text
+    margin: 10px 0
+    max-height: 60px
+    overflow: hidden
+    line-height: 20px
+    @include breakpoint($t)
+      max-height: 40px
+    @include breakpoint($m)
+      max-height: 40px
+  .tile-more-link
+    text-transform: uppercase
+    .squareToRound
+      transition: none
+      width: auto
+      height: auto
+      text-align: left
+      margin: 0 auto
+      background-color: transparent
+      -webkit-box-shadow: none
+      -moz-box-shadow: none
+      box-shadow: none
+      p
+        padding: 0
+        border-bottom: solid 1px $font-dark-red
+        line-height: 24px
+        padding-bottom: 2px
+  .node
+    // padding: 50px
+    // @include breakpoint($m)
+    //   padding: 30px
+    // @include breakpoint($t)
+    //   padding: 40px
+    transition: all 0.5s ease
+    @include breakpoint($m)
+      padding: 15px
+      height: calc(100% - 30px)
+    @include breakpoint($t)
+      padding: 20px
+      height: calc(100% - 40px)
+    .ds-2col
+      & > .group-left
+        width: 41.5%
+        position: relative
+        @include breakpoint($t)
+          width: 41.5%
+        @include breakpoint($m)
+          width: 45%
+      & > .group-right
+        width: 50%
+        position: relative
+        margin-left: 7%
+        @include breakpoint($t)
+          margin-left: 4%
+        @include breakpoint($m)
+          margin-left: 4%
+        .field-item
+          border-bottom: 2px solid $font-dark-red
+          padding-bottom: $btn-padding-height
+          display: inline-block
+
+// -----------------------------------------------  TILE 2 x 2
+
+.tile-shape-4
+  //background: green
+  width: 50%
+  padding-bottom: 50%
+  +tile4hoverwhite
+  .field-name-node-link
+    display: none
+  @include breakpoint($m)
+    width: 100%
+    padding-bottom: 100%
+  @include breakpoint($t)
+    width: 100%
+    padding-bottom: 100%
+  @include breakpoint($d)
+    width: 66%
+    padding-bottom: 66%
+  @include breakpoint($b)
+    width: 50%
+    padding-bottom: 50%
+  .tile-title
+    text-align: center
+    // text-transform: uppercase
+    font-family: $font-tile-title
+    font-size: $font-size-tile-action
+    color: black
+    margin: 0
+    padding-top: 40px
+    line-height: normal
+    font-weight: normal
+    -webkit-margin-before: 0
+    -webkit-margin-after: 0
+    -webkit-margin-start: 0
+    -webkit-margin-end: 0
+    padding: 0 5%
+    line-height: 60px
+    max-height: 120px
+    overflow: hidden
+    @include breakpoint($t)
+      font-size: 25px
+      line-height: 30px
+      max-height: 60px
+  .tile-text
+    text-align: center
+    margin: 20px 50px
+    color: black
+    line-height: 20px
+    max-height: 60px
+    overflow: hidden
+    @include breakpoint($t)
+      font-size: 12px
+      line-height: 16px
+      max-height: 48px
+  .tile-more-link
+    //background: white
+    text-align: center
+    padding: 15px 10px
+    text-transform: uppercase
+    max-width: 200px
+    text-align: center
+    display: block
+    margin: 0 auto
+    //+darkshadow
+    .squareToRound
+      margin-bottom: 40px
+
+  .node
+    padding: 25px
+    // width: 100%
+    // height: 100%
+    box-sizing:  border-box
+    // @include breakpoint($m)
+    //   padding: 30px
+    // @include breakpoint($t)
+    //   padding: 40px
+    .ds-2col
+      width: 100%
+      height: 100%
+      position: relative
+      & > .group-left
+        width: 100%
+        position: relative
+        img
+          transition: all 0.5s ease
+      & > .group-right
+        width: 100%
+        transition: all 0.5s ease
+        background: $transparent-white-node
+        position: absolute
+        top: 25%
+        left: 0
+        &:before
+          +outer-border-top-white
+          transition: all 0.5s ease
+        &:after
+          +outer-border-bottom-white
+          transition: all 0.5s ease
+        .field-item
+          border-bottom: 2px solid $font-dark-red
+          padding-bottom: $btn-padding-height
+          display: inline-block
+
+.tile-shape-4
+  +tile4hover
+  .node-action
+    .ds-2col
+      & > .group-right
+        background: $transparent-red
+        &:before
+          +outer-border-top
+        &:after
+          +outer-border-bottom
+        .field-item
+          border-bottom: 2px solid $font-dark-red
+          padding-bottom: $btn-padding-height
+          display: inline-block
+        .tile-title
+          font-family: $font-stack
+          font-size: $font-size-tile-action
+          text-transform: uppercase
+          color: white
+          font-weight: bold
+          @include breakpoint($t)
+            font-size: 30px
+            line-height: 33px
+            max-height: 66px
+        .tile-text
+          color: white
+          @include breakpoint($t)
+            font-size: 12px
+            line-height: 16px
+            max-height: 48px
