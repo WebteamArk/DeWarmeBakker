@@ -4,7 +4,7 @@
  * @author Jacek Szmit
  */
 define('DWB_IMPORT_NODE_TYPE', 'bakery');
-//define('DWB_IMPORT_VOCABULARY_ID', 1);
+define('DWB_IMPORT_VOCABULARY_ID', 7);
 define('DWB_IMPORT_FILES_DIR', 'private://dwb_import/');
 
 /**
@@ -43,14 +43,23 @@ function dwb_import_bakeries_form($form, &$form_state) {
       '#type' => 'fieldset',
       '#title' => 'Import form'
   );
+//  print taxonomy_vocabulary_machine_name_load('bakery_products')->vid;
 
-//  $vocabulary = taxonomy_get_tree(NOPIX_IMPORT_VOCABULARY_ID);
-//   $options = array();
+  $vocabulary = taxonomy_get_tree(DWB_IMPORT_VOCABULARY_ID);
+  $options = array(-1 => 'none');
 
-//   foreach ($vocabulary as $term) {
-//     $options[$term->tid] = $term->name;
-//   }
+  foreach ($vocabulary as $term) {
+    $options[$term->tid] = $term->name;
+  }
 
+  $form['dwb_import']['import_category'] = array(
+      '#type' => 'select',
+      '#title' => 'Category',
+      '#description' => 'Select category for bakeries.',
+      '#options' => $options,
+      '#required' => FALSE,
+  );
+  
   $form['dwb_import']['import_file'] = array(
       '#type' => 'managed_file',
       '#title' => 'CSV file',
@@ -89,7 +98,9 @@ function dwb_import_bakeries_form_submit(&$form, &$form_state) {
 
   $file_path = drupal_realpath($file->uri);
 
-  _dwb_import_csv_file_process($file_path);
+  $tid = isset($form_state['values']['import_category']) && intval($form_state['values']['import_category']) != -1 ? intval($form_state['values']['import_category']) : false;
+  
+  _dwb_import_csv_file_process($file_path, $tid);
 
   file_delete($file);
 }
@@ -99,7 +110,7 @@ function dwb_import_bakeries_form_submit(&$form, &$form_state) {
  * 
  * @param string $file_path
  */
-function _dwb_import_csv_file_process($file_path) {
+function _dwb_import_csv_file_process($file_path, $tid = false) {
   $rows = array();
   $csv = fopen($file_path, 'r');
   while (($line = fgetcsv($csv)) !== FALSE) {
@@ -143,7 +154,7 @@ function _dwb_import_csv_file_process($file_path) {
   $import_ok = array();
   $import_errors = array();
   foreach($rows as $key => $row) {
-    if(_dwb_import_create_bakery_node($row)) {
+    if(_dwb_import_create_bakery_node($row, $tid)) {
       $import_count_ok++;
       $import_ok[] = sprintf('<p><strong>Row index: %s</strong>, Bakery name: %s</p>', $key+1, $row[0]);
     } else {
@@ -162,7 +173,7 @@ function _dwb_import_csv_file_process($file_path) {
   }
 }
 
-function  _dwb_import_create_bakery_node($data) {
+function  _dwb_import_create_bakery_node($data, $tid = false) {
   global $user;
   
   $values = array(
@@ -187,6 +198,7 @@ function  _dwb_import_create_bakery_node($data) {
     'city' => $data[4],
     'postal_code' => $data[3],
     'country' => 'be',
+    'email' => $data[5],
     'latitude' => $data[6],
     'longitude' => $data[7],
     'inhibit_geocode' => TRUE,
@@ -194,6 +206,10 @@ function  _dwb_import_create_bakery_node($data) {
   $locationID = location_save($location);
   
   $entity->locations[0]['lid'] = $locationID;
+  
+  if ($tid !== false) {
+    $ewrapper->field_bakery_products->set(array($tid));
+  }
   
   $ewrapper->save();
   
