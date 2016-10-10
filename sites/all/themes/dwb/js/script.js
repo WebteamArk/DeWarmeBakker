@@ -43,6 +43,22 @@ Drupal.behaviors.dwbWebformSubmit = {
         $(that).click();
       });
     });
+    $('#views-exposed-form-find-dwb-block #edit-city', context).once('dwb-webform-submit').each(function () {
+      $(this).keypress( function (e) {
+        var keycode = (e.keyCode ? e.keyCode : e.which);
+        if (keycode == '13') {
+          $('button.npxSearchMap', context).click();
+        }
+      });
+    });
+    $('#views-exposed-form-find-dwb-block #edit-distance-postal-code', context).once('dwb-webform-submit').each(function () {
+      $(this).keypress( function (e) {
+        var keycode = (e.keyCode ? e.keyCode : e.which);
+        if (keycode == '13') {
+          $('button.npxSearchMap', context).click();
+        }
+      });
+    });
   },
 };
 
