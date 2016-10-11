@@ -136,8 +136,8 @@ function _dwb_import_csv_file_process($file_path, $tid = false) {
     3 => 'Postal code',
     4 => 'City',
     5 => 'Email',
-    6 => 'lattitude',
-    7 => 'logitude',
+    6 => 'Lat',
+    7 => 'Lng',
   );
   
   $data_columns = array_shift($rows);
