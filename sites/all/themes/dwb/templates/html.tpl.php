@@ -21,6 +21,9 @@
     <meta name="MobileOptimized" content="width">
     <meta name="HandheldFriendly" content="true">
     <meta name="viewport" content="width=device-width">
+    
+	<!--    <meta property="og:description" content="Facebook De Warme Bakker description"/> -->
+
   <?php endif; ?>
   <!--[if IEMobile]><meta http-equiv="cleartype" content="on"><![endif]-->
 
