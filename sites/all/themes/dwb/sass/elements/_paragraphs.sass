@@ -45,6 +45,8 @@
 
   .paragraphs-item-par-images-2-links
     margin-top: 30px
+    @include breakpoint($m)
+      margin-top: 0px
     .group-left,
     .group-right
       position: relative
@@ -63,6 +65,9 @@
           line-height: 0
           font-size: 0
           color: transparent
+    .group-left
+      @include breakpoint($m)
+        margin-top: 30px
   .group-one-column
     .group-left,
     .group-right
@@ -70,7 +75,7 @@
       float: none
       @include breakpoint($m)
         width: 100%
-
+        margin-top: 0px
 
 p
   margin: 30px 0
@@ -106,15 +111,15 @@ p
     font-size: $font-size-subpages-h2
     @include breakpoint($t)
       margin: 50px 0 0 0
-      font-size: $font-size-subpages-title
+      font-size: $font-size-subpages-h2-mobile
     @include breakpoint($m)
       margin: 50px 0 0 0
-      font-size: $font-size-title-tablet
+      font-size: $font-size-subpages-h2-mobile
       overflow-wrap: break-word
       word-wrap: break-word
     @include breakpoint($sm)
       margin: 30px 0 0 0
-      font-size: $font-size-title-mobile
+      font-size: $font-size-subpages-h2-mobile
 
 #page-title
   margin-bottom: 30px
@@ -155,6 +160,8 @@ p
   .group-right
     @include breakpoint($m)
       width: 100%
+.paragraphs-item-par-image
+  margin-top: 0px
 
 .field-name-field-long-text-html
   ul

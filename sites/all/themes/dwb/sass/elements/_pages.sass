@@ -1,12 +1,15 @@
 // --------------- WHO IS
 
 .styles-who-is
+  .scroll-to-top
+    z-index: 120
   .paragraphs-item-par-image
     &.styles-image-with-link
       .content
         display: inline-block
         position: relative
     text-align: center
+    z-index: 80
     // .content
     //   display: inline-block
     //   position: relative
@@ -29,7 +32,7 @@
     font-size: $font-size-whois-title
     text-rendering: optimizeLegibility
     color: white
-    text-transform: capitalize
+    text-transform: none
     font-weight: bold
   .field-name-field-image
     text-align: center
@@ -213,6 +216,12 @@
       background-color: #822a3a
       color: white
       font-weight: bold !important
+  .marker-cluster-medium
+    background: white
+    div
+      background: #822a3a
+      span
+        color: white
   .form-item-distance-country
     display: none
   .form-item-distance-search-distance
@@ -224,6 +233,9 @@
   .view-filters
     background: $transparent-white-node
     max-width: none
+  .views-column
+    @include breakpoint($m)
+      padding: 0 5%
   .views-row
     display: block
     float: left
@@ -233,6 +245,11 @@
     padding: 3%
     box-sizing: border-box
     position: relative
+    min-height: 260px
+    @include breakpoint($m)
+      min-height: initial
+      width: 100%
+      margin: 10% 0 0 0
     &:before
       +outer-border-top-white
     &:after
@@ -322,7 +339,7 @@
         @include breakpoint($m)
           margin: 30px auto 20px auto
           text-align: center
-          max-width: 60px
+          max-width: 100px
         +buttonshadow
         span
           margin-top: 0
@@ -344,6 +361,10 @@
     padding: 5%
   #main
     padding-top: 70px
+  p
+    margin: 30px 0 0 0
+  ul
+    margin: 0
 
 // ------------------------------------ RECEPTEN
 

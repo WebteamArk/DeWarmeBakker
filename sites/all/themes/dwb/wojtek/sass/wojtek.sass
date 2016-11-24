@@ -153,7 +153,7 @@
     input
       +box-shadow(0 0 10px #d1d1d1)
       +box-sizing(border-box)
-      padding-left: 10px
+      padding-left: 2%
     .ms-options-wrap
       +box-shadow(0px 2px 10px 0 #999)
       > button
@@ -199,41 +199,60 @@
       .webform-component--street-group--straat
         width: 66%
         margin-right: 2%
+        display: block
+        float: left
       .webform-component--street-group--nr
         width: 15%
         margin-right: 2%
+        display: block
+        float: left
       .webform-component--street-group--bus
         width: 15%
         margin-right: 0%
+        display: block
+        float: left
+
       @include breakpoint($m)
         .webform-component--street-group--straat,
         .webform-component--street-group--nr,
         .webform-component--street-group--bus
           width: 100%
           margin-right: 0%
+          display: block
+          float: none
       @include breakpoint($sm)
         .webform-component--street-group--straat,
         .webform-component--street-group--nr,
         .webform-component--street-group--bus
           width: 100%
           margin-right: 0%
+          display: block
+          float: none
     .webform-component--city-group
       .webform-component--city-group--postcode
         width: 33%
         margin-right: 2%
+        display: block
+        float: left
       .webform-component--city-group--gemeente
         width: 65%
         margin-right: 0%
+        display: block
+        float: left
       @include breakpoint($m)
         .webform-component--city-group--postcode,
         .webform-component--city-group--gemeente
           width: 100%
           margin-right: 0%
+          display: block
+          float: none
       @include breakpoint($sm)
         .webform-component--city-group--postcode,
         .webform-component--city-group--gemeente
           width: 100%
           margin-right: 0%
+          display: block
+          float: none
     .webform-component-markup
       margin: 40px auto
       text-align: center
@@ -243,12 +262,12 @@
       button
         +box-shadow(0 0 10px 1px rgba(0,0,0,0.2))
         display: inline-block
-        padding: 5px 10px
+        padding: 5px 30px
         line-height: 30px
         text-align: center
         text-transform: uppercase
         transition: border-radius 1s ease 0s, background-color 1s ease 0s
-        color: #333
+        color: #822a3a
         font-weight: 500
         text-decoration: none
         border: none
@@ -267,7 +286,7 @@
         &:hover
           border-radius: 20px
           transition: border-radius 0.5s ease 0s, background-color 0.5s ease 0s
-
+          color: #822a3a
           // span
           //   border-bottom: 3px solid #822a3a
           //   color: #822a3a
@@ -309,7 +328,20 @@
     #social-icons
       display: inline-block
 
-
+.front
+  header
+    position: relative
+  .zabki
+    position: absolute
+    overflow: hidden
+    width: 100%
+    height: 100px
+    left: 0
+    top: 100%
+    z-index: 0
+    background: transparent url('/sites/all/themes/dwb/css/i/zigzag4.png') repeat-x left bottom
+    margin-top: -5px
+    pointer-events: none
 
 
 

@@ -27,7 +27,7 @@
     this._maxIterations = 100;
     this._resizeTimer = null;
     this._matrix = [];
-    this._defaultMatrixSize = 200;
+    this._defaultMatrixSize = 400;
     this._tilesInfo = [];
     this._breakpoint = {};
     this._lastBreakpoint = '';

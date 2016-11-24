@@ -273,7 +273,7 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  padding-left: 10px;
+  padding-left: 2%;
 }
 /* line 157, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form .ms-options-wrap {
@@ -345,83 +345,101 @@
 .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component--street-group .webform-component--street-group--straat {
   width: 66%;
   margin-right: 2%;
+  display: block;
+  float: left;
 }
-/* line 202, ../sass/wojtek.sass */
+/* line 204, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component--street-group .webform-component--street-group--nr {
   width: 15%;
   margin-right: 2%;
+  display: block;
+  float: left;
 }
-/* line 205, ../sass/wojtek.sass */
+/* line 209, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component--street-group .webform-component--street-group--bus {
   width: 15%;
   margin-right: 0%;
+  display: block;
+  float: left;
 }
 @media (max-width: 767px) {
-  /* line 209, ../sass/wojtek.sass */
+  /* line 216, ../sass/wojtek.sass */
   .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component--street-group .webform-component--street-group--straat,
   .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component--street-group .webform-component--street-group--nr,
   .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component--street-group .webform-component--street-group--bus {
     width: 100%;
     margin-right: 0%;
+    display: block;
+    float: none;
   }
 }
 @media (max-width: 320px) {
-  /* line 215, ../sass/wojtek.sass */
+  /* line 224, ../sass/wojtek.sass */
   .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component--street-group .webform-component--street-group--straat,
   .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component--street-group .webform-component--street-group--nr,
   .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component--street-group .webform-component--street-group--bus {
     width: 100%;
     margin-right: 0%;
+    display: block;
+    float: none;
   }
 }
-/* line 221, ../sass/wojtek.sass */
+/* line 232, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component--city-group .webform-component--city-group--postcode {
   width: 33%;
   margin-right: 2%;
+  display: block;
+  float: left;
 }
-/* line 224, ../sass/wojtek.sass */
+/* line 237, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component--city-group .webform-component--city-group--gemeente {
   width: 65%;
   margin-right: 0%;
+  display: block;
+  float: left;
 }
 @media (max-width: 767px) {
-  /* line 228, ../sass/wojtek.sass */
+  /* line 243, ../sass/wojtek.sass */
   .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component--city-group .webform-component--city-group--postcode,
   .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component--city-group .webform-component--city-group--gemeente {
     width: 100%;
     margin-right: 0%;
+    display: block;
+    float: none;
   }
 }
 @media (max-width: 320px) {
-  /* line 233, ../sass/wojtek.sass */
+  /* line 250, ../sass/wojtek.sass */
   .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component--city-group .webform-component--city-group--postcode,
   .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component--city-group .webform-component--city-group--gemeente {
     width: 100%;
     margin-right: 0%;
+    display: block;
+    float: none;
   }
 }
-/* line 237, ../sass/wojtek.sass */
+/* line 256, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component-markup {
   margin: 40px auto;
   text-align: center;
   color: #888;
 }
-/* line 241, ../sass/wojtek.sass */
+/* line 260, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form .form-actions {
   text-align: center;
 }
-/* line 243, ../sass/wojtek.sass */
+/* line 262, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form .form-actions button {
   -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
   display: inline-block;
-  padding: 5px 10px;
+  padding: 5px 30px;
   line-height: 30px;
   text-align: center;
   text-transform: uppercase;
   transition: border-radius 1s ease 0s, background-color 1s ease 0s;
-  color: #333;
+  color: #822a3a;
   font-weight: 500;
   text-decoration: none;
   border: none;
@@ -429,22 +447,41 @@
   min-width: 200px;
   text-align: center;
 }
-/* line 267, ../sass/wojtek.sass */
+/* line 286, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form .form-actions button:hover {
   border-radius: 20px;
   transition: border-radius 0.5s ease 0s, background-color 0.5s ease 0s;
+  color: #822a3a;
 }
-/* line 306, ../sass/wojtek.sass */
+/* line 325, ../sass/wojtek.sass */
 .node-type-action .field-name-addtoany {
   text-align: center;
   margin-right: 10px;
 }
-/* line 309, ../sass/wojtek.sass */
+/* line 328, ../sass/wojtek.sass */
 .node-type-action .field-name-addtoany #social-icons {
   display: inline-block;
 }
 
-/* line 322, ../sass/wojtek.sass */
+/* line 332, ../sass/wojtek.sass */
+.front header {
+  position: relative;
+}
+/* line 334, ../sass/wojtek.sass */
+.front .zabki {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100px;
+  left: 0;
+  top: 100%;
+  z-index: 0;
+  background: transparent url("/sites/all/themes/dwb/css/i/zigzag4.png") repeat-x left bottom;
+  margin-top: -5px;
+  pointer-events: none;
+}
+
+/* line 354, ../sass/wojtek.sass */
 hr {
   display: block;
   height: 1px;

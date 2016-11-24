@@ -57,8 +57,12 @@ function dwb_fixes_webform_autocomplete_options_alter(&$options, $node, $cid, $s
 function dwb_fixes_views_query_alter(&$view, &$query) {
   if ($view->name == 'find_dwb') {
     //dpm($query->where);
-     if (!isset($query->where[1]['conditions'][3]) && !isset($query->where[1]['conditions'][4] )) {
+     if (!isset($query->where[1]['conditions'][2]) && !isset($query->where[1]['conditions'][3] )) {
        $query->where[1]['conditions'][0]['value'] = '-1';
      }
   }
+}
+
+function dwb_fixes_form_i18n_string_locale_translate_edit_form_alter(&$form, $form_state) {
+   unset($form['#validate']);
 }
