@@ -414,6 +414,18 @@ Drupal.behaviors.dwbFindFix = {
   },
 };
 
+Drupal.behaviors.dwbSearchInput = {
+    attach: function(context, settings) {
+      $('.view-find-dwb', context).once('dwb-search-input', function () {
+        $(this).find('#edit-city-wrapper, #edit-distance-wrapper').hide();
+        var newInput = document.createElement("input");
+        newInput.type="text";
+        newInput.id="fakesearch";
+        $(this).find('.views-exposed-widgets').prepend(newInput);
+      });
+    },
+};
+
 Drupal.behaviors.dwbMapSize = {
   attach: function(context, settings) {
     $('.view-find-dwb', context).once('dwb-map-size', function () {
