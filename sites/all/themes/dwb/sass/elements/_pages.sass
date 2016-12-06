@@ -292,8 +292,14 @@
     //   @include breakpoint($t)
     //     float: none
     #edit-city-wrapper,
+    #edit-distance-wrapper
+      display: none
+    .fakesearch-wrapper,
+    #edit-city-wrapper,
     #edit-distance-wrapper,
     #edit-field-bakery-products-tid-wrapper
+      float: left
+      padding: 0.5em 1em 0 0
       @include breakpoint($m)
         float: none
         .form-item-field-bakery-products-tid
@@ -312,18 +318,25 @@
           padding-right: 15px
           @include breakpoint($m)
             display: block
+    #fakesearch
+      width: 260px
+      @include breakpoint($m)
+        width: 80%
+        clear: both
     #edit-distance-postal-code
       width: 100px
       @include breakpoint($m)
         width: 80%
         clear: both
     #edit-city
+
       width: 200px
       @include breakpoint($t)
         width: 240px
       @include breakpoint($m)
         width: 80%
         clear: both
+    #fakesearch,
     #edit-distance-postal-code,
     #edit-city
       height: 40px

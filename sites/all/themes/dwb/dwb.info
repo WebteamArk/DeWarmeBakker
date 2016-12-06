@@ -75,6 +75,7 @@ stylesheets[print][] = print.css
 scripts[] = js/multiselect/jquery.multiselect.js
 scripts[] = js/ellipsis/jquery.ellipsis.min.js
 scripts[] = js/npxGrid.js
+scripts[] = js/npxLoc.js
 scripts[] = js/script.js
 
 

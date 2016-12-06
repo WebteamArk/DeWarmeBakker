@@ -56,9 +56,12 @@ function dwb_fixes_webform_autocomplete_options_alter(&$options, $node, $cid, $s
  */
 function dwb_fixes_views_query_alter(&$view, &$query) {
   if ($view->name == 'find_dwb') {
-    //dpm($query->where);
+     //var_dump($query->where[1]);
      if (!isset($query->where[1]['conditions'][2]) && !isset($query->where[1]['conditions'][3] )) {
        $query->where[1]['conditions'][0]['value'] = '-1';
+     } 
+     elseif (isset($query->where[1]['conditions'][2]) && isset($query->where[1]['conditions'][3])) {
+       unset($query->where[1]['conditions'][2]);
      }
   }
 }
