@@ -1,10 +1,14 @@
 <?php
 
-
 /**
  * Page callback for node/add/%node_type/mlid/%menu_editor_mlid
+ *
+ * @param object $type
+ * @param array $menu_item
+ *
+ * @return array|mixed
  */
-function me_node_creation_create_node($type, $menu_item) {
+function me_node_creation_create_node($type, array $menu_item) {
   global $user;
 
   drupal_set_title(t('Create @name', array('@name' => $type->name)), PASS_THROUGH);
@@ -24,8 +28,11 @@ function me_node_creation_create_node($type, $menu_item) {
   return $form;
 }
 
-
-function _me_node_creation_form_alter(&$form, $node) {
+/**
+ * @param array $form
+ * @param object $node
+ */
+function _me_node_creation_form_alter(array &$form, $node) {
   $menu_item = $node->me_node_creation_menu_item;
 
   unset($form['menu']);
@@ -39,7 +46,7 @@ function _me_node_creation_form_alter(&$form, $node) {
   }
 
   $txt = t('The created node will be associated with the chosen menu item (!mlid),<br/>with link title "@title"', array(
-    '!mlid' => $mlid_text, 
+    '!mlid' => $mlid_text,
     '@title' => $menu_item['link_title'],
   ));
   $txt = "<p>$txt</p>";

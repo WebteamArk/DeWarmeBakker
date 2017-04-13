@@ -3,6 +3,12 @@
   top: 20px;
   right: 20px;
   z-index: 1000;
+  background-color: #FAB008;
+  font-style: italic;
+
+}
+#purr-container .placeholder{
+	text-transform: lowercase;
 }
 
 .notice {
@@ -27,7 +33,7 @@
   text-align: left;
   min-height: 50px;
   padding: 22px 32px 0 22px;
-  background: url(images/purrTop.png) no-repeat left top;
+  // background: url(images/purrTop.png) no-repeat left top;
   color: #f9f9f9;
 }
 
@@ -56,7 +62,7 @@
 
 .notice-bottom {
   height: 22px;
-  background: url(./images/purrBottom.png) no-repeat left top;
+  // background: url(./images/purrBottom.png) no-repeat left top;
 }
 
 .notice.error,
@@ -67,12 +73,12 @@
 }
 
 .notice.error .notice-body {
-  background: url(./images/purrTop-error.png) no-repeat left top;
+  // background: url(./images/purrTop-error.png) no-repeat left top;
   border: 0;
 }
 
 .notice.error .notice-bottom {
-  background: url(images/purrBottom-error.png) no-repeat left top;
+  // background: url(images/purrBottom-error.png) no-repeat left top;
 }
 
 .notice.warning {
@@ -91,6 +97,8 @@
 
 .notice li {
   margin: 0;
+  padding-bottom: 15px;
+  color:#822a3a;
 }
 
 .notice a:link {

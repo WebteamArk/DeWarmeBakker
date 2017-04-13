@@ -150,11 +150,16 @@ function _dwb_check_win_loose_callback(&$form, &$form_state) {
   module_load_include('inc', 'webform', 'includes/webform.submissions');
   $count = webform_get_submission_count($form['#node']->nid);
   $node = menu_get_object();
-  if($count <= 1000) {
+  if($count <= 8000) {
     $form_state['redirect'] = array('node/' . $node->nid, array('query' => array('v' => 'win')));
+echo '<script type="text/javascript">',
+     'alert("test");',
+     '</script>'
+     ;
   } else {
     $form_state['redirect'] = array('node/' . $node->nid, array('query' => array('v' => 'nowin')));
   }
+
 }
 
 /**

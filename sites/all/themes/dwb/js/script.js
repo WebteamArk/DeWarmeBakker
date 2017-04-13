@@ -271,6 +271,13 @@ Drupal.behaviors.dwbMultiselect = {
       });
     });
     $('#edit-field-bread-type-tid', context).once('dwb-multiselect').each(function() {
+      var $options = $(this).find('option');
+      $options.detach().sort(function(a,b) {
+          var at = $.trim($(a).text());
+          var bt = $.trim($(b).text());
+          return (at > bt)?1:((at < bt)?-1:0);
+      });
+      $options.appendTo(this);
       $(this).multiselect({
         columns: 1,
         placeholder: Drupal.t('Broodsoort'),
@@ -414,6 +421,43 @@ Drupal.behaviors.dwbFindFix = {
   },
 };
 
+Drupal.behaviors.dwbSearchInput = {
+    attach: function(context, settings) {
+      $('.view-find-dwb', context).once('dwb-search-input', function () {
+        //$(this).find('#edit-city-wrapper, #edit-distance-wrapper').hide();
+        var $city = $(this).find('#edit-city');
+        var $distance = $(this).find('#edit-distance-postal-code');
+        
+        var newInput = document.createElement("input");
+        newInput.type="text";
+        newInput.id="fakesearch";
+        newInput.placeholder=Drupal.t("Geef een postcode of gemeente in");
+        $(this).find('.views-exposed-widgets').prepend(newInput);
+        var $input = $(this).find('#fakesearch');
+        $input.wrap('<div class="fakesearch-wrapper">');
+        $input.val($.trim($city.val() + ' ' + $distance.val()));
+        $input.keyup( function () {
+          var text = $(this).val();
+          var zip = text.match(/\d{4}/g);
+          $city.val(text.replace(/\d{4}/g, ''));
+          if(zip && zip.length) {
+            $distance.val(zip[0]);
+          } else {
+            var loc = $.NpxLoc();
+            $distance.val(loc.npxGetCode($city.val()));
+          }
+        });
+        $input.keypress( function (e) {
+          var keycode = (e.keyCode ? e.keyCode : e.which);
+          if (keycode == '13') {
+            $('button.npxSearchMap', context).click();
+          }
+        });
+        
+      });
+    },
+};
+
 Drupal.behaviors.dwbMapSize = {
   attach: function(context, settings) {
     $('.view-find-dwb', context).once('dwb-map-size', function () {
@@ -470,5 +514,12 @@ $(window).resize( function () {
   });
 
 });
+
+$( document ).ready(function() {
+	if (window.location.href.indexOf("?v=win") > -1  || window.location.href.indexOf("?v=nowin") ) {
+		  $("html, body").animate({ scrollTop: $(".node-type-action h1").offset().top - 250 }, 1000);
+	}
+});
+
 
 })(jQuery, Drupal, this, this.document);

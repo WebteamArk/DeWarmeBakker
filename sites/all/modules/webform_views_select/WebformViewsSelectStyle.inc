@@ -16,11 +16,11 @@ class WebformViewsSelectStyle extends views_plugin_style_mapping {
   public function define_mapping() {
     return array(
       'webform_select_key' => array(
-        '#title' => t('Select Key'),
+        '#title' => t('Short, raw options (keys)'),
         '#required' => TRUE,
       ),
       'webform_select_value' => array(
-        '#title' => t('Select Value'),
+        '#title' => t('Full, human-readable options (values)'),
         '#required' => TRUE,
       ),
     );
@@ -55,39 +55,26 @@ class WebformViewsSelectStyle extends views_plugin_style_mapping {
 
     $form['html'] = array(
       '#type' => 'fieldset',
-      '#title' => t('HTML options'),
+      '#title' => t('HTML filter'),
     );
 
     $form['html']['strip'] = array(
       '#type' => 'checkbox',
-      '#title' => t('Remove all HTML tags'),
+      '#title' => t('No HTML tags allowed.'),
       '#default_value' => $this->options['html']['strip'],
     );
 
     $form['html']['tags_allowed'] = array(
       '#type' => 'textfield',
-      '#title' => t('Allowed tags'),
+      '#title' => t('Allowed HTML tags'),
       '#default_value' => $this->options['html']['tags_allowed'],
-      '#description' => t('The list of HTML tags that are allowed, separated by spaces.'),
+      '#description' => t('A space-separated list of HTML tags allowed. Disallowed tags are stripped from the content.'),
       '#states' => array(
         'enabled' => array(
           ':input[name="style_options[html][strip]"]' => array('checked' => FALSE),
         ),
       ),
     );
-  }
-
-  /**
-   * Implements views_plugin_style::validate().
-   */
-  public function validate() {
-    $errors = parent::validate();
-
-    // The master display is of type 'default'.
-    if ($this->display->display_plugin != 'webform_select' && $this->display->display_plugin != 'default') {
-      $errors[] = t("%display: the 'Webform Select List' format requires a display of type 'Webform Options', but it is of type %displayplugin.", array('@style' => $this->definition['title'], '%displayplugin' => $this->display->handler->definition['title'], '%display' => $this->display->display_title));
-    }
-    return $errors;
   }
 
   /**

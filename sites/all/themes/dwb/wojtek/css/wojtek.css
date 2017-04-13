@@ -243,6 +243,9 @@
   padding: 0;
   margin: 0 auto;
 }
+.webform-component-email label{
+	display: inline-block;
+}
 /* line 139, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form .form-item {
   margin: 0 0;
@@ -273,7 +276,7 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  padding-left: 2%;
+  padding-left: 10px;
 }
 /* line 157, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form .ms-options-wrap {
@@ -343,7 +346,7 @@
 }
 /* line 199, ../sass/wojtek.sass */
 .node-type-action .field-name-field-p-basic form.webform-client-form .webform-component--street-group .webform-component--street-group--straat {
-  width: 66%;
+  width: 100%;
   margin-right: 2%;
   display: block;
   float: left;
