@@ -19,6 +19,14 @@ function dwb_import_menu() {
     'type' => MENU_SUGGESTED_ITEM,
   );
 
+  $items['admin/content/dwb-update'] = array(
+    'title' => 'Bakeries update',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('dwb_import_update_bakeries_form'),
+    'access arguments' => array('bakeries import'),
+    'type' => MENU_SUGGESTED_ITEM,
+  );
+
   return $items;
 }
 
@@ -104,6 +112,213 @@ function dwb_import_bakeries_form_submit(&$form, &$form_state) {
 
   file_delete($file);
 }
+
+/**
+ * dwb_import_update_bakeries_form CALLBACK
+ */
+function dwb_import_update_bakeries_form($form, &$form_state) {
+  $form['dwb_import'] = array(
+    '#type' => 'fieldset',
+    '#title' => 'Update form'
+  );
+  //  print taxonomy_vocabulary_machine_name_load('bakery_products')->vid;
+  
+//   $vocabulary = taxonomy_get_tree(DWB_IMPORT_VOCABULARY_ID);
+//   $options = array(-1 => 'none');
+  
+//   foreach ($vocabulary as $term) {
+//     $options[$term->tid] = $term->name;
+//   }
+  
+//   $form['dwb_import']['import_category'] = array(
+//     '#type' => 'select',
+//     '#title' => 'Category',
+//     '#description' => 'Select category for bakeries.',
+//     '#options' => $options,
+//     '#required' => FALSE,
+//   );
+  
+  $form['dwb_import']['import_file'] = array(
+    '#type' => 'managed_file',
+    '#title' => 'CSV file',
+    '#description' => 'File format: CSV. <span style="color: red; font-weight: bold;">You have to use UTF-8 encoded file.</span>',
+    '#default_value' => variable_get('import_file', ''),
+    '#upload_validators' => array(
+      'file_validate_extensions' => array('csv'),
+    ),
+    '#upload_location' => DWB_IMPORT_FILES_DIR,
+    '#required' => TRUE
+  );
+  
+  $form['dwb_import']['import_submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'Update',
+  );
+  
+  return $form;
+}
+
+/**
+ * dwb_import_update_bakeries_form_submit CALLBACK
+ */
+function dwb_import_update_bakeries_form_submit(&$form, &$form_state) {
+  $file = file_load($form_state['values']['import_file']);
+  $file->status = FILE_STATUS_PERMANENT;
+  $uploaded = file_save($file);
+  
+  if ($uploaded == TRUE) {
+    drupal_set_message(t('The file has been uploaded.'));
+  }
+  else {
+    drupal_set_message(t('The file could not be uploaded.'), 'error');
+    return;
+  }
+  
+  $file_path = drupal_realpath($file->uri);
+  
+  //$tid = isset($form_state['values']['import_category']) && intval($form_state['values']['import_category']) != -1 ? intval($form_state['values']['import_category']) : false;
+  
+  _dwb_import_update_csv_file_process($file_path);
+  
+  file_delete($file);
+}
+
+/**
+ * Process CSV file UPDATE
+ *
+ * @param string $file_path
+ */
+function _dwb_import_update_csv_file_process($file_path, $tid = false) {
+  $rows = array();
+  $csv = fopen($file_path, 'r');
+  while (($line = fgetcsv($csv)) !== FALSE) {
+    $tmp = implode('', $line);
+    if(!mb_detect_encoding($tmp, 'UTF-8', true)) {
+      drupal_set_message('Incorrect character encoding.', 'error');
+      return;
+    }
+    
+    $rows[] = $line;
+  }
+  fclose($csv);
+  
+  if(empty($rows)) {
+    drupal_set_message('Nothing to be updated.', 'warning');
+    return;
+  }
+  
+  $column_names = array (
+      0 => 'Name',
+      1 => 'Adres',
+      2 => 'adres 2',
+      3 => 'Postal code',
+      4 => 'City',
+      5 => 'Email',
+      6 => 'Lat',
+      7 => 'Lng',
+  );
+  
+  $data_columns = array_shift($rows);
+  
+  if($data_columns == $column_names) {
+    drupal_set_message('Headers OK.');
+  } else {
+    drupal_set_message('Incorrect headers.', 'error');
+    return;
+  }
+
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+  ->entityCondition('bundle', DWB_IMPORT_NODE_TYPE);
+  
+  $result = $query->execute();
+  
+  $nodes = array();
+  
+  if (!empty($result['node'])) {
+    $nids = array_keys($result['node']);
+    
+    foreach ($nids as $nid) {
+      $node = node_load($nid, NULL, TRUE);
+      
+      $nodes[$node->nid] = $node;
+    }
+  }
+  //reset($nodes); dpm($nodes[key($nodes)]); return;
+  
+  
+  $import_count_ok = 0;
+  $import_count_err = 0;
+  $import_ok = array();
+  $import_errors = array();
+  foreach($rows as $key => $row) {
+    $found = 0;
+    $index = null;
+    foreach ($nodes as $node) {
+      if ($row[0] == $node->title) {
+        $found++;
+        $index = $node->nid;
+      }
+    }
+    
+    if ($found == 0) {
+      $import_count_err++;
+      $import_errors[] = sprintf('<p><strong>NOT FOUND Row index: %s</strong>, Bakery name: %s</p>', $key+1, $row[0]);
+    } elseif ($found > 1) {
+      $import_count_err++;
+      $import_errors[] = sprintf('<p><strong>DUPLICATES FOUND Row index: %s</strong>, Bakery name: %s</p>', $key+1, $row[0]);
+    } else {
+      if(_dwb_import_update_bakery_node($row, $nodes[$index])) {
+        $import_count_ok++;
+        $import_ok[] = sprintf('<p><strong>UPDATED Row index: %s</strong>, Bakery name: %s</p>', $key+1, $row[0]);
+      } else {
+//         $import_count_err++;
+//         $import_errors[] = sprintf('<p><strong>Row index: %s</strong>, Bakery name: %s</p>', $key+1, $row[0]);
+      }
+      
+    }
+    
+  }
+  
+  drupal_set_message('Updated '.$import_count_ok.' rows.');
+  if($import_count_ok > 0) {
+    drupal_set_message(implode('', $import_ok));
+  }
+  if($import_count_err > 0) {
+    drupal_set_message('Errors '.$import_count_err, 'error');
+    drupal_set_message(implode('', $import_errors), 'error');
+  }
+}
+
+function  _dwb_import_update_bakery_node($data, $node) {
+  if($node->location['name'] != $data[0] ||
+     $node->location['street'] != $data[1] ||
+     $node->location['city'] != $data[4] ||
+     $node->location['postal_code'] != $data[3] ||
+     $node->location['email'] != $data[5] ||
+     $node->location['latitude'] != $data[6] ||
+     $node->location['longitude'] != $data[7]) {
+       
+    $location = array(
+      'name' => $data[0],
+      'street' => $data[1],
+      'city' => $data[4],
+      'postal_code' => $data[3],
+      'country' => 'be',
+      'email' => $data[5],
+      'latitude' => $data[6],
+      'longitude' => $data[7],
+      'inhibit_geocode' => TRUE,
+    );
+    $node->locations[0] = $location;
+    $node->location = $location;
+    node_save($node);
+    return true;
+  }
+  
+  return false;
+}
+
 
 /**
  * Process CSV file
